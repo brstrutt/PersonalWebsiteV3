@@ -31,3 +31,7 @@ TODO: add tests and test command
 ### Publish
 
 TODO: setup github actions to automatically build + publish when the main branch gets pushed
+
+### Format rust code
+
+`leptosfmt ./**/*.rs`

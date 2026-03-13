@@ -6,6 +6,14 @@
 	"postCreateCommand": ".devcontainer/postCreateCommand.sh",
 	"customizations": {
 		"vscode": {
+            "settings": {
+                "rust-analyzer.procMacro.ignored": {
+					"leptos_macro": [
+						"server"
+					]
+				},
+				"rust-analyzer.cargo.features": "all"  // Enable all features
+            },
 			"extensions": [
 				"fill-labs.dependi"
 			]
