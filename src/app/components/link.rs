@@ -9,7 +9,10 @@ pub fn InternalLink
     children: Children,
 ) -> impl IntoView {
     view!{
-        <A href=format!("{}{}", URL_SUFFIX, href)>
+        <A
+            href=format!("{}{}", URL_SUFFIX, href)
+            exact=true
+        >
             {children()}
         </A>
     }

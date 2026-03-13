@@ -17,6 +17,10 @@ nav {
         background-color: grey;
         padding: 4px;
         color: white;
+
+        &[aria-current='page'] {
+            background-color: purple;
+        }
     }
 }
 
