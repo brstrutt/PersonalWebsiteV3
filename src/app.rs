@@ -1,20 +1,31 @@
 use leptos::prelude::*;
+use leptos_router::{components::{A, Route, Router, Routes}, path};
 
 #[component]
 pub fn App() -> impl IntoView {
-    let (count, set_count) = signal(0);
-
     view! {
-        <button
-            on:click=move |_| *set_count.write() += 1
-            class=("bold", move || count.get() % 2 == 0)
-            style=("font-size", move || format!("{}px", count.get() + 10))
-        >
-            "Click me: "
-            {count}
-        </button>
-        <ProgressBar progress=move || count.get() />
-        <ProgressBar max=10 progress=count />
+        <Router>
+            <nav>
+                <A href="/">"Home"</A>
+                <br/>
+                <A href="/other-page">"Other Page"</A>
+            </nav>
+            <main>
+                <Routes fallback=|| "404 Not found!">
+                    <Route path=path!("/") view=Home/>
+                    <Route path=path!("/other-page") view=OtherPage/>
+                </Routes>
+            </main>
+        </Router>
+    }
+}
+
+#[component]
+fn Home() -> impl IntoView {
+    view! {
+        <p>
+            "HOME!"
+        </p>
     }
 }
 
@@ -29,4 +40,26 @@ fn ProgressBar(
     max: u16,
 ) -> impl IntoView {
     view! { <progress max=max value=progress style=("display", "block") /> }
+}
+
+
+#[component]
+fn OtherPage() -> impl IntoView {
+    let (count, set_count) = signal(0);
+
+    view! {
+        <p>
+            "Other Page!"
+        </p>
+        <button
+            on:click=move |_| *set_count.write() += 1
+            class=("bold", move || count.get() % 2 == 0)
+            style=("font-size", move || format!("{}px", count.get() + 10))
+        >
+            "Click me: "
+            {count}
+        </button>
+        <ProgressBar progress=move || count.get() />
+        <ProgressBar max=10 progress=count />
+    }
 }
