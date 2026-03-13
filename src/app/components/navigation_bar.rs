@@ -3,7 +3,7 @@ use leptos_router::components::A;
 
 #[component]
 pub fn NavigationBar() -> impl IntoView {
-    view!{
+    view! {
         <nav>
             <A href="/art">"Art"</A>
             <A href="/">"Ben!"</A>

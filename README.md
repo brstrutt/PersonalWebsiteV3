@@ -11,6 +11,7 @@ The goal is to use Leptos to rebuild the website from the ground up.
 - Language: Rust
 - Build tool: Trunk
 - Web Framework: Leptos (client-side rendering only)
+- Formatter: leptosfmt
 
 ### Setup
 
@@ -20,18 +21,14 @@ The goal is to use Leptos to rebuild the website from the ground up.
 
 `trunk build`
 
-### Test
-
-TODO: add tests and test command
-
 ### Run
 
 `trunk serve`
 
+### Format
+
+`leptosfmt ./**/*.rs`
+
 ### Publish
 
 TODO: setup github actions to automatically build + publish when the main branch gets pushed
-
-### Format rust code
-
-`leptosfmt ./**/*.rs`

@@ -1,5 +1,5 @@
-use leptos::prelude::*;
 use crate::app::components::ProgressBar;
+use leptos::prelude::*;
 
 #[component]
 pub fn Other() -> impl IntoView {

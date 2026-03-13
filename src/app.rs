@@ -1,8 +1,11 @@
 use leptos::prelude::*;
-use leptos_router::{components::{Route, Router, Routes}, path};
+use leptos_router::{
+    components::{Route, Router, Routes},
+    path,
+};
 mod components;
 mod pages;
-use crate::app::components::{NavigationBar, Footer};
+use crate::app::components::{Footer, NavigationBar};
 
 #[component]
 pub fn App() -> impl IntoView {
@@ -17,7 +20,7 @@ pub fn App() -> impl IntoView {
                     <Route path=path!("/other-page") view=pages::Other />
                 </Routes>
             </main>
-            <Footer/>
+            <Footer />
         </Router>
     }
 }
