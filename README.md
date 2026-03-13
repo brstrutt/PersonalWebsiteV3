@@ -29,3 +29,7 @@ To auto format the codebase: `leptosfmt ./**/*.rs`
 ### Publish
 
 Push your changes to the `main` branch. Github Actions will build the latest version and push it live automatically.
+
+The live site can be seen [here](https://brstrutt.github.io/PersonalWebsiteV3/).
+Due to quirks in Leptos routing and Github Pages it will open on a 404 page initially. Navigating around the site works but if you refresh it'll redirect to a 404 page.
+These issues will solve themselves when I switch to using a custom URL instead of github pages default URL.
