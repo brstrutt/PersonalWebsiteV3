@@ -1,13 +1,13 @@
 use leptos::prelude::*;
-use leptos_router::components::A;
+use crate::app::components::InternalLink;
 
 #[component]
 pub fn NavigationBar() -> impl IntoView {
     view! {
         <nav>
-            <A href="/art">"Art"</A>
-            <A href="/">"Ben!"</A>
-            <A href="/projects">"Projects"</A>
+            <InternalLink href="/art">"Art"</InternalLink>
+            <InternalLink href="/">"Ben!"</InternalLink>
+            <InternalLink href="/projects">"Projects"</InternalLink>
         </nav>
     }
 }

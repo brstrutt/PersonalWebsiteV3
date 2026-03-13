@@ -1,3 +1,5 @@
+use core::str;
+
 use leptos::prelude::*;
 use leptos_router::{
     components::{Route, Router, Routes},
@@ -7,10 +9,12 @@ mod components;
 mod pages;
 use crate::app::components::{Footer, NavigationBar};
 
+const URL_SUFFIX: &str = "/PersonalWebsiteV3";
+
 #[component]
 pub fn App() -> impl IntoView {
     view! {
-        <Router>
+        <Router base=URL_SUFFIX>
             <NavigationBar />
             <main>
                 <Routes fallback=|| "404 Not found!">
