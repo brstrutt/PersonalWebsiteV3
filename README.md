@@ -6,6 +6,12 @@ The goal is to use Leptos to rebuild the website from the ground up.
 
 ## Development
 
+### Tools
+
+- Language: Rust
+- Build tool: Trunk
+- Web Framework: Leptos (client-side rendering only)
+
 ### Setup
 
 - This repo comes with a devcontainer. This container contains all the tools you should need to work on this repo.
