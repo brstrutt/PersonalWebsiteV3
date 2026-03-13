@@ -1,5 +1,12 @@
-.bold {
-    font-weight: bold;
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
 }
 
 nav {
@@ -19,11 +26,18 @@ main {
 }
 
 footer {
-    --padding: 6px;
+    display: flex;
     position: absolute;
-    bottom: var(--padding);
+    bottom: 0;
+    width: 100%;
+    background-color: gray;
 
     a {
-        padding: var(--padding);
+        display: block;
+        padding: 6px;
+
+        img {
+            display: block;
+        }
     }
 }
