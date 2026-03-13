@@ -31,4 +31,4 @@ The goal is to use Leptos to rebuild the website from the ground up.
 
 ### Publish
 
-TODO: setup github actions to automatically build + publish when the main branch gets pushed
+When the `main` branch is updated it will automatically be built and pushed live
