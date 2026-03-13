@@ -23,13 +23,12 @@ jobs:
       concurrency: ci-${{github.ref}}
       steps:
         - name: Checkout
-          uses: actions/checkout@v4
+          uses: actions/checkout@v6
 
         - name: Rust setup
-          uses: hecrj/setup-rust-action@v2
+          uses: actions-rust-lang/setup-rust-toolchain@v1
           with:
-            targets: wasm32-unknown-unknown
-            rust-version: stable
+            target: wasm32-unknown-unknown
 
         - name: Trunk setup
           run: cargo install --locked trunk
@@ -41,7 +40,7 @@ jobs:
           uses: actions/configure-pages@v5
 
         - name: Upload artifact
-          uses: actions/upload-pages-artifact@v3
+          uses: actions/upload-pages-artifact@v4
           with:
             # Upload the public directory
             path: './dist'
