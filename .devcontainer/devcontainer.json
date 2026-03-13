@@ -12,7 +12,8 @@
 						"server"
 					]
 				},
-				"rust-analyzer.cargo.features": "all"  // Enable all features
+				"rust-analyzer.cargo.features": "all",  // Enable all features
+				"editor.inlayHints.enabled": "offUnlessPressed"
             },
 			"extensions": [
 				"fill-labs.dependi"
