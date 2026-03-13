@@ -1,10 +1,10 @@
 use leptos::prelude::*;
 
 #[component]
-pub fn Home() -> impl IntoView {
+pub fn Art() -> impl IntoView {
     view! {
         <h1>
-            "HOME!"
+            "Art!"
         </h1>
     }
 }

@@ -1,3 +1,19 @@
 .bold {
     font-weight: bold;
 }
+
+nav {
+    display: flex;
+    justify-content: space-evenly;
+
+    a {
+        background-color: grey;
+        padding: 4px;
+        color: white;
+    }
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}

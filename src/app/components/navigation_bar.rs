@@ -5,9 +5,9 @@ use leptos_router::components::A;
 pub fn NavigationBar() -> impl IntoView {
     view!{
         <nav>
-            <A href="/">"Home"</A>
-            <br/>
-            <A href="/other-page">"Other Page"</A>
+            <A href="/art">"Art"</A>
+            <A href="/">"Ben!"</A>
+            <A href="/projects">"Projects"</A>
         </nav>
     }
 }
