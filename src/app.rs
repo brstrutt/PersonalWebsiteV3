@@ -7,13 +7,16 @@ pub fn App() -> impl IntoView {
     view! {
         <button
             on:click=move |_| *set_count.write() += 1
-            class=("green", move || count.get() % 2 == 0)
-            class=("red", move || count.get() % 2 == 1)
+            class=("bold", move || count.get() % 2 == 0)
             style=("font-size", move || format!("{}px", count.get()))
         >
             "Click me: "
             {count}
         </button>
-        <p>"Double count: " {move || count.get() * 2}</p>
+        <progress
+            max="50"
+            value=count
+            style=("display", "block")
+        />
     }
 }
