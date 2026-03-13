@@ -17,3 +17,13 @@ main {
     display: flex;
     justify-content: center;
 }
+
+footer {
+    --padding: 6px;
+    position: absolute;
+    bottom: var(--padding);
+
+    a {
+        padding: var(--padding);
+    }
+}
