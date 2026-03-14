@@ -3,7 +3,7 @@ use leptos_router::components::A;
 use crate::app::utils::internal_path;
 
 #[component]
-pub fn NavigationBar() -> impl IntoView {
+pub fn TopNavigationBar() -> impl IntoView {
     view! {
         <nav class="top-navigation-bar">
             <A href=internal_path("/art")>"Art"</A>

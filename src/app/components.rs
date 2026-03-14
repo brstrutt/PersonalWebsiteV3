@@ -1,7 +1,7 @@
 pub mod progress_bar;
 pub use progress_bar::ProgressBar;
 pub mod navigation_bar;
-pub use navigation_bar::NavigationBar;
+pub use navigation_bar::TopNavigationBar;
 pub use navigation_bar::LeftNavigationBar;
 pub use navigation_bar::RightNavigationBar;
 pub mod footer;
