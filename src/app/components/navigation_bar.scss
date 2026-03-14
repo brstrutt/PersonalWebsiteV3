@@ -1,13 +1,3 @@
-*,
-*::before,
-*::after {
-	box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-}
 
 nav {
     &.top-navigation-bar {
@@ -29,28 +19,6 @@ nav {
 
         &[aria-current='page'] {
             background-color: purple;
-        }
-    }
-}
-
-main {
-    display: flex;
-    justify-content: center;
-}
-
-footer {
-    display: flex;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: gray;
-
-    a {
-        display: block;
-        padding: 6px;
-
-        img {
-            display: block;
         }
     }
 }

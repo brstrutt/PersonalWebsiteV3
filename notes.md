@@ -22,3 +22,10 @@ version = "0.1"
 [build]
 public_url = "/PersonalWebsiteV3/"
 ```
+
+## Plain CSS files placed next to the component they relate to
+
+I would like to have `<Component>` live in `components/component.rs`, and any styles specific to that component should live in `components/component.css`.
+This doesn't just work out of the box. I need to find some way to grab all these css files at build time and compile them into a single file that actually gets served.
+
+The solution is just to use `scss` files instead. Import the root styles file with `<link data-trunk rel="scss" href="styles.scss"/>` in the `index.html`. Then use `@import 'src/app/more_styles.scss'` to include other files in the css bundle. Trunk works with scss files out the box so this does just work. Irritating I need to use an extra layer instead of native CSS but hey ho, if it works it works.

@@ -1,0 +1,17 @@
+
+footer {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: gray;
+
+    a {
+        display: block;
+        padding: 6px;
+
+        img {
+            display: block;
+        }
+    }
+}
