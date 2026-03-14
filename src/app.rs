@@ -29,10 +29,8 @@ pub fn App() -> impl IntoView {
                             path=path!("/nokia-art-jam-3")
                             view=pages::art::pixel_art::NokiaArtJam
                         />
-                        <Route
-                            path=path!("/vermintide")
-                            view=pages::art::pixel_art::Vermintide
-                        />
+                        <Route path=path!("/vermintide") view=pages::art::pixel_art::Vermintide />
+                        <Route path=path!("/other") view=pages::art::pixel_art::Other />
                     </ParentRoute>
                 </ParentRoute>
                 <ParentRoute path=path!("/projects") view=pages::projects::Wrapper>

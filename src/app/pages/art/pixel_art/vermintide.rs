@@ -7,7 +7,7 @@ pub fn Vermintide() -> impl IntoView {
     view! {
         <h1>"Vermintide"</h1>
         <p>"I've played perhaps a bit too much Warhammer Vermintide 2."</p>
-        <p>"Here is some pixel art I created inspired by the game."</p>
+        <p>"Here is some pixel art inspired by the game."</p>
         <img
             src=internal_path("/assets/images/pages/art/pixel_art/vermintide/the_squad.png")
             title="The Squad"

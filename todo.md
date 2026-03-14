@@ -6,6 +6,7 @@ A todo list of features to add/bugs to fix.
 - [x] replace `<InternalLink>` component with a `internalPath()` function that modifies any provided relative path to prepend the url suffix
 - [x] properly pin the footer to the bottom of the screen when scrolling happens
 - [x] always center the page content, regardless of left vs right navigation bars
-- [ ] add a few individual pages with actual content
+- [x] add a few individual pages with actual content
 - [ ] add password box and secret routing
 - [x] properly organise css styles
+- [ ] move the routing out of `app.rs`
