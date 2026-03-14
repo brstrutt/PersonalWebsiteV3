@@ -4,7 +4,7 @@ use crate::app::components::NavigationBar;
 
 #[component]
 pub fn Header() -> impl IntoView {
-    view!{
+    view! {
         <header>
             <NavigationBar />
         </header>
