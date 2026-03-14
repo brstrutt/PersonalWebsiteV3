@@ -1,17 +1,27 @@
 use leptos::prelude::*;
 
 pub mod nokia_art_jam;
-pub use nokia_art_jam::NokiaArtJam;
 pub mod other;
-pub use other::Other;
 pub mod vermintide;
-pub use vermintide::Vermintide;
 
-use leptos_router::components::A;
+use leptos_router::{MatchNestedRoutes, components::{A, Outlet, ParentRoute, Route}, path};
 use crate::app::utils::internal_path;
 
+#[component(transparent)]
+pub fn Routes() -> impl MatchNestedRoutes + Clone {
+    view! {
+        <ParentRoute path=path!("/pixel-art") view=Outlet>
+            <Route path=path!("/") view=Page />
+            <nokia_art_jam::Routes />
+            <vermintide::Routes />
+            <other::Routes />
+        </ParentRoute>
+    }
+    .into_inner()
+}
+
 #[component]
-pub fn PixelArt() -> impl IntoView {
+fn Page() -> impl IntoView {
     view! {
         <h1>"Pixel Art!"</h1>
         <A href=internal_path("/art/pixel-art/nokia-art-jam-3")>"Nokia art jam 3"</A>

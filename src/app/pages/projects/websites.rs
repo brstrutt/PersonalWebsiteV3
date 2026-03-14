@@ -1,6 +1,13 @@
 use leptos::prelude::*;
+use leptos_router::{MatchNestedRoutes, components::Route, path};
+
+#[component(transparent)]
+pub fn Routes() -> impl MatchNestedRoutes + Clone {
+    view! { <Route path=path!("/websites") view=Page /> }
+    .into_inner()
+}
 
 #[component]
-pub fn Websites() -> impl IntoView {
+fn Page() -> impl IntoView {
     view! { <h1>"Websites!"</h1> }
 }

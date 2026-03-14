@@ -1,9 +1,16 @@
 use leptos::prelude::*;
+use leptos_router::{MatchNestedRoutes, components::Route, path};
 
 use crate::app::utils::internal_path;
 
+#[component(transparent)]
+pub fn Routes() -> impl MatchNestedRoutes + Clone {
+    view! { <Route path=path!("/nokia-art-jam-3") view=Page /> }
+    .into_inner()
+}
+
 #[component]
-pub fn NokiaArtJam() -> impl IntoView {
+fn Page() -> impl IntoView {
     view! {
         <h1>"Nokia Art Jam 3"</h1>
         <p>"In April 2025 I took part in the Nokia Art Jam."</p>

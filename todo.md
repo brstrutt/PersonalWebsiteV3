@@ -9,4 +9,4 @@ A todo list of features to add/bugs to fix.
 - [x] add a few individual pages with actual content
 - [ ] add password box and secret routing
 - [x] properly organise css styles
-- [ ] move the routing out of `app.rs`
+- [x] move the routing out of `app.rs`

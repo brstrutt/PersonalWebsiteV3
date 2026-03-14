@@ -1,9 +1,16 @@
 use leptos::prelude::*;
+use leptos_router::{MatchNestedRoutes, components::Route, path};
 
 use crate::app::utils::internal_path;
 
+#[component(transparent)]
+pub fn Routes() -> impl MatchNestedRoutes + Clone {
+    view! { <Route path=path!("/vermintide") view=Page /> }
+    .into_inner()
+}
+
 #[component]
-pub fn Vermintide() -> impl IntoView {
+fn Page() -> impl IntoView {
     view! {
         <h1>"Vermintide"</h1>
         <p>"I've played perhaps a bit too much Warhammer Vermintide 2."</p>

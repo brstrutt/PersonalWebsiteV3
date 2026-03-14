@@ -1,17 +1,26 @@
 use leptos::prelude::*;
-use leptos_router::components::Outlet;
+use leptos_router::{MatchNestedRoutes, components::{Outlet, ParentRoute, Route}, path};
 use crate::app::components::LeftNavigationBar;
 
 pub mod maps;
-pub use maps::Maps;
 pub mod pixel_art;
-pub use pixel_art::PixelArt;
 pub mod warhammer;
-pub use warhammer::Warhammer;
 
+#[component(transparent)]
+pub fn Routes() -> impl MatchNestedRoutes + Clone {
+    view! {
+        <ParentRoute path=path!("/art") view=Wrapper>
+            <Route path=path!("/") view=Page />
+            <maps::Routes />
+            <warhammer::Routes />
+            <pixel_art::Routes />
+        </ParentRoute>
+    }
+    .into_inner()
+}
 
 #[component]
-pub fn Wrapper() -> impl IntoView {
+fn Wrapper() -> impl IntoView {
     view! {
         <LeftNavigationBar />
         <main>
@@ -21,6 +30,6 @@ pub fn Wrapper() -> impl IntoView {
 }
 
 #[component]
-pub fn Art() -> impl IntoView {
+fn Page() -> impl IntoView {
     view! { <h1>"Art!"</h1> }
 }

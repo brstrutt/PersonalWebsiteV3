@@ -1,8 +1,18 @@
-pub mod home;
-pub use home::Home;
-pub mod other;
-pub use other::Other;
 pub mod art;
-pub use art::Art;
+pub mod home;
+pub mod other;
 pub mod projects;
-pub use projects::Projects;
+
+use leptos::prelude::*;
+use leptos_router::MatchNestedRoutes;
+
+#[component(transparent)]
+pub fn Routes() -> impl MatchNestedRoutes + Clone {
+    view! {
+        <home::Routes />
+        <art::Routes />
+        <projects::Routes />
+        <other::Routes />
+    }
+    .into_inner()
+}

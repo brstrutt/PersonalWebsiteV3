@@ -1,9 +1,16 @@
 use leptos::prelude::*;
+use leptos_router::{MatchNestedRoutes, components::Route, path};
 
 use crate::app::utils::internal_path;
 
+#[component(transparent)]
+pub fn Routes() -> impl MatchNestedRoutes + Clone {
+    view! { <Route path=path!("/other") view=Page /> }
+    .into_inner()
+}
+
 #[component]
-pub fn Other() -> impl IntoView {
+fn Page() -> impl IntoView {
     view! {
         <h1>"Other"</h1>
         <p>"Here's some pixel art that doesn't really fit into the other categories."</p>

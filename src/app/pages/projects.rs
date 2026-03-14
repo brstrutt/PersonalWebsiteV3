@@ -1,14 +1,24 @@
 use leptos::prelude::*;
-use leptos_router::components::Outlet;
+use leptos_router::{MatchNestedRoutes, components::{Outlet, ParentRoute, Route}, path};
 use crate::app::components::RightNavigationBar;
 
 pub mod guides;
-pub use guides::Guides;
 pub mod websites;
-pub use websites::Websites;
+
+#[component(transparent)]
+pub fn Routes() -> impl MatchNestedRoutes + Clone {
+    view! {
+        <ParentRoute path=path!("/projects") view=Wrapper>
+            <Route path=path!("/") view=Page />
+            <guides::Routes />
+            <websites::Routes />
+        </ParentRoute>
+    }
+    .into_inner()
+}
 
 #[component]
-pub fn Wrapper() -> impl IntoView {
+fn Wrapper() -> impl IntoView {
     view! {
         <main>
             <Outlet />
@@ -18,6 +28,6 @@ pub fn Wrapper() -> impl IntoView {
 }
 
 #[component]
-pub fn Projects() -> impl IntoView {
+fn Page() -> impl IntoView {
     view! { <h1>"Projects!"</h1> }
 }
