@@ -23,6 +23,9 @@ version = "0.1"
 public_url = "/PersonalWebsiteV3/"
 ```
 
+You ALSO need to update your publishing instructions. After the build has finished, copy './dist/index.html' and rename the copy to './dist/404.html'. This is a hack to solve an issue where github shows a 404 page if you navigate directly to `https://brstrutt.github.io/PersonalWebsiteV3/art`. We fix the issue by...overriding the 404 page...to just be the webapp...
+A bit hacky but it works. See [https://garrit.xyz/posts/2023-06-01-single-page-applications-on-github-pages](https://garrit.xyz/posts/2023-06-01-single-page-applications-on-github-pages) for more info.
+
 ## Plain CSS files placed next to the component they relate to
 
 I would like to have `<Component>` live in `components/component.rs`, and any styles specific to that component should live in `components/component.css`.

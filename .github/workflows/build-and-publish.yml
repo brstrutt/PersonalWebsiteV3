@@ -36,6 +36,12 @@ jobs:
         - name: Build
           run: trunk build --release
 
+        - name: Fix github-pages specific 404 issue
+          # Github shows 404 if you try to navigate to a subpage of the application.
+          # To get around this, we specify a custom 404 page that just happens to be the main application.
+          # See https://garrit.xyz/posts/2023-06-01-single-page-applications-on-github-pages for more info
+          run:  cp ./dist/index.html ./dist/404.html
+
         - name: Setup Pages
           uses: actions/configure-pages@v5
 
