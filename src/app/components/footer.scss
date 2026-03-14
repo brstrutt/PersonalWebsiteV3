@@ -1,14 +1,20 @@
+:root {
+    --icon-height: 32px;
+    --icon-padding: 6px;
+    --footer-height: 44px; // This should be icon-height + (icon-padding * 2). Have to hardcode because sotring calc() output in a variable doesnt work.
+}
 
 footer {
     display: flex;
     position: fixed;
     bottom: 0;
     width: 100%;
+    height: var(--footer-height);
     background-color: gray;
 
     a {
         display: block;
-        padding: 6px;
+        padding: var(--icon-padding);
 
         img {
             display: block;

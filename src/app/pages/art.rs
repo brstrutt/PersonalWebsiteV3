@@ -13,10 +13,10 @@ pub use warhammer::Warhammer;
 #[component]
 pub fn Wrapper() -> impl IntoView {
     view! {
-        <div style:display="flex" style:height="80vh" style:width="100vw">
-            <LeftNavigationBar />
+        <LeftNavigationBar />
+        <main>
             <Outlet />
-        </div>
+        </main>
     }
 }
 

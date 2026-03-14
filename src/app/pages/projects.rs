@@ -10,15 +10,10 @@ pub use websites::Websites;
 #[component]
 pub fn Wrapper() -> impl IntoView {
     view! {
-        <div
-            style:display="flex"
-            style:height="80vh"
-            style:width="100vw"
-            style:justify-content="right"
-        >
+        <main>
             <Outlet />
-            <RightNavigationBar />
-        </div>
+        </main>
+        <RightNavigationBar />
     }
 }
 
