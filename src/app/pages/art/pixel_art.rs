@@ -1,6 +1,15 @@
 use leptos::prelude::*;
 
+pub mod nokia_art_jam;
+use leptos_router::components::A;
+pub use nokia_art_jam::NokiaArtJam;
+
+use crate::app::utils::internal_path;
+
 #[component]
 pub fn PixelArt() -> impl IntoView {
-    view! { <h1>"Pixel Art!"</h1> }
+    view! {
+        <h1>"Pixel Art!"</h1>
+        <A href=internal_path("/art/pixel-art/nokia-art-jam-3")>"Nokia art jam 3"</A>
+    }
 }

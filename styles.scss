@@ -1,7 +1,9 @@
 @import 'src/app/rules.scss';
 
 main {
-    display: flex;
-    justify-content: center;
+    text-align: center;
+    padding-left: 25vw;
+    padding-right: 25vw;
     padding-top: var(--header-height);
+    padding-bottom: var(--footer-height);
 }

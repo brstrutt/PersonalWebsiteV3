@@ -7,7 +7,7 @@ pub fn Footer() -> impl IntoView {
         <footer>
             <a href="https://github.com/brstrutt" target="_blank" rel="noopener noreferrer">
                 <img
-                    src=internal_path("/assets/images/GitHub-Mark-Light-64px.png")
+                    src=internal_path("/assets/icons/GitHub-Mark-Light-64px.png")
                     title="Github"
                     alt="Github Logo"
                     width="32px"
@@ -20,7 +20,7 @@ pub fn Footer() -> impl IntoView {
                 rel="noopener noreferrer"
             >
                 <img
-                    src=internal_path("/assets/images/LI-In-Bug-Modified.png")
+                    src=internal_path("/assets/icons/LI-In-Bug-Modified.png")
                     title="LinkedIn"
                     alt="LinkedIn Logo(Slightly Modified)"
                     width="32px"

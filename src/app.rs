@@ -1,7 +1,7 @@
 use core::str;
 use leptos::prelude::*;
 use leptos_router::{
-    components::{ParentRoute, Route, Router, Routes},
+    components::{Outlet, ParentRoute, Route, Router, Routes},
     path,
 };
 use crate::app::components::{Footer, Header};
@@ -23,7 +23,13 @@ pub fn App() -> impl IntoView {
                     <Route path=path!("/") view=pages::Art />
                     <Route path=path!("/maps") view=pages::art::Maps />
                     <Route path=path!("/warhammer") view=pages::art::Warhammer />
-                    <Route path=path!("/pixel-art") view=pages::art::PixelArt />
+                    <ParentRoute path=path!("/pixel-art") view=Outlet>
+                        <Route path=path!("/") view=pages::art::PixelArt />
+                        <Route
+                            path=path!("/nokia-art-jam-3")
+                            view=pages::art::pixel_art::NokiaArtJam
+                        />
+                    </ParentRoute>
                 </ParentRoute>
                 <ParentRoute path=path!("/projects") view=pages::projects::Wrapper>
                     <Route path=path!("/") view=pages::Projects />
