@@ -1,13 +1,14 @@
 use leptos::prelude::*;
-use crate::app::components::InternalLink;
+use leptos_router::components::A;
+use crate::app::utils::internal_path;
 
 #[component]
 pub fn NavigationBar() -> impl IntoView {
     view! {
         <nav class="top-navigation-bar">
-            <InternalLink href="/art">"Art"</InternalLink>
-            <InternalLink href="/">"Ben!"</InternalLink>
-            <InternalLink href="/projects">"Projects"</InternalLink>
+            <A href=internal_path("/art")>"Art"</A>
+            <A href=internal_path("/") exact=true>"Ben!"</A>
+            <A href=internal_path("/projects")>"Projects"</A>
         </nav>
     }
 }
@@ -16,9 +17,9 @@ pub fn NavigationBar() -> impl IntoView {
 pub fn LeftNavigationBar() -> impl IntoView {
     view! {
         <nav class="left-navigation-bar">
-            <InternalLink href="/art/warhammer">"Warhammer"</InternalLink>
-            <InternalLink href="/art/maps">"Maps"</InternalLink>
-            <InternalLink href="/art/pixel-art">"Pixel Art"</InternalLink>
+            <A href=internal_path("/art/warhammer")>"Warhammer"</A>
+            <A href=internal_path("/art/maps")>"Maps"</A>
+            <A href=internal_path("/art/pixel-art")>"Pixel Art"</A>
         </nav>
     }
 }
@@ -27,8 +28,8 @@ pub fn LeftNavigationBar() -> impl IntoView {
 pub fn RightNavigationBar() -> impl IntoView {
     view! {
         <nav class="right-navigation-bar">
-            <InternalLink href="/projects/guides">"Guides"</InternalLink>
-            <InternalLink href="/projects/websites">"Websites"</InternalLink>
+            <A href=internal_path("/projects/guides")>"Guides"</A>
+            <A href=internal_path("/projects/websites")>"Websites"</A>
         </nav>
     }
 }

@@ -6,5 +6,3 @@ pub use navigation_bar::LeftNavigationBar;
 pub use navigation_bar::RightNavigationBar;
 pub mod footer;
 pub use footer::Footer;
-pub mod link;
-pub use link::InternalLink;

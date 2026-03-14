@@ -1,13 +1,14 @@
 use core::str;
-
 use leptos::prelude::*;
 use leptos_router::{
     components::{ParentRoute, Route, Router, Routes},
     path,
 };
+use crate::app::components::{Footer, NavigationBar};
+
+mod utils;
 mod components;
 mod pages;
-use crate::app::components::{Footer, NavigationBar};
 
 const URL_SUFFIX: &str = "/PersonalWebsiteV3";
 
