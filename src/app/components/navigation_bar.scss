@@ -4,6 +4,12 @@ nav {
         display: flex;
         justify-content: space-evenly;
         height: 100%;
+
+        a {
+            display: flex;
+            justify-content: center;
+            width: 5rem;
+        }
     }
 
     &.left-navigation-bar, &.right-navigation-bar {
