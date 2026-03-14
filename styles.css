@@ -10,8 +10,18 @@ body {
 }
 
 nav {
-    display: flex;
-    justify-content: space-evenly;
+
+    &.top-navigation-bar {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    &.left-navigation-bar, &.right-navigation-bar {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 100%;
+    }
 
     a {
         background-color: grey;

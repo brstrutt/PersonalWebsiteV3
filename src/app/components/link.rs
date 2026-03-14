@@ -11,7 +11,6 @@ pub fn InternalLink
     view!{
         <A
             href=format!("{}{}", URL_SUFFIX, href)
-            exact=true
         >
             {children()}
         </A>
