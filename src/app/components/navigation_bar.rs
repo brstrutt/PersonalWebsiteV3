@@ -7,7 +7,9 @@ pub fn NavigationBar() -> impl IntoView {
     view! {
         <nav class="top-navigation-bar">
             <A href=internal_path("/art")>"Art"</A>
-            <A href=internal_path("/") exact=true>"Ben!"</A>
+            <A href=internal_path("/") exact=true>
+                "Ben!"
+            </A>
             <A href=internal_path("/projects")>"Projects"</A>
         </nav>
     }

@@ -2,9 +2,5 @@ use leptos::prelude::*;
 
 #[component]
 pub fn Websites() -> impl IntoView {
-    view! {
-        <h1>
-            "Websites!"
-        </h1>
-    }
+    view! { <h1>"Websites!"</h1> }
 }

@@ -24,7 +24,7 @@ To build the code: `trunk build`
 
 To run the dev server locally: `trunk serve`
 
-To auto format the codebase: `leptosfmt ./**/*.rs`
+To auto format the codebase: `leptosfmt .`
 
 ### Publish
 

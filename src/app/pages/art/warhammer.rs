@@ -2,9 +2,5 @@ use leptos::prelude::*;
 
 #[component]
 pub fn Warhammer() -> impl IntoView {
-    view! {
-        <h1>
-            "Warhammer!"
-        </h1>
-    }
+    view! { <h1>"Warhammer!"</h1> }
 }
