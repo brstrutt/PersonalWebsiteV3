@@ -16,11 +16,12 @@ use leptos::{
     },
 };
 use wasmfenbein3d::core::{
+    motion,
     render::{
         render_to_screen_buffer,
         rgb_palette::RgbPalette,
-        screen_buffer_row_first::ScreenBufferRowFirst,
         screen_buffer::ScreenBuffer,
+        screen_buffer_row_first::ScreenBufferRowFirst,
     }, state::GameState,
 };
 
@@ -66,6 +67,7 @@ pub fn world_display() -> impl IntoView {
 
             // Allow controlling the player character
             setup_controls(element.clone(), state.clone());
+            character_motion_loop(state.clone());
 
             // Setup the render loop
             render_loop(screen_buffer, state, element);
@@ -138,6 +140,7 @@ fn render_loop<T: ScreenBuffer + 'static>(
     state: Rc<RefCell<GameState>>,
     element: HtmlCanvasElement,
 ) {
+    let render_start_time = leptos_dom::helpers::window().performance().unwrap().now();
     render_to_screen_buffer(&screen_buffer, &state);
     if let Ok(context_result) = element.get_context("2d") &&
     let Some(canvas_context) = context_result {
@@ -148,6 +151,65 @@ fn render_loop<T: ScreenBuffer + 'static>(
         .put_image_data(&buffer.to_imagedata(), 0.0, 0.0)
         .expect("Failed to copy Screen Buffer to canvas.");
     }
+    let render_end_time = leptos_dom::helpers::window().performance().unwrap().now();
+
+    {
+        let mut state = state.borrow_mut();
+        state.last_time_to_render_one_frame_ms = render_end_time - render_start_time;
+    }
 
     leptos_dom::helpers::request_animation_frame(|| render_loop(screen_buffer, state, element));
+}
+
+
+fn character_motion_loop(state: Rc<RefCell<GameState>>) {
+    {
+        let mut state = state.borrow_mut();
+
+        // Use time delta to control for framerate variations
+        let current_time = leptos_dom::helpers::window().performance().unwrap().now();
+        let time_since_last_frame_ms = current_time - state.last_frame_time_ms;
+
+        let time_since_last_frame_s = time_since_last_frame_ms / 1000.0;
+
+        // Calculate movement speed
+        let velocity_per_s = if state.input.sprint { 12.0 } else { 4.0 };
+        let velocity = velocity_per_s * time_since_last_frame_s;
+
+        // Calculate the direction the player is facing
+        let camera_rotation = state.world.camera.ray.get_angle();
+        let motion = state
+            .input
+            .get_cameraspace_movement_direction()
+            .rotate(camera_rotation)
+            * velocity;
+
+        // Move the character
+        state.world.camera.ray.origin =
+            motion::move_object(state.world.camera.ray.origin, &motion, &state.world);
+
+
+        // Rotate the camera
+        const ROTATION_SPEED: f64 = 0.001;
+
+        let camera_rotation = state.input.camera_rotation;
+        state.input.camera_rotation = 0;
+
+        if camera_rotation != 0 {
+            state.world.camera = state
+                .world
+                .camera
+                .rotate(camera_rotation as f64 * ROTATION_SPEED);
+        }
+        state.world.camera.refresh_screen_rays();
+
+
+        // Track the last time we ran a physics tick
+        state.last_frame_time_ms = current_time;
+
+        // Track how much time is passing between each tick (for FPS calculation/display)
+        state.last_time_between_frames_ms = time_since_last_frame_ms;
+    }
+
+    leptos_dom::helpers::request_animation_frame(|| character_motion_loop(state));
 }
