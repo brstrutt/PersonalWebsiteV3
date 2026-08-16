@@ -10,14 +10,17 @@ use leptos::{
     html::Canvas,
     leptos_dom,
     prelude::*,
+    wasm_bindgen::{JsCast},
     web_sys::{
-        EventTarget, HtmlCanvasElement,
+        CanvasRenderingContext2d, EventTarget, HtmlCanvasElement,
     },
 };
 use wasmfenbein3d::core::{
     render::{
+        render_to_screen_buffer,
         rgb_palette::RgbPalette,
         screen_buffer_row_first::ScreenBufferRowFirst,
+        screen_buffer::ScreenBuffer,
     }, state::GameState,
 };
 
@@ -65,18 +68,7 @@ pub fn world_display() -> impl IntoView {
             setup_controls(element.clone(), state.clone());
 
             // Setup the render loop
-            leptos_dom::helpers::request_animation_frame(move || {
-                render_to_screen_buffer(&screen_buffer, &state);
-                if let Ok(context_result) = element.get_context("2d") &&
-                let Some(canvas_context) = context_result {
-                    let buffer = screen_buffer.borrow();
-                    canvas_context
-                    .dyn_into::<CanvasRenderingContext2d>()
-                    .expect("Failed to get 2D context even MORE")
-                    .put_image_data(&buffer.to_imagedata(), 0.0, 0.0)
-                    .expect("Failed to copy Screen Buffer to canvas.");
-                }
-            });
+            render_loop(screen_buffer, state, element);
         }
     });
 
@@ -141,3 +133,21 @@ fn setup_controls(canvas_element: HtmlCanvasElement, state: Rc<RefCell<GameState
     });
 }
 
+fn render_loop<T: ScreenBuffer + 'static>(
+    screen_buffer: Rc<RefCell<T>>,
+    state: Rc<RefCell<GameState>>,
+    element: HtmlCanvasElement,
+) {
+    render_to_screen_buffer(&screen_buffer, &state);
+    if let Ok(context_result) = element.get_context("2d") &&
+    let Some(canvas_context) = context_result {
+        let buffer = screen_buffer.borrow();
+        canvas_context
+        .dyn_into::<CanvasRenderingContext2d>()
+        .expect("Failed to get 2D context even MORE")
+        .put_image_data(&buffer.to_imagedata(), 0.0, 0.0)
+        .expect("Failed to copy Screen Buffer to canvas.");
+    }
+
+    leptos_dom::helpers::request_animation_frame(|| render_loop(screen_buffer, state, element));
+}
