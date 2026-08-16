@@ -53,8 +53,7 @@ pub fn world_display() -> impl IntoView {
 
             leptos_dom::helpers::request_animation_frame(move || {
                 render_to_screen_buffer(&screen_buffer, &state);
-                if let Some(canvas) = node_ref.get() &&
-                let Ok(context_result) = canvas.get_context("2d") &&
+                if let Ok(context_result) = element.get_context("2d") &&
                 let Some(canvas_context) = context_result {
                     let buffer = screen_buffer.borrow();
                     canvas_context
