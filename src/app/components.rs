@@ -12,3 +12,5 @@ pub mod header;
 pub use header::Header;
 pub mod world_display;
 pub use world_display::WorldDisplay;
+pub mod overlay;
+pub use overlay::Overlay;
