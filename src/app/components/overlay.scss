@@ -3,4 +3,9 @@
     position: absolute;
     width: 100%;
     z-index: 2;
+    pointer-events: none;
+
+    button, a, img {
+        pointer-events: auto;
+    }
 }
