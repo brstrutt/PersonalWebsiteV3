@@ -99,7 +99,7 @@ fn setup_controls(canvas_element: HtmlCanvasElement, state: Rc<RefCell<GameState
         }
     });
     let cloned_canvas = canvas_element.clone();
-    leptos_dom::helpers::window_event_listener(ev::click, move |_| {
+    add_event_listener_with_callback(EventTarget::from(cloned_canvas.clone()), "click", move |_: Event| {
         cloned_canvas.request_pointer_lock();
     });
 
