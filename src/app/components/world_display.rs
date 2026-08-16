@@ -24,24 +24,27 @@ pub fn world_display() -> impl IntoView {
     let node_ref = NodeRef::<Canvas>::new();
     Effect::new(move |_| {
         if let Some(element) = node_ref.get() {
+            // Setup the canvas image size to be half resolution when compared to canvas element size
             let width: u32 = element.offset_width() as u32;
             let height: u32 = element.offset_height() as u32;
             element.set_width(width/2);
             element.set_height(height/2);
 
+            // Setup the screen buffer we render to
             let screen_width = element.width() as usize;
             let screen_height = element.height() as usize;
-
             let screen_buffer = Rc::new(RefCell::new(ScreenBufferRowFirst::setup(
                 screen_width,
                 screen_height,
             )));
 
+            // Load the textures world
             let mut palette = RgbPalette::new();
             let walls = world::load_walls(&mut palette);
             let floor_texture = textures::big_floor::load_texture(&mut palette);
             let ceiling_texture = textures::floor::load_texture(&mut palette);
 
+            // Setup the initial game state
             let state = Rc::new(RefCell::new(GameState::setup(
                 screen_width,
                 screen_height,
@@ -51,6 +54,7 @@ pub fn world_display() -> impl IntoView {
                 ceiling_texture,
             )));
 
+            // Setup the render loop
             leptos_dom::helpers::request_animation_frame(move || {
                 render_to_screen_buffer(&screen_buffer, &state);
                 if let Ok(context_result) = element.get_context("2d") &&
