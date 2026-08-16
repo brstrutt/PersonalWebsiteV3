@@ -8,3 +8,4 @@ console_error_panic_hook = "0.1.7"
 leptos = { version = "0.8.20", features = ["csr"] }
 leptos_router = "0.8.15"
 markdown = "1.0.0"
+wasmfenbein3d = {git = "https://github.com/brstrutt/wasmfenbein3d.git"}

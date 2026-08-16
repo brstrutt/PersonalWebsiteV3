@@ -10,3 +10,5 @@ pub mod footer;
 pub use footer::Footer;
 pub mod header;
 pub use header::Header;
+pub mod world_display;
+pub use world_display::WorldDisplay;
