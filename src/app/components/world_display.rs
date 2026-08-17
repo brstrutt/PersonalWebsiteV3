@@ -1,8 +1,7 @@
 use std::{cell::RefCell, rc::Rc};
 
 use leptos::{
-    html::Canvas,
-    prelude::*,
+    html::{Button, Canvas}, prelude::*,
 };
 use wasmfenbein3d::core::{
     render::{
@@ -25,8 +24,18 @@ mod physics;
 #[component]
 pub fn world_display() -> impl IntoView {
     let node_ref = NodeRef::<Canvas>::new();
+    let touchscreen_control_node_refs = TouchscreenMovementControlButtonRefs{
+        left: NodeRef::<Button>::new(),
+        right: NodeRef::<Button>::new(),
+        up: NodeRef::<Button>::new(),
+        down: NodeRef::<Button>::new(),
+    };
     Effect::new(move |_| {
-        if let Some(element) = node_ref.get() {
+        if let Some(element) = node_ref.get() &&
+        let Some(left_button_ref) = touchscreen_control_node_refs.left.get() &&
+        let Some(right_button_ref) = touchscreen_control_node_refs.right.get() &&
+        let Some(up_button_ref) = touchscreen_control_node_refs.up.get() &&
+        let Some(down_button_ref) = touchscreen_control_node_refs.down.get() {
             // Setup the canvas image size to be half resolution when compared to canvas element size
             let width: u32 = element.offset_width() as u32;
             let height: u32 = element.offset_height() as u32;
@@ -58,7 +67,7 @@ pub fn world_display() -> impl IntoView {
             )));
 
             // Allow controlling the player character
-            setup_controls(element.clone(), state.clone());
+            setup_controls(element.clone(), state.clone(), left_button_ref, right_button_ref, up_button_ref, down_button_ref);
             character_motion_loop(state.clone());
 
             // Setup the render loop
@@ -66,5 +75,33 @@ pub fn world_display() -> impl IntoView {
         }
     });
 
-    view! { <canvas node_ref=node_ref class="world_display" /> }
+    view! {
+        <canvas node_ref=node_ref class="world_display" />
+        <TouchscreenMovementControls touchscreen_control_node_refs={touchscreen_control_node_refs}/>
+    }
+}
+
+struct TouchscreenMovementControlButtonRefs {
+    pub left: NodeRef::<Button>,
+    pub right: NodeRef::<Button>,
+    pub up: NodeRef::<Button>,
+    pub down: NodeRef::<Button>,
+}
+
+#[component]
+fn touchscreen_movement_controls(
+    /// Mutable reference to allow reference to controls to bubble up
+    #[prop(into)]
+    touchscreen_control_node_refs: TouchscreenMovementControlButtonRefs,
+) -> impl IntoView {
+    view! {
+        <div class="screen_controls">
+            <button node_ref=touchscreen_control_node_refs.left>"◄"</button>
+            <div class="vertical_movement_buttons">
+                <button node_ref=touchscreen_control_node_refs.up>"▲"</button>
+                <button node_ref=touchscreen_control_node_refs.down>"▼"</button>
+            </div>
+            <button node_ref=touchscreen_control_node_refs.right>"►"</button>
+        </div>
+    }
 }
