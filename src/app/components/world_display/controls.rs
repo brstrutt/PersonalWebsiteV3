@@ -10,6 +10,11 @@ use crate::app::utils::add_event_listener_with_callback;
 
 
 pub fn setup_controls(canvas_element: HtmlCanvasElement, state: Rc<RefCell<GameState>>) {
+    setup_keyboard_and_mouse_controls(canvas_element.clone(), state.clone());
+    setup_camera_touch_control(canvas_element, state);
+}
+
+fn setup_keyboard_and_mouse_controls(canvas_element: HtmlCanvasElement, state: Rc<RefCell<GameState>>) {
     let cloned_state = state.clone();
     add_event_listener_with_callback(EventTarget::from(document()), "pointerlockchange", move |_: Event| {
         let mut state = cloned_state.borrow_mut();
@@ -65,8 +70,6 @@ pub fn setup_controls(canvas_element: HtmlCanvasElement, state: Rc<RefCell<GameS
             }
         }
     });
-
-    setup_camera_touch_control(canvas_element, state);
 }
 
 fn setup_camera_touch_control(canvas_element: HtmlCanvasElement, state: Rc<RefCell<GameState>>) {
