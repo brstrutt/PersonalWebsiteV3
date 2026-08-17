@@ -6,3 +6,51 @@
     left: 0;
     z-index: 1;
 }
+
+.screen_controls {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    background-color: rgba($color: #555, $alpha: 0.5);
+    padding: 1vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 3;
+
+    .vertical_movement_buttons {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 1vh;
+
+        :first-child {
+            margin-bottom: 1vh;
+        }
+    }
+
+    button {
+        height: 10vh;
+        width: 10vh;
+
+        background-color: #999;
+        border: 2px solid #933;
+        border-radius: 1vh;
+
+        font-weight: bold;
+        font-size: xx-large;
+
+        &:active,
+        &.active {
+            background-color: #222;
+        }
+    }
+
+    @media not (pointer: coarse) {
+        visibility: hidden;
+    }
+}
