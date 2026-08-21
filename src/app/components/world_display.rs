@@ -20,6 +20,7 @@ mod textures;
 mod world;
 mod render;
 mod physics;
+mod touchscreen_movement_controls;
 
 #[component]
 pub fn world_display() -> impl IntoView {
@@ -77,7 +78,7 @@ pub fn world_display() -> impl IntoView {
 
     view! {
         <canvas node_ref=node_ref class="world_display" />
-        <TouchscreenMovementControls touchscreen_control_node_refs={touchscreen_control_node_refs}/>
+        <TouchscreenMovementControls touchscreen_control_node_refs=touchscreen_control_node_refs />
     }
 }
 
@@ -96,12 +97,31 @@ fn touchscreen_movement_controls(
 ) -> impl IntoView {
     view! {
         <div class="screen_controls">
-            <button node_ref=touchscreen_control_node_refs.left>"◄"</button>
+            <TouchscreenButton node_ref=touchscreen_control_node_refs.left>"◄"</TouchscreenButton>
             <div class="vertical_movement_buttons">
-                <button node_ref=touchscreen_control_node_refs.up>"▲"</button>
-                <button node_ref=touchscreen_control_node_refs.down>"▼"</button>
+                <TouchscreenButton node_ref=touchscreen_control_node_refs
+                    .up>"▲"</TouchscreenButton>
+                <TouchscreenButton node_ref=touchscreen_control_node_refs
+                    .down>"▼"</TouchscreenButton>
             </div>
-            <button node_ref=touchscreen_control_node_refs.right>"►"</button>
+            <TouchscreenButton node_ref=touchscreen_control_node_refs
+                .right>"►"</TouchscreenButton>
         </div>
     }
+}
+
+#[component]
+fn touchscreen_button(
+    /// Mutable reference to allow reference to controls to bubble up
+    #[prop(into)]
+    node_ref: NodeRef::<Button>,
+    children: Children,
+) -> impl IntoView {
+    Effect::new(move |_| {
+        if let Some(button_ref) = node_ref.get() {
+            touchscreen_movement_controls::setup_touchscreen_button_behaviour(&button_ref)
+        }
+    });
+
+    view! { <button node_ref=node_ref>{children()}</button> }
 }
