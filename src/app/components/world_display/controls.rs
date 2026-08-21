@@ -19,6 +19,12 @@ pub fn setup_controls(
 ) {
     setup_keyboard_and_mouse_controls(canvas_element.clone(), state.clone());
     setup_camera_touch_control(canvas_element, state.clone());
+    setup_touchscreen_button_behaviour(&[
+        &left_button_ref,
+        &right_button_ref,
+        &up_button_ref,
+        &down_button_ref,
+    ]);
     setup_touchscreen_movement_controls(
         state,
         left_button_ref,
@@ -152,6 +158,51 @@ fn setup_camera_touch_control(canvas_element: HtmlCanvasElement, state: Rc<RefCe
     );
 }
 
+fn setup_touchscreen_button_behaviour(buttons: &[&HtmlButtonElement]) {
+    for button in buttons {
+        let target = EventTarget::from((*button).clone());
+        add_event_listener_with_callback(target.clone(), "mousedown", on_button_touched(&button));
+        add_event_listener_with_callback(target.clone(), "touchstart", on_button_touched(&button));
+
+        add_event_listener_with_callback(target.clone(), "mouseup", on_button_untouched(&button));
+        add_event_listener_with_callback(target.clone(), "touchend", on_button_untouched(&button));
+    }
+}
+
+fn on_button_touched<'button>(button: &'button HtmlButtonElement) -> Box<dyn Fn(Event) + 'button> {
+    on_button_touch_event(button, EventType::Start)
+}
+
+fn on_button_untouched<'button>(
+    button: &'button HtmlButtonElement,
+) -> Box<dyn Fn(Event) + 'button> {
+    on_button_touch_event(button, EventType::Stop)
+}
+
+#[derive(PartialEq)]
+enum EventType {
+    Start,
+    Stop,
+}
+
+fn on_button_touch_event<'button>(
+    button: &'button HtmlButtonElement,
+    event_type: EventType,
+) -> Box<dyn Fn(Event) + 'button> {
+    Box::new(move |e: Event| {
+        e.prevent_default();
+        set_active(event_type == EventType::Start, button);
+    })
+}
+
+fn set_active(active: bool, button: &HtmlButtonElement) {
+    if active {
+        button.set_class_name("active")
+    } else {
+        button.set_class_name("")
+    }
+}
+
 fn setup_touchscreen_movement_controls(
     state: Rc<RefCell<GameState>>,
     left_button_ref: HtmlButtonElement,
@@ -170,37 +221,18 @@ fn setup_movement_button(
     button: HtmlButtonElement,
     direction: Direction,
 ) {
+    let target = EventTarget::from(button.clone());
     {
         let state = state.clone();
         let direction = direction.clone();
+        let callback = move |_: Event| start_move(&mut state.borrow_mut(), &direction);
 
-        let cloned_button = button.clone();
-        let callback = move |e: Event| {
-            e.prevent_default();
-            cloned_button.set_class_name("active");
-
-            start_move(&mut state.borrow_mut(), &direction);
-        };
-        add_event_listener_with_callback(
-            EventTarget::from(button.clone()),
-            "mousedown",
-            callback.clone(),
-        );
-        add_event_listener_with_callback(EventTarget::from(button.clone()), "touchstart", callback);
+        add_event_listener_with_callback(target.clone(), "mousedown", callback.clone());
+        add_event_listener_with_callback(target.clone(), "touchstart", callback);
     }
-    {
-        let cloned_button = button.clone();
-        let callback = move |e: Event| {
-            e.prevent_default();
-            cloned_button.set_class_name("");
+    let state = state.clone();
+    let callback = move |_: Event| stop_move(&mut state.borrow_mut(), &direction);
 
-            stop_move(&mut state.borrow_mut(), &direction);
-        };
-        add_event_listener_with_callback(
-            EventTarget::from(button.clone()),
-            "mouseup",
-            callback.clone(),
-        );
-        add_event_listener_with_callback(EventTarget::from(button.clone()), "touchend", callback);
-    }
+    add_event_listener_with_callback(target.clone(), "mouseup", callback.clone());
+    add_event_listener_with_callback(target.clone(), "touchend", callback);
 }
