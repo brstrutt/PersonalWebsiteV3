@@ -3,9 +3,11 @@ use leptos::ev::{self, Event, KeyboardEvent, MouseEvent, TouchEvent};
 use leptos::leptos_dom;
 use leptos::prelude::*;
 use leptos::web_sys::{EventTarget, HtmlButtonElement, HtmlCanvasElement};
-use std::cell::RefMut;
 use std::{cell::RefCell, rc::Rc};
 use wasmfenbein3d::core::state::GameState;
+
+mod movement;
+use movement::*;
 
 pub fn setup_controls(
     canvas_element: HtmlCanvasElement,
@@ -17,7 +19,13 @@ pub fn setup_controls(
 ) {
     setup_keyboard_and_mouse_controls(canvas_element.clone(), state.clone());
     setup_camera_touch_control(canvas_element, state.clone());
-    setup_touchscreen_movement_controls(state, left_button_ref, right_button_ref, up_button_ref, down_button_ref);
+    setup_touchscreen_movement_controls(
+        state,
+        left_button_ref,
+        right_button_ref,
+        up_button_ref,
+        down_button_ref,
+    );
 }
 
 fn setup_keyboard_and_mouse_controls(
@@ -32,11 +40,7 @@ fn setup_keyboard_and_mouse_controls(
             let mut state = cloned_state.borrow_mut();
             state.input.pointer_locked = document().pointer_lock_element().is_some();
             if !state.input.pointer_locked {
-                state.input.sprint = false;
-                state.input.move_left = false;
-                state.input.move_right = false;
-                state.input.move_forward = false;
-                state.input.move_backward = false;
+                reset_movement(&mut state)
             }
         },
     );
@@ -65,12 +69,8 @@ fn setup_keyboard_and_mouse_controls(
             let mut state = cloned_state.borrow_mut();
             if state.input.pointer_locked {
                 state.input.sprint = e.shift_key();
-                match e.key().as_str() {
-                    "a" | "A" => state.input.move_left = true,
-                    "d" | "D" => state.input.move_right = true,
-                    "w" | "W" => state.input.move_forward = true,
-                    "s" | "S" => state.input.move_backward = true,
-                    &_ => return,
+                if let Some(direction) = key_to_direction(e.key().as_str()) {
+                    start_move(&mut state, &direction);
                 }
             }
         },
@@ -84,12 +84,8 @@ fn setup_keyboard_and_mouse_controls(
             let mut state = cloned_state.borrow_mut();
             if state.input.pointer_locked {
                 state.input.sprint = e.shift_key();
-                match e.key().as_str() {
-                    "a" | "A" => state.input.move_left = false,
-                    "d" | "D" => state.input.move_right = false,
-                    "w" | "W" => state.input.move_forward = false,
-                    "s" | "S" => state.input.move_backward = false,
-                    &_ => return,
+                if let Some(direction) = key_to_direction(e.key().as_str()) {
+                    stop_move(&mut state, &direction);
                 }
             }
         },
@@ -163,86 +159,48 @@ fn setup_touchscreen_movement_controls(
     up_button_ref: HtmlButtonElement,
     down_button_ref: HtmlButtonElement,
 ) {
-    setup_movement_button(
-        state.clone(),
-        up_button_ref,
-        |state: &mut RefMut<GameState>, new_value: bool| {
-            state.input.move_forward = new_value;
-        },
-    );
-    setup_movement_button(
-        state.clone(),
-        down_button_ref,
-        |state: &mut RefMut<GameState>, new_value: bool| {
-            state.input.move_backward = new_value;
-        },
-    );
-    setup_movement_button(
-        state.clone(),
-        left_button_ref,
-        |state: &mut RefMut<GameState>, new_value: bool| {
-            state.input.move_left = new_value;
-        },
-    );
-    setup_movement_button(
-        state.clone(),
-        right_button_ref,
-        |state: &mut RefMut<GameState>, new_value: bool| {
-            state.input.move_right = new_value;
-        },
-    );
+    setup_movement_button(state.clone(), up_button_ref, Direction::Forward);
+    setup_movement_button(state.clone(), down_button_ref, Direction::Backward);
+    setup_movement_button(state.clone(), left_button_ref, Direction::Left);
+    setup_movement_button(state.clone(), right_button_ref, Direction::Right);
 }
 
-
-fn setup_movement_button<T: FnMut(&mut RefMut<GameState>, bool) + Clone>(
+fn setup_movement_button(
     state: Rc<RefCell<GameState>>,
     button: HtmlButtonElement,
-    state_change: T,
+    direction: Direction,
 ) {
     {
         let state = state.clone();
-        let mut state_change = state_change.clone();
+        let direction = direction.clone();
 
         let cloned_button = button.clone();
         let callback = move |e: Event| {
             e.prevent_default();
             cloned_button.set_class_name("active");
 
-            let mut state = state.borrow_mut();
-            state_change(&mut state, true);
+            start_move(&mut state.borrow_mut(), &direction);
         };
         add_event_listener_with_callback(
             EventTarget::from(button.clone()),
             "mousedown",
             callback.clone(),
         );
-        add_event_listener_with_callback(
-            EventTarget::from(button.clone()),
-            "touchstart",
-            callback,
-        );
+        add_event_listener_with_callback(EventTarget::from(button.clone()), "touchstart", callback);
     }
     {
-        let state = state.clone();
-        let mut state_change = state_change.clone();
-
         let cloned_button = button.clone();
         let callback = move |e: Event| {
             e.prevent_default();
             cloned_button.set_class_name("");
 
-            let mut state = state.borrow_mut();
-            state_change(&mut state, false);
+            stop_move(&mut state.borrow_mut(), &direction);
         };
         add_event_listener_with_callback(
             EventTarget::from(button.clone()),
             "mouseup",
             callback.clone(),
         );
-        add_event_listener_with_callback(
-            EventTarget::from(button.clone()),
-            "touchend",
-            callback,
-        );
+        add_event_listener_with_callback(EventTarget::from(button.clone()), "touchend", callback);
     }
 }
