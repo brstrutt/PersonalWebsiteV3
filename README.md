@@ -26,6 +26,8 @@ To run the dev server locally: `trunk serve`
 
 To auto format the codebase: `leptosfmt .`
 
+To grab the latest version of `wasmfenbein3d` run `cargo update`
+
 ### Publish
 
 Push your changes to the `main` branch. Github Actions will build the latest version and push it live automatically.
