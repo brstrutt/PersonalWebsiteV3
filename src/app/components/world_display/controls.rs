@@ -17,8 +17,9 @@ pub fn setup_controls(
     up_button_ref: HtmlButtonElement,
     down_button_ref: HtmlButtonElement,
 ) {
-    setup_keyboard_and_mouse_controls(canvas_element.clone(), state.clone());
+    setup_camera_mouse_controls(canvas_element.clone(), state.clone());
     setup_camera_touch_control(canvas_element, state.clone());
+    setup_keyboard_movement_controls(state.clone());
     setup_touchscreen_movement_controls(
         state,
         left_button_ref,
@@ -28,10 +29,17 @@ pub fn setup_controls(
     );
 }
 
-fn setup_keyboard_and_mouse_controls(
+fn setup_camera_mouse_controls(
     canvas_element: HtmlCanvasElement,
     state: Rc<RefCell<GameState>>,
 ) {
+    // Lock the mouse to the canvas on click
+    let target = EventTarget::from(canvas_element.clone());
+    add_event_listener_with_callback(target, "click", move |_: Event| {
+        canvas_element.request_pointer_lock();
+    });
+
+    // Track if the mouse is locked to the canvas or not, and stop all movement when the mouse becomes unlocked
     let cloned_state = state.clone();
     add_event_listener_with_callback(
         EventTarget::from(document()),
@@ -44,6 +52,8 @@ fn setup_keyboard_and_mouse_controls(
             }
         },
     );
+
+    // Convert mouse movement into camera movement if the mouse is locked to the canvas element
     let cloned_state = state.clone();
     leptos_dom::helpers::window_event_listener(ev::mousemove, move |e: MouseEvent| {
         let mut state = cloned_state.borrow_mut();
@@ -52,44 +62,6 @@ fn setup_keyboard_and_mouse_controls(
             state.input.camera_rotation += e.movement_x();
         }
     });
-    let cloned_canvas = canvas_element.clone();
-    add_event_listener_with_callback(
-        EventTarget::from(cloned_canvas.clone()),
-        "click",
-        move |_: Event| {
-            cloned_canvas.request_pointer_lock();
-        },
-    );
-
-    let cloned_state = state.clone();
-    add_event_listener_with_callback(
-        EventTarget::from(document()),
-        "keydown",
-        move |e: KeyboardEvent| {
-            let mut state = cloned_state.borrow_mut();
-            if state.input.pointer_locked {
-                state.input.sprint = e.shift_key();
-                if let Some(direction) = key_to_direction(e.key().as_str()) {
-                    start_move(&mut state, &direction);
-                }
-            }
-        },
-    );
-
-    let cloned_state = state.clone();
-    add_event_listener_with_callback(
-        EventTarget::from(document()),
-        "keyup",
-        move |e: KeyboardEvent| {
-            let mut state = cloned_state.borrow_mut();
-            if state.input.pointer_locked {
-                state.input.sprint = e.shift_key();
-                if let Some(direction) = key_to_direction(e.key().as_str()) {
-                    stop_move(&mut state, &direction);
-                }
-            }
-        },
-    );
 }
 
 fn setup_camera_touch_control(canvas_element: HtmlCanvasElement, state: Rc<RefCell<GameState>>) {
@@ -148,6 +120,38 @@ fn setup_camera_touch_control(canvas_element: HtmlCanvasElement, state: Rc<RefCe
             e.prevent_default();
             let mut state = cloned_state.borrow_mut();
             state.input.last_canvas_touch_point_x = None;
+        },
+    );
+}
+
+fn setup_keyboard_movement_controls(state: Rc<RefCell<GameState>>) {
+    let cloned_state = state.clone();
+    add_event_listener_with_callback(
+        EventTarget::from(document()),
+        "keydown",
+        move |e: KeyboardEvent| {
+            let mut state = cloned_state.borrow_mut();
+            if state.input.pointer_locked {
+                state.input.sprint = e.shift_key();
+                if let Some(direction) = key_to_direction(e.key().as_str()) {
+                    start_move(&mut state, &direction);
+                }
+            }
+        },
+    );
+
+    let cloned_state = state.clone();
+    add_event_listener_with_callback(
+        EventTarget::from(document()),
+        "keyup",
+        move |e: KeyboardEvent| {
+            let mut state = cloned_state.borrow_mut();
+            if state.input.pointer_locked {
+                state.input.sprint = e.shift_key();
+                if let Some(direction) = key_to_direction(e.key().as_str()) {
+                    stop_move(&mut state, &direction);
+                }
+            }
         },
     );
 }
