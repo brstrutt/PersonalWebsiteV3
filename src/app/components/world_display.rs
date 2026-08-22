@@ -3,6 +3,7 @@ use std::{cell::RefCell, rc::Rc};
 use leptos::{
     html::{Button, Canvas}, prelude::*,
 };
+use leptos_router::hooks::use_navigate;
 use wasmfenbein3d::core::{
     render::{
         rgb_palette::RgbPalette,
@@ -31,6 +32,8 @@ pub fn world_display() -> impl IntoView {
         up: NodeRef::<Button>::new(),
         down: NodeRef::<Button>::new(),
     };
+
+    let navigate = use_navigate();
     Effect::new(move |_| {
         if let Some(element) = node_ref.get() &&
         let Some(left_button_ref) = touchscreen_control_node_refs.left.get() &&
@@ -68,7 +71,7 @@ pub fn world_display() -> impl IntoView {
             )));
 
             // Allow controlling the player character
-            setup_controls(element.clone(), state.clone(), left_button_ref, right_button_ref, up_button_ref, down_button_ref);
+            setup_controls(element.clone(), state.clone(), left_button_ref, right_button_ref, up_button_ref, down_button_ref, navigate.clone());
             character_motion_loop(state.clone());
 
             // Setup the render loop

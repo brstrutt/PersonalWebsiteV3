@@ -3,6 +3,7 @@ use leptos::ev::{self, Event, KeyboardEvent, MouseEvent, TouchEvent};
 use leptos::leptos_dom;
 use leptos::prelude::*;
 use leptos::web_sys::{EventTarget, HtmlButtonElement, HtmlCanvasElement};
+use leptos_router::NavigateOptions;
 use std::{cell::RefCell, rc::Rc};
 use wasmfenbein3d::core::state::GameState;
 
@@ -16,9 +17,10 @@ pub fn setup_controls(
     right_button_ref: HtmlButtonElement,
     up_button_ref: HtmlButtonElement,
     down_button_ref: HtmlButtonElement,
+    navigate: impl Fn(&str, NavigateOptions) + Clone,
 ) {
-    setup_camera_mouse_controls(canvas_element.clone(), state.clone());
-    setup_camera_touch_control(canvas_element, state.clone());
+    setup_camera_mouse_controls(canvas_element.clone(), state.clone(), navigate.clone());
+    setup_camera_touch_control(canvas_element, state.clone(), navigate);
     setup_keyboard_movement_controls(state.clone());
     setup_touchscreen_movement_controls(
         state,
@@ -32,6 +34,7 @@ pub fn setup_controls(
 fn setup_camera_mouse_controls(
     canvas_element: HtmlCanvasElement,
     state: Rc<RefCell<GameState>>,
+    navigate: impl Fn(&str, NavigateOptions) + Clone,
 ) {
     // Lock the mouse to the canvas on click
     let target = EventTarget::from(canvas_element.clone());
@@ -47,8 +50,10 @@ fn setup_camera_mouse_controls(
         move |_: Event| {
             let mut state = cloned_state.borrow_mut();
             state.input.pointer_locked = document().pointer_lock_element().is_some();
-            if !state.input.pointer_locked {
-                reset_movement(&mut state)
+            if state.input.pointer_locked {
+                navigate("/", Default::default());
+            } else {
+                reset_movement(&mut state);
             }
         },
     );
@@ -64,7 +69,11 @@ fn setup_camera_mouse_controls(
     });
 }
 
-fn setup_camera_touch_control(canvas_element: HtmlCanvasElement, state: Rc<RefCell<GameState>>) {
+fn setup_camera_touch_control(
+    canvas_element: HtmlCanvasElement,
+    state: Rc<RefCell<GameState>>,
+    navigate: impl Fn(&str, NavigateOptions) + Clone,
+) {
     let cloned_state = state.clone();
     add_event_listener_with_callback(
         EventTarget::from(canvas_element.clone()),
@@ -80,6 +89,8 @@ fn setup_camera_touch_control(canvas_element: HtmlCanvasElement, state: Rc<RefCe
                     .expect("Failed to get first touch point on the canvas")
                     .screen_x();
                 state.input.last_canvas_touch_point_x = Some(touch_x_position);
+
+                navigate("/", Default::default());
             }
         },
     );
