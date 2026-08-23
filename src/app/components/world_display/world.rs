@@ -7,6 +7,11 @@ use wasmfenbein3d::core::{
 
 pub mod entity_ids {
     pub const DUMMY_ID: &str = "no_on_click_behaviour";
+    pub const VERMINTIDE_TAPESTRY_ID: &str = "vermintide_tapestry";
+    pub const UBERSREIK_FIVE_ID: &str = "ubersreik_five";
+    pub const NOKIA_JAM_HOUSE_ID: &str = "nokia_jam_house";
+    pub const NOKIA_JAM_CAT_ID: &str = "nokia_jam_cat";
+    pub const NOKIA_JAM_WORMS_ID: &str = "nokia_jam_worms";
 }
 use entity_ids::*;
 
@@ -57,7 +62,11 @@ pub fn load_walls(palette: &mut RgbPalette) -> Vec<Wall> {
         },
         &wood_wall_texture,
         vec![
-            Painting::new_to_scale(DUMMY_ID, vermintide_tapestry, Point2D::new(2.85, 0.1)),
+            Painting::new_to_scale(
+                VERMINTIDE_TAPESTRY_ID,
+                vermintide_tapestry,
+                Point2D::new(2.85, 0.1),
+            ),
             Painting::new(
                 DUMMY_ID,
                 blood_in_the_darkness,
@@ -128,9 +137,9 @@ pub fn load_walls(palette: &mut RgbPalette) -> Vec<Wall> {
         },
         &stone_wall_texture,
         vec![
-            Painting::new_to_scale(DUMMY_ID, nokia_jam_house, Point2D::new(0.4, 0.6)),
-            Painting::new_to_scale(DUMMY_ID, nokia_jam_cat, Point2D::new(2.0, 0.6)),
-            Painting::new_to_scale(DUMMY_ID, nokia_jam_worms, Point2D::new(3.5, 0.6)),
+            Painting::new_to_scale(NOKIA_JAM_HOUSE_ID, nokia_jam_house, Point2D::new(0.4, 0.6)),
+            Painting::new_to_scale(NOKIA_JAM_CAT_ID, nokia_jam_cat, Point2D::new(2.0, 0.6)),
+            Painting::new_to_scale(NOKIA_JAM_WORMS_ID, nokia_jam_worms, Point2D::new(3.5, 0.6)),
         ],
     ));
     result.append(&mut walls_from_point_path(
@@ -151,7 +160,7 @@ pub fn load_walls(palette: &mut RgbPalette) -> Vec<Wall> {
         },
         &stone_wall_texture,
         vec![Painting::new_to_scale(
-            DUMMY_ID,
+            UBERSREIK_FIVE_ID,
             ubersreik_five,
             Point2D::new(3.0, 0.2),
         )],

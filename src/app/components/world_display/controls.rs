@@ -1,3 +1,6 @@
+use crate::app::components::world_display::world::entity_ids::{
+    NOKIA_JAM_CAT_ID, NOKIA_JAM_HOUSE_ID, NOKIA_JAM_WORMS_ID, VERMINTIDE_TAPESTRY_ID,
+};
 use crate::app::utils::add_event_listener_with_callback;
 use leptos::ev::{self, Event, KeyboardEvent, MouseEvent, TouchEvent};
 use leptos::leptos_dom;
@@ -6,6 +9,7 @@ use leptos::web_sys::{EventTarget, HtmlButtonElement, HtmlCanvasElement};
 use leptos_router::NavigateOptions;
 use std::{cell::RefCell, rc::Rc};
 use wasmfenbein3d::core::state::GameState;
+use super::world::entity_ids::*;
 
 mod movement;
 use movement::*;
@@ -20,15 +24,16 @@ pub fn setup_controls(
     navigate: impl Fn(&str, NavigateOptions) + Clone,
 ) {
     setup_camera_mouse_controls(canvas_element.clone(), state.clone(), navigate.clone());
-    setup_camera_touch_control(canvas_element, state.clone(), navigate);
+    setup_camera_touch_control(canvas_element.clone(), state.clone(), navigate.clone());
     setup_keyboard_movement_controls(state.clone());
     setup_touchscreen_movement_controls(
-        state,
+        state.clone(),
         left_button_ref,
         right_button_ref,
         up_button_ref,
         down_button_ref,
     );
+    setup_click_passthrough(canvas_element, state, navigate);
 }
 
 fn setup_camera_mouse_controls(
@@ -199,4 +204,62 @@ fn setup_movement_button(
 
     add_event_listener_with_callback(target.clone(), "mouseup", callback.clone());
     add_event_listener_with_callback(target.clone(), "touchend", callback);
+}
+
+fn setup_click_passthrough(
+    canvas_element: HtmlCanvasElement,
+    state: Rc<RefCell<GameState>>,
+    navigate: impl Fn(&str, NavigateOptions) + Clone,
+) {
+    let canvas_target = EventTarget::from(canvas_element);
+    let cloned_state = state.clone();
+    let cloned_navigate = navigate.clone();
+    add_event_listener_with_callback(canvas_target.clone(), "click", move |_e: MouseEvent| {
+        let state = cloned_state.borrow();
+
+        if state.input.pointer_locked {
+            let item_ids = state.input.get_items_under_cursor(&state.world);
+            for id in item_ids {
+                 on_click(id.as_str(), cloned_navigate.clone());
+            }
+        }
+    });
+
+    let cloned_state = state.clone();
+    add_event_listener_with_callback(canvas_target.clone(), "touchmove", move |_e: TouchEvent| {
+        let mut state = cloned_state.borrow_mut();
+
+        state.input.touch_has_moved_camera = true;
+    });
+
+    add_event_listener_with_callback(canvas_target.clone(), "touchend", move |_e: TouchEvent| {
+        let mut state = state.borrow_mut();
+
+        if !state.input.touch_has_moved_camera {
+            let item_ids = state.input.get_items_under_cursor(&state.world);
+            for id in item_ids {
+                on_click(id.as_str(), navigate.clone());
+            }
+        }
+        state.input.touch_has_moved_camera = false;
+    });
+}
+
+fn on_click(item_id: &str, navigate: impl Fn(&str, NavigateOptions) + Clone) {
+    if let Some(dest_page) = navigate_to(item_id) {
+        document().exit_pointer_lock();
+        navigate(dest_page, Default::default());
+    }
+}
+
+fn navigate_to(item_id: &str) -> Option<&'static str> {
+    match item_id {
+        NOKIA_JAM_CAT_ID | NOKIA_JAM_HOUSE_ID | NOKIA_JAM_WORMS_ID => {
+            Some("/art/pixel-art/nokia-art-jam-3")
+        }
+        VERMINTIDE_TAPESTRY_ID | UBERSREIK_FIVE_ID => {
+            Some("/art/pixel-art/vermintide")
+        }
+        &_ => {None}
+    }
 }
