@@ -34,7 +34,7 @@ jobs:
           run: cargo install --locked trunk
 
         - name: Build
-          run: trunk build --release
+          run: trunk build --release --public-url "/PersonalWebsiteV3/"
 
         - name: Fix github-pages specific 404 issue
           # Github shows 404 if you try to navigate to a subpage of the application.
