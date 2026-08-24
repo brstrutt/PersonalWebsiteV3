@@ -56,7 +56,7 @@ fn setup_camera_mouse_controls(
             let mut state = cloned_state.borrow_mut();
             state.input.pointer_locked = document().pointer_lock_element().is_some();
             if state.input.pointer_locked {
-                navigate("/", Default::default());
+                navigate("/explore", Default::default());
             } else {
                 reset_movement(&mut state);
             }
@@ -95,7 +95,7 @@ fn setup_camera_touch_control(
                     .screen_x();
                 state.input.last_canvas_touch_point_x = Some(touch_x_position);
 
-                navigate("/", Default::default());
+                navigate("/explore", Default::default());
             }
         },
     );
