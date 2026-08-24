@@ -13,7 +13,6 @@ pub fn Routes() -> impl MatchNestedRoutes + Clone {
 fn Page() -> impl IntoView {
     view! {
         <main>
-            <div>HOME</div>
         </main>
     }
 }
