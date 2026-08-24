@@ -1,6 +1,5 @@
 use leptos::prelude::*;
 use leptos_router::{MatchNestedRoutes, components::{Outlet, ParentRoute, Route}, path};
-use crate::app::components::LeftNavigationBar;
 
 pub mod maps;
 pub mod pixel_art;
@@ -22,7 +21,6 @@ pub fn Routes() -> impl MatchNestedRoutes + Clone {
 #[component]
 fn Wrapper() -> impl IntoView {
     view! {
-        <LeftNavigationBar />
         <main>
             <Outlet />
         </main>

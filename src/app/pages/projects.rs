@@ -1,6 +1,5 @@
 use leptos::prelude::*;
 use leptos_router::{MatchNestedRoutes, components::{Outlet, ParentRoute, Route}, path};
-use crate::app::components::RightNavigationBar;
 
 pub mod guides;
 pub mod websites;
@@ -23,7 +22,6 @@ fn Wrapper() -> impl IntoView {
         <main>
             <Outlet />
         </main>
-        <RightNavigationBar />
     }
 }
 

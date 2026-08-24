@@ -1,7 +1,7 @@
 use core::str;
 use leptos::prelude::*;
 use leptos_router::components::{Router, Routes};
-use crate::app::components::{Footer, Header, WorldDisplay, Overlay};
+use crate::app::components::{Footer, WorldDisplay, Overlay};
 
 mod utils;
 mod components;
@@ -15,7 +15,6 @@ pub fn App() -> impl IntoView {
         <Router base=URL_SUFFIX>
             <WorldDisplay/>
             <Overlay>
-                <Header />
                 <Routes fallback=|| "404 Not found!">
                     <pages::Routes />
                 </Routes>
