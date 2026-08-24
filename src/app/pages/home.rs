@@ -11,8 +11,5 @@ pub fn Routes() -> impl MatchNestedRoutes + Clone {
 
 #[component]
 fn Page() -> impl IntoView {
-    view! {
-        <main>
-        </main>
-    }
+    view! { <main></main> }
 }

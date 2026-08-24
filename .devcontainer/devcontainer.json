@@ -14,6 +14,7 @@
 				},
 				"rust-analyzer.cargo.features": "all",  // Enable all features
 				"editor.inlayHints.enabled": "offUnlessPressed",
+				"editor.formatOnSave": true,
 				"rust-analyzer.rustfmt.overrideCommand": ["leptosfmt", "--stdin", "--rustfmt"] // Use leptosfmt as default formatter
             },
 			"extensions": [

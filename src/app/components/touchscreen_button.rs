@@ -19,7 +19,11 @@ pub fn touchscreen_button(
         }
     });
 
-    view! { <button node_ref=node_ref data-action=data_action>{children()}</button> }
+    view! {
+        <button node_ref=node_ref data-action=data_action>
+            {children()}
+        </button>
+    }
 }
 
 /// Function to update the behaviour of an array of buttons to work better on touch devices

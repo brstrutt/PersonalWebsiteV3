@@ -21,8 +21,12 @@ fn Page() -> impl IntoView {
             <div class="screen_controls">
                 <TouchscreenButton data_action=DATA_ACTION_MOVE_LEFT>"◄"</TouchscreenButton>
                 <div class="vertical_movement_buttons">
-                    <TouchscreenButton data_action=DATA_ACTION_MOVE_FORWARD>"▲"</TouchscreenButton>
-                    <TouchscreenButton data_action=DATA_ACTION_MOVE_BACKWARD>"▼"</TouchscreenButton>
+                    <TouchscreenButton data_action=DATA_ACTION_MOVE_FORWARD>
+                        "▲"
+                    </TouchscreenButton>
+                    <TouchscreenButton data_action=DATA_ACTION_MOVE_BACKWARD>
+                        "▼"
+                    </TouchscreenButton>
                 </div>
                 <TouchscreenButton data_action=DATA_ACTION_MOVE_RIGHT>"►"</TouchscreenButton>
             </div>

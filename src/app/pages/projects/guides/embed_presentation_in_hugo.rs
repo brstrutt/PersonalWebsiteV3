@@ -11,7 +11,5 @@ pub fn Routes() -> impl MatchNestedRoutes + Clone {
 
 #[component]
 fn Page() -> impl IntoView {
-    view! {
-        <MarkdownContent markdown_text=include_str!("embed_presentation_in_hugo.md") />
-    }
+    view! { <MarkdownContent markdown_text=include_str!("embed_presentation_in_hugo.md") /> }
 }
