@@ -122,7 +122,7 @@ fn touchscreen_button(
 ) -> impl IntoView {
     Effect::new(move |_| {
         if let Some(button_ref) = node_ref.get() {
-            touchscreen_movement_controls::setup_touchscreen_button_behaviour(&button_ref)
+            touchscreen_movement_controls::setup_touchscreen_button_behaviour(button_ref)
         }
     });
 
