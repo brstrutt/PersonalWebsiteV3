@@ -6,3 +6,5 @@ pub mod world_display;
 pub use world_display::WorldDisplay;
 pub mod overlay;
 pub use overlay::Overlay;
+pub mod touchscreen_button;
+pub use touchscreen_button::TouchscreenButton;

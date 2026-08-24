@@ -14,6 +14,7 @@ use wasmfenbein3d::core::{
 use controls::setup_controls;
 use render::render_loop;
 use physics::character_motion_loop;
+use super::touchscreen_button::TouchscreenButton;
 
 
 mod controls;
@@ -21,7 +22,6 @@ mod textures;
 mod world;
 mod render;
 mod physics;
-mod touchscreen_movement_controls;
 
 #[component]
 pub fn world_display() -> impl IntoView {
@@ -111,20 +111,4 @@ fn touchscreen_movement_controls(
                 .right>"►"</TouchscreenButton>
         </div>
     }
-}
-
-#[component]
-fn touchscreen_button(
-    /// Mutable reference to allow reference to controls to bubble up
-    #[prop(into)]
-    node_ref: NodeRef::<Button>,
-    children: Children,
-) -> impl IntoView {
-    Effect::new(move |_| {
-        if let Some(button_ref) = node_ref.get() {
-            touchscreen_movement_controls::setup_touchscreen_button_behaviour(button_ref)
-        }
-    });
-
-    view! { <button node_ref=node_ref>{children()}</button> }
 }
