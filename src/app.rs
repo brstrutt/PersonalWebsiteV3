@@ -1,11 +1,11 @@
+use crate::app::components::{Footer, Overlay, WorldDisplay};
 use core::str;
 use leptos::prelude::*;
 use leptos_router::components::{Router, Routes};
-use crate::app::components::{Footer, WorldDisplay, Overlay};
 
-mod utils;
 mod components;
 mod pages;
+mod utils;
 
 const URL_SUFFIX: &str = "/PersonalWebsiteV3";
 

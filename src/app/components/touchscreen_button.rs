@@ -8,18 +8,18 @@ use leptos::{
 
 #[component]
 pub fn touchscreen_button(
-    /// Mutable reference to allow reference to controls to bubble up
     #[prop(into)]
-    node_ref: NodeRef<Button>,
-    children: Children,
+    data_action: &'static str,
+    children: Children
 ) -> impl IntoView {
+    let node_ref = NodeRef::<Button>::new();
     Effect::new(move |_| {
         if let Some(button_ref) = node_ref.get() {
             setup_touchscreen_button_behaviour(button_ref)
         }
     });
 
-    view! { <button node_ref=node_ref>{children()}</button> }
+    view! { <button node_ref=node_ref data-action=data_action>{children()}</button> }
 }
 
 /// Function to update the behaviour of an array of buttons to work better on touch devices

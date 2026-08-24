@@ -5,7 +5,8 @@ use crate::app::utils::add_event_listener_with_callback;
 use leptos::ev::{self, Event, KeyboardEvent, MouseEvent, TouchEvent};
 use leptos::leptos_dom;
 use leptos::prelude::*;
-use leptos::web_sys::{EventTarget, HtmlButtonElement, HtmlCanvasElement};
+use leptos::web_sys::{EventTarget, Element, HtmlCanvasElement};
+use leptos::wasm_bindgen::{JsCast};
 use leptos_router::NavigateOptions;
 use std::{cell::RefCell, rc::Rc};
 use wasmfenbein3d::core::state::GameState;
@@ -17,22 +18,12 @@ use movement::*;
 pub fn setup_controls(
     canvas_element: HtmlCanvasElement,
     state: Rc<RefCell<GameState>>,
-    left_button_ref: HtmlButtonElement,
-    right_button_ref: HtmlButtonElement,
-    up_button_ref: HtmlButtonElement,
-    down_button_ref: HtmlButtonElement,
     navigate: impl Fn(&str, NavigateOptions) + Clone,
 ) {
     setup_camera_mouse_controls(canvas_element.clone(), state.clone(), navigate.clone());
     setup_camera_touch_control(canvas_element.clone(), state.clone(), navigate.clone());
     setup_keyboard_movement_controls(state.clone());
-    setup_touchscreen_movement_controls(
-        state.clone(),
-        left_button_ref,
-        right_button_ref,
-        up_button_ref,
-        down_button_ref,
-    );
+    setup_touchscreen_movement_controls(state.clone());
     setup_click_passthrough(canvas_element, state, navigate);
 }
 
@@ -172,38 +163,79 @@ fn setup_keyboard_movement_controls(state: Rc<RefCell<GameState>>) {
     );
 }
 
+pub mod input_action_keys{
+    pub const DATA_ACTION_MOVE_LEFT: &str = "character_input_move_left";
+    pub const DATA_ACTION_MOVE_RIGHT: &str = "character_input_move_right";
+    pub const DATA_ACTION_MOVE_FORWARD: &str = "character_input_move_forward";
+    pub const DATA_ACTION_MOVE_BACKWARD: &str = "character_input_move_backward";
+}
+use input_action_keys::*;
+
 fn setup_touchscreen_movement_controls(
     state: Rc<RefCell<GameState>>,
-    left_button_ref: HtmlButtonElement,
-    right_button_ref: HtmlButtonElement,
-    up_button_ref: HtmlButtonElement,
-    down_button_ref: HtmlButtonElement,
 ) {
-    setup_movement_button(state.clone(), up_button_ref, Direction::Forward);
-    setup_movement_button(state.clone(), down_button_ref, Direction::Backward);
-    setup_movement_button(state.clone(), left_button_ref, Direction::Left);
-    setup_movement_button(state.clone(), right_button_ref, Direction::Right);
+    setup_movement_button(state.clone(), DATA_ACTION_MOVE_FORWARD, Direction::Forward);
+    setup_movement_button(state.clone(), DATA_ACTION_MOVE_BACKWARD, Direction::Backward);
+    setup_movement_button(state.clone(), DATA_ACTION_MOVE_LEFT, Direction::Left);
+    setup_movement_button(state.clone(), DATA_ACTION_MOVE_RIGHT, Direction::Right);
 }
 
 fn setup_movement_button(
     state: Rc<RefCell<GameState>>,
-    button: HtmlButtonElement,
+    input_element_data_action: &'static str,
     direction: Direction,
 ) {
-    let target = EventTarget::from(button.clone());
     {
         let state = state.clone();
         let direction = direction.clone();
-        let callback = move |_: Event| start_move(&mut state.borrow_mut(), &direction);
 
-        add_event_listener_with_callback(target.clone(), "mousedown", callback.clone());
-        add_event_listener_with_callback(target.clone(), "touchstart", callback);
+        window_event_listener(ev::mousedown, move |event: MouseEvent| {
+            if does_event_target_have_data_action(event.target(), input_element_data_action) {
+                start_move(&mut state.borrow_mut(), &direction);
+            }
+        });
     }
-    let state = state.clone();
-    let callback = move |_: Event| stop_move(&mut state.borrow_mut(), &direction);
+    {
+        let state = state.clone();
+        let direction = direction.clone();
+        window_event_listener(ev::touchstart, move |event: TouchEvent| {
+            if does_event_target_have_data_action(event.target(), input_element_data_action) {
+                start_move(&mut state.borrow_mut(), &direction);
+            }
+        });
+    }
 
-    add_event_listener_with_callback(target.clone(), "mouseup", callback.clone());
-    add_event_listener_with_callback(target.clone(), "touchend", callback);
+    {
+        let state = state.clone();
+        let direction = direction.clone();
+
+        window_event_listener(ev::mouseup, move |event: MouseEvent| {
+            if does_event_target_have_data_action(event.target(), input_element_data_action) {
+                stop_move(&mut state.borrow_mut(), &direction);
+            }
+        });
+    }
+    {
+        let state = state.clone();
+        let direction = direction.clone();
+
+        window_event_listener(ev::touchend, move |event: TouchEvent| {
+            if does_event_target_have_data_action(event.target(), input_element_data_action) {
+                stop_move(&mut state.borrow_mut(), &direction);
+            }
+        });
+    }
+}
+
+fn does_event_target_have_data_action(event_target: Option<EventTarget>, data_action: &'static str) -> bool {
+    if let Some(target) = event_target {
+        if let Ok(element) = target.dyn_into::<Element>() {
+            if let Some(element_data_action) = element.get_attribute("data-action") {
+                return element_data_action == data_action;
+            }
+        }
+    }
+    false
 }
 
 fn setup_click_passthrough(
