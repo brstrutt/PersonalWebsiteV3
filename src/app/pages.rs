@@ -1,6 +1,5 @@
 pub mod art;
 pub mod home;
-pub mod other;
 pub mod projects;
 
 use leptos::prelude::*;
@@ -12,7 +11,6 @@ pub fn Routes() -> impl MatchNestedRoutes + Clone {
         <home::Routes />
         <art::Routes />
         <projects::Routes />
-        <other::Routes />
     }
     .into_inner()
 }

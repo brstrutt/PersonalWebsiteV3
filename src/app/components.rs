@@ -1,5 +1,3 @@
-pub mod progress_bar;
-pub use progress_bar::ProgressBar;
 pub mod markdown_content;
 pub use markdown_content::MarkdownContent;
 pub mod footer;
