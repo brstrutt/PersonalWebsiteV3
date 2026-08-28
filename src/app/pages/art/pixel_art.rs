@@ -4,8 +4,11 @@ pub mod nokia_art_jam;
 pub mod other;
 pub mod vermintide;
 
-use leptos_router::{MatchNestedRoutes, components::{A, Outlet, ParentRoute, Route}, path};
 use crate::app::utils::internal_path;
+use leptos_router::{
+    components::{Outlet, ParentRoute, Route, A},
+    path, MatchNestedRoutes,
+};
 
 #[component(transparent)]
 pub fn Routes() -> impl MatchNestedRoutes + Clone {

@@ -1,3 +1,4 @@
+use super::world::entity_ids::*;
 use crate::app::components::world_display::world::entity_ids::{
     NOKIA_JAM_CAT_ID, NOKIA_JAM_HOUSE_ID, NOKIA_JAM_WORMS_ID, VERMINTIDE_TAPESTRY_ID,
 };
@@ -5,12 +6,11 @@ use crate::app::utils::add_event_listener_with_callback;
 use leptos::ev::{self, Event, KeyboardEvent, MouseEvent, TouchEvent};
 use leptos::leptos_dom;
 use leptos::prelude::*;
-use leptos::web_sys::{EventTarget, Element, HtmlCanvasElement};
-use leptos::wasm_bindgen::{JsCast};
+use leptos::wasm_bindgen::JsCast;
+use leptos::web_sys::{Element, EventTarget, HtmlCanvasElement};
 use leptos_router::NavigateOptions;
 use std::{cell::RefCell, rc::Rc};
 use wasmfenbein3d::core::state::GameState;
-use super::world::entity_ids::*;
 
 mod movement;
 use movement::*;
@@ -163,7 +163,7 @@ fn setup_keyboard_movement_controls(state: Rc<RefCell<GameState>>) {
     );
 }
 
-pub mod input_action_keys{
+pub mod input_action_keys {
     pub const DATA_ACTION_MOVE_LEFT: &str = "character_input_move_left";
     pub const DATA_ACTION_MOVE_RIGHT: &str = "character_input_move_right";
     pub const DATA_ACTION_MOVE_FORWARD: &str = "character_input_move_forward";
@@ -171,11 +171,13 @@ pub mod input_action_keys{
 }
 use input_action_keys::*;
 
-fn setup_touchscreen_movement_controls(
-    state: Rc<RefCell<GameState>>,
-) {
+fn setup_touchscreen_movement_controls(state: Rc<RefCell<GameState>>) {
     setup_movement_button(state.clone(), DATA_ACTION_MOVE_FORWARD, Direction::Forward);
-    setup_movement_button(state.clone(), DATA_ACTION_MOVE_BACKWARD, Direction::Backward);
+    setup_movement_button(
+        state.clone(),
+        DATA_ACTION_MOVE_BACKWARD,
+        Direction::Backward,
+    );
     setup_movement_button(state.clone(), DATA_ACTION_MOVE_LEFT, Direction::Left);
     setup_movement_button(state.clone(), DATA_ACTION_MOVE_RIGHT, Direction::Right);
 }
@@ -227,7 +229,10 @@ fn setup_movement_button(
     }
 }
 
-fn does_event_target_have_data_action(event_target: Option<EventTarget>, data_action: &'static str) -> bool {
+fn does_event_target_have_data_action(
+    event_target: Option<EventTarget>,
+    data_action: &'static str,
+) -> bool {
     if let Some(target) = event_target {
         if let Ok(element) = target.dyn_into::<Element>() {
             if let Some(element_data_action) = element.get_attribute("data-action") {
@@ -252,7 +257,7 @@ fn setup_click_passthrough(
         if state.input.pointer_locked {
             let item_ids = state.input.get_items_under_cursor(&state.world);
             for id in item_ids {
-                 on_click(id.as_str(), cloned_navigate.clone());
+                on_click(id.as_str(), cloned_navigate.clone());
             }
         }
     });
@@ -289,9 +294,7 @@ fn navigate_to(item_id: &str) -> Option<&'static str> {
         NOKIA_JAM_CAT_ID | NOKIA_JAM_HOUSE_ID | NOKIA_JAM_WORMS_ID => {
             Some("/art/pixel-art/nokia-art-jam-3")
         }
-        VERMINTIDE_TAPESTRY_ID | UBERSREIK_FIVE_ID => {
-            Some("/art/pixel-art/vermintide")
-        }
-        &_ => {None}
+        VERMINTIDE_TAPESTRY_ID | UBERSREIK_FIVE_ID => Some("/art/pixel-art/vermintide"),
+        &_ => None,
     }
 }

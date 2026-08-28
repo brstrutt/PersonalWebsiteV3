@@ -1,10 +1,9 @@
 use leptos::prelude::*;
-use leptos_router::{MatchNestedRoutes, components::Route, path};
+use leptos_router::{components::Route, path, MatchNestedRoutes};
 
 #[component(transparent)]
 pub fn Routes() -> impl MatchNestedRoutes + Clone {
-    view! { <Route path=path!("/maps") view=Page /> }
-    .into_inner()
+    view! { <Route path=path!("/maps") view=Page /> }.into_inner()
 }
 
 #[component]

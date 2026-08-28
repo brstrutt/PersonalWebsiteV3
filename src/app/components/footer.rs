@@ -1,5 +1,5 @@
-use leptos::prelude::*;
 use crate::app::utils::internal_path;
+use leptos::prelude::*;
 
 #[component]
 pub fn Footer() -> impl IntoView {

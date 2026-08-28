@@ -8,9 +8,8 @@ use leptos::{
 
 #[component]
 pub fn touchscreen_button(
-    #[prop(into)]
-    data_action: &'static str,
-    children: Children
+    #[prop(into)] data_action: &'static str,
+    children: Children,
 ) -> impl IntoView {
     let node_ref = NodeRef::<Button>::new();
     Effect::new(move |_| {

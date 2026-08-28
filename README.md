@@ -24,7 +24,8 @@ To build the code: `trunk build`
 
 To run the dev server locally: `trunk serve`
 
-To auto format the codebase: `leptosfmt .`
+Files should format automatically when saved (if using devcontainer and VScode).
+Do NOT use `leptosfmt .` to format the codebase as this formats everything slightly differently to formatting applied automatically by vscode.
 
 To grab the latest version of `wasmfenbein3d` run `cargo update`
 

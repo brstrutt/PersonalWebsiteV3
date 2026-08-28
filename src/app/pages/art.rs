@@ -1,5 +1,8 @@
 use leptos::prelude::*;
-use leptos_router::{MatchNestedRoutes, components::{Outlet, ParentRoute, Route}, path};
+use leptos_router::{
+    components::{Outlet, ParentRoute, Route},
+    path, MatchNestedRoutes,
+};
 
 pub mod maps;
 pub mod pixel_art;

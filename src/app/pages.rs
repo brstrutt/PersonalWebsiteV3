@@ -1,7 +1,7 @@
 pub mod art;
+pub mod explore;
 pub mod home;
 pub mod projects;
-pub mod explore;
 
 use leptos::prelude::*;
 use leptos_router::MatchNestedRoutes;

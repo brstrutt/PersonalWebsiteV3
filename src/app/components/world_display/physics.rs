@@ -1,5 +1,5 @@
-use std::{cell::RefCell, rc::Rc};
 use leptos::leptos_dom;
+use std::{cell::RefCell, rc::Rc};
 use wasmfenbein3d::core::{motion, state::GameState};
 
 pub fn character_motion_loop(state: Rc<RefCell<GameState>>) {
@@ -28,7 +28,6 @@ pub fn character_motion_loop(state: Rc<RefCell<GameState>>) {
         state.world.camera.ray.origin =
             motion::move_object(state.world.camera.ray.origin, &motion, &state.world);
 
-
         // Rotate the camera
         const ROTATION_SPEED: f64 = 0.001;
 
@@ -42,7 +41,6 @@ pub fn character_motion_loop(state: Rc<RefCell<GameState>>) {
                 .rotate(camera_rotation as f64 * ROTATION_SPEED);
         }
         state.world.camera.refresh_screen_rays();
-
 
         // Track the last time we ran a physics tick
         state.last_frame_time_ms = current_time;
