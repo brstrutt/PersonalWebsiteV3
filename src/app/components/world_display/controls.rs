@@ -273,9 +273,14 @@ fn setup_click_passthrough(
         let mut state = state.borrow_mut();
 
         if !state.input.touch_has_moved_camera {
-            let item_ids = state.input.get_items_under_cursor(&state.world);
-            for id in item_ids {
-                on_click(id.as_str(), navigate.clone());
+            if state.input.pointer_locked {
+                let item_ids = state.input.get_items_under_cursor(&state.world);
+                for id in item_ids {
+                    on_click(id.as_str(), navigate.clone());
+                }
+                state.input.pointer_locked = false
+            } else {
+                state.input.pointer_locked = true;
             }
         }
         state.input.touch_has_moved_camera = false;
