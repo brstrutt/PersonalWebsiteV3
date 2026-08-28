@@ -1,0 +1,15 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    .page_wrapper {
+        margin-top: 20px;
+        padding: 20px;
+        background-color: hsla(200, 50%, 70%, 50%);
+        text-align: center;
+        width: fit-content;
+        border-radius: 2rem;
+    }
+}
