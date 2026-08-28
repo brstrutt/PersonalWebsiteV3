@@ -11,5 +11,33 @@ main {
         text-align: center;
         width: fit-content;
         border-radius: 2rem;
+
+        view-transition-name: page_wrapper;
+    }
+}
+
+::view-transition-group(page_wrapper) {
+    animation-duration: 0.25s;
+    animation-timing-function: ease;
+}
+
+::view-transition-new(page_wrapper) {
+    animation-name: slide-in;
+}
+
+::view-transition-old(page_wrapper) {
+    animation-name: slide-out;
+}
+
+
+@keyframes slide-in {
+    from {
+        transform: translateY(100dvh);
+    }
+}
+
+@keyframes slide-out {
+    to {
+        transform: translateY(100dvh);
     }
 }

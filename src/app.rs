@@ -15,7 +15,7 @@ pub fn App() -> impl IntoView {
         <Router base=URL_SUFFIX>
             <WorldDisplay />
             <Overlay>
-                <Routes fallback=|| "404 Not found!">
+                <Routes fallback=|| "404 Not found!" transition=true>
                     <pages::Routes />
                 </Routes>
                 <Footer />
