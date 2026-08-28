@@ -1,19 +1,16 @@
 use leptos::prelude::*;
 use leptos_router::{
-    components::{Outlet, ParentRoute, Route},
+    components::{Outlet, ParentRoute},
     path, MatchNestedRoutes,
 };
 
 pub mod guides;
-pub mod websites;
 
 #[component(transparent)]
 pub fn Routes() -> impl MatchNestedRoutes + Clone {
     view! {
         <ParentRoute path=path!("/projects") view=Wrapper>
-            <Route path=path!("/") view=Page />
             <guides::Routes />
-            <websites::Routes />
         </ParentRoute>
     }
     .into_inner()
@@ -26,9 +23,4 @@ fn Wrapper() -> impl IntoView {
             <Outlet />
         </main>
     }
-}
-
-#[component]
-fn Page() -> impl IntoView {
-    view! { <h1>"Projects!"</h1> }
 }
