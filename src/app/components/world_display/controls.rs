@@ -1,3 +1,4 @@
+use super::world::entity_ids::*;
 use crate::app::utils::add_event_listener_with_callback;
 use leptos::ev::{self, Event, KeyboardEvent, MouseEvent, TouchEvent};
 use leptos::leptos_dom;
@@ -292,6 +293,7 @@ fn on_click(item_id: &str, navigate: impl Fn(&str, NavigateOptions) + Clone) {
 
 fn navigate_to(item_id: &str) -> Option<&'static str> {
     match item_id {
+        VERMINTIDE_TAPESTRY_ID => Some("/art/pixel-art/vermintide"),
         &_ => None,
     }
 }
