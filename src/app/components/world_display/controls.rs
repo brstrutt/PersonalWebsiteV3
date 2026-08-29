@@ -1,4 +1,5 @@
 use super::world::entity_ids::*;
+use crate::app::pages;
 use crate::app::utils::add_event_listener_with_callback;
 use leptos::ev::{self, Event, KeyboardEvent, MouseEvent, TouchEvent};
 use leptos::leptos_dom;
@@ -44,7 +45,7 @@ fn setup_camera_mouse_controls(
             let mut state = cloned_state.borrow_mut();
             state.input.pointer_locked = document().pointer_lock_element().is_some();
             if state.input.pointer_locked {
-                navigate("/explore", Default::default());
+                navigate(pages::explore::PAGE_PATH, Default::default());
             } else {
                 reset_movement(&mut state);
             }
@@ -83,7 +84,7 @@ fn setup_camera_touch_control(
                     .screen_x();
                 state.input.last_canvas_touch_point_x = Some(touch_x_position);
 
-                navigate("/explore", Default::default());
+                navigate(pages::explore::PAGE_PATH, Default::default());
             }
         },
     );
@@ -293,7 +294,7 @@ fn on_click(item_id: &str, navigate: impl Fn(&str, NavigateOptions) + Clone) {
 
 fn navigate_to(item_id: &str) -> Option<&'static str> {
     match item_id {
-        VERMINTIDE_TAPESTRY_ID => Some("/art/pixel-art/vermintide"),
+        VERMINTIDE_TAPESTRY_ID => Some(pages::art::pixel_art::vermintide::PAGE_PATH),
         &_ => None,
     }
 }

@@ -6,6 +6,8 @@ pub mod projects;
 use leptos::prelude::*;
 use leptos_router::MatchNestedRoutes;
 
+pub const PAGE_PATH: &str = "";
+
 #[component(transparent)]
 pub fn Routes() -> impl MatchNestedRoutes + Clone {
     view! {
