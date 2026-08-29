@@ -6,6 +6,7 @@ mod library;
 pub mod entity_ids {
     pub const DUMMY_ID: &str = "no_on_click_behaviour";
     pub use super::gallery::entity_ids::*;
+    pub use super::library::entity_ids::*;
 }
 
 pub fn load_walls(palette: &mut RgbPalette) -> Vec<Wall> {

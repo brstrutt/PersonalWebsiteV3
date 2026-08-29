@@ -295,6 +295,9 @@ fn on_click(item_id: &str, navigate: impl Fn(&str, NavigateOptions) + Clone) {
 fn navigate_to(item_id: &str) -> Option<&'static str> {
     match item_id {
         VERMINTIDE_TAPESTRY_ID => Some(pages::art::pixel_art::vermintide::PAGE_PATH),
+        RIDGE_RACER_BURNING_NIGHTMARE_ID => {
+            Some(pages::projects::guides::ridge_racer_ds_unlock_burning_nightmare::PAGE_PATH)
+        }
         &_ => None,
     }
 }

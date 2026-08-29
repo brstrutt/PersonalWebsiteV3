@@ -5,9 +5,9 @@ use leptos_router::{
     path, MatchNestedRoutes, StaticSegment,
 };
 
-mod control_dark_souls_with_a_piano;
-mod embed_presentation_in_hugo;
-mod ridge_racer_ds_unlock_burning_nightmare;
+pub mod control_dark_souls_with_a_piano;
+pub mod embed_presentation_in_hugo;
+pub mod ridge_racer_ds_unlock_burning_nightmare;
 
 pub const URL_FRAGMENT: (StaticSegment<&str>,) = path!("/guides");
 pub const PAGE_PATH: &str = concatcp!(super::PAGE_PATH, "/", URL_FRAGMENT.0 .0);

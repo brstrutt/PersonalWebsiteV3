@@ -7,6 +7,7 @@ pub mod into_the_nest;
 pub mod nokia_art_jam_3_house;
 pub mod nokia_art_jam_3_keyboard_cat;
 pub mod nokia_art_jam_3_worms;
+pub mod ridge_racer_ds_unlock_burning_nightmare;
 pub mod righteous_stand;
 pub mod taals_horn_keep;
 pub mod ubersreik_five;
