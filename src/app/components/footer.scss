@@ -11,13 +11,21 @@ footer {
     width: 100%;
     height: var(--footer-height);
     background-color: gray;
+    view-transition-name: footer;
 
     a {
         display: block;
+
         padding: var(--icon-padding);
 
         img {
             display: block;
         }
     }
+}
+
+::view-transition-group(footer),
+::view-transition-old(footer),
+::view-transition-new(footer) {
+    animation: none;
 }
