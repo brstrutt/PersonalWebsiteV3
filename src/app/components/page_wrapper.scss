@@ -13,6 +13,8 @@ main {
         max-width: 75dvw;
         border-radius: 2rem;
 
+        pointer-events: auto;
+
         view-transition-name: page_wrapper;
     }
 }
