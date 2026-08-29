@@ -1,7 +1,3 @@
-use super::world::entity_ids::*;
-use crate::app::components::world_display::world::entity_ids::{
-    NOKIA_JAM_CAT_ID, NOKIA_JAM_HOUSE_ID, NOKIA_JAM_WORMS_ID, VERMINTIDE_TAPESTRY_ID,
-};
 use crate::app::utils::add_event_listener_with_callback;
 use leptos::ev::{self, Event, KeyboardEvent, MouseEvent, TouchEvent};
 use leptos::leptos_dom;
@@ -296,10 +292,6 @@ fn on_click(item_id: &str, navigate: impl Fn(&str, NavigateOptions) + Clone) {
 
 fn navigate_to(item_id: &str) -> Option<&'static str> {
     match item_id {
-        NOKIA_JAM_CAT_ID | NOKIA_JAM_HOUSE_ID | NOKIA_JAM_WORMS_ID => {
-            Some("/art/pixel-art/nokia-art-jam-3")
-        }
-        VERMINTIDE_TAPESTRY_ID | UBERSREIK_FIVE_ID => Some("/art/pixel-art/vermintide"),
         &_ => None,
     }
 }
