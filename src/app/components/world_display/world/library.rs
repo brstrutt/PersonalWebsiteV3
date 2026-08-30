@@ -16,15 +16,19 @@ pub mod entity_ids {
 use super::entity_ids::*;
 
 pub fn get_walls(palette: &mut RgbPalette) -> Vec<Wall> {
-    let wood_wall_texture = textures::wall_wood::load_texture(palette);
+    let wood_wall_texture = textures::environment::wall_wood::load_texture(palette);
     let ridge_racer_ds_unlock_burning_nightmare =
-        textures::ridge_racer_ds_unlock_burning_nightmare::load_texture(palette);
+        textures::paintings::guides::ridge_racer_ds_unlock_burning_nightmare::load_texture(palette);
     let first_turn_kill_bosses_in_bravely_default2 =
-        textures::first_turn_kill_bosses_in_bravely_default2::load_texture(palette);
-    let payday2_safehouse_nightmare = textures::payday2_safehouse_nightmare::load_texture(palette);
+        textures::paintings::guides::first_turn_kill_bosses_in_bravely_default2::load_texture(
+            palette,
+        );
+    let payday2_safehouse_nightmare =
+        textures::paintings::guides::payday2_safehouse_nightmare::load_texture(palette);
     let control_dark_souls_with_a_piano =
-        textures::control_dark_souls_with_a_piano::load_texture(palette);
-    let embed_presentation_in_hugo = textures::embed_presentation_in_hugo::load_texture(palette);
+        textures::paintings::guides::control_dark_souls_with_a_piano::load_texture(palette);
+    let embed_presentation_in_hugo =
+        textures::paintings::guides::embed_presentation_in_hugo::load_texture(palette);
 
     let mut result = Vec::<Wall>::new();
     result.append(&mut walls_from_point_path(

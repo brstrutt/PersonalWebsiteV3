@@ -41,8 +41,8 @@ pub fn world_display() -> impl IntoView {
             // Load the textures world
             let mut palette = RgbPalette::new();
             let walls = world::load_walls(&mut palette);
-            let floor_texture = textures::big_floor::load_texture(&mut palette);
-            let ceiling_texture = textures::floor::load_texture(&mut palette);
+            let floor_texture = textures::environment::big_floor::load_texture(&mut palette);
+            let ceiling_texture = textures::environment::floor::load_texture(&mut palette);
 
             // Setup the initial game state
             let state = Rc::new(RefCell::new(GameState::setup(

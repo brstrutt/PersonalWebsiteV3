@@ -6,7 +6,7 @@ use wasmfenbein3d::core::{
 };
 
 pub fn get_walls(palette: &mut RgbPalette) -> Vec<Wall> {
-    let wood_wall_texture = textures::wall_wood::load_texture(palette);
+    let wood_wall_texture = textures::environment::wall_wood::load_texture(palette);
 
     let mut result = Vec::<Wall>::new();
     result.append(&mut walls_from_point_path(

@@ -11,15 +11,18 @@ pub mod entity_ids {
 use super::entity_ids::*;
 
 pub fn get_walls(palette: &mut RgbPalette) -> Vec<Wall> {
-    let wood_wall_texture = textures::wall_wood::load_texture(palette);
+    let wood_wall_texture = textures::environment::wall_wood::load_texture(palette);
 
-    let vermintide_tapestry = textures::vermintide_tapestry::load_texture(palette);
-    let blood_in_the_darkness = textures::blood_in_the_darkness::load_texture(palette);
-    let burplespue_halescourge = textures::burplespue_halescourge::load_texture(palette);
-    let castle_drachenfels = textures::castle_drachenfels::load_texture(palette);
-    let into_the_nest = textures::into_the_nest::load_texture(palette);
-    let righteous_stand = textures::righteous_stand::load_texture(palette);
-    let taals_horn_keep = textures::taals_horn_keep::load_texture(palette);
+    let vermintide_tapestry =
+        textures::paintings::pixel_art::vermintide_tapestry::load_texture(palette);
+    let blood_in_the_darkness =
+        textures::paintings::maps::blood_in_the_darkness::load_texture(palette);
+    let burplespue_halescourge =
+        textures::paintings::maps::burplespue_halescourge::load_texture(palette);
+    let castle_drachenfels = textures::paintings::maps::castle_drachenfels::load_texture(palette);
+    let into_the_nest = textures::paintings::maps::into_the_nest::load_texture(palette);
+    let righteous_stand = textures::paintings::maps::righteous_stand::load_texture(palette);
+    let taals_horn_keep = textures::paintings::maps::taals_horn_keep::load_texture(palette);
 
     let mut result = Vec::<Wall>::new();
     result.append(&mut walls_from_point_path(
