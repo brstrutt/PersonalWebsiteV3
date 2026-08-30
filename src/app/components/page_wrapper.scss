@@ -16,6 +16,10 @@ main {
         pointer-events: auto;
 
         view-transition-name: page_wrapper;
+
+        img {
+            max-width: 100%;
+        }
     }
 }
 
