@@ -298,6 +298,18 @@ fn navigate_to(item_id: &str) -> Option<&'static str> {
         RIDGE_RACER_BURNING_NIGHTMARE_ID => {
             Some(pages::projects::guides::ridge_racer_ds_unlock_burning_nightmare::PAGE_PATH)
         }
+        FIRST_TURN_KILL_BOSSES_IN_BRAVELY_DEFAULT2_ID => {
+            Some(pages::projects::guides::first_turn_kill_bosses_in_bravely_default2::PAGE_PATH)
+        }
+        PAYDAY2_SAFEHOUSE_NIGHTMARE_ID => {
+            Some(pages::projects::guides::payday2_safehouse_nightmare::PAGE_PATH)
+        }
+        CONTROL_DARK_SOULS_WITH_A_PIANO_ID => {
+            Some(pages::projects::guides::control_dark_souls_with_a_piano::PAGE_PATH)
+        }
+        EMBED_PRESENTATION_IN_HUGO_ID => {
+            Some(pages::projects::guides::embed_presentation_in_hugo::PAGE_PATH)
+        }
         &_ => None,
     }
 }
