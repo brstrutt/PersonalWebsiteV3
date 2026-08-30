@@ -44,7 +44,7 @@ Upon starting the drill a selection of random effects will start. The possible e
 
 ### Map
 
-![Safehouse Nightmare Basement Map](Map_Basement.jpg)
+![Safehouse Nightmare Basement Map](/PersonalWebsiteV3/assets/images/pages/projects/guides/payday2_safehouse_nightmare/Map_Basement.jpg)
 
 ### Other
 

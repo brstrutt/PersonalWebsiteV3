@@ -25,21 +25,21 @@ The basic idea of this build is low health = big damage, and going berserk = fre
 
 ### Classes
 
-![Main: Phantom Lv 12, Sub: Berserker Lv 15](ActiveJobs.png)
-![Diabolism Lv 14](DiabolismJob.png)
-![Bravery Lv 10](BraveryJob.png)
+![Main: Phantom Lv 12, Sub: Berserker Lv 15](/PersonalWebsiteV3/assets/images/pages/projects/guides/first_turn_kill_bosses_in_bravely_default2/ActiveJobs.png)
+![Diabolism Lv 14](/PersonalWebsiteV3/assets/images/pages/projects/guides/first_turn_kill_bosses_in_bravely_default2/DiabolismJob.png)
+![Bravery Lv 10](/PersonalWebsiteV3/assets/images/pages/projects/guides/first_turn_kill_bosses_in_bravely_default2/BraveryJob.png)
 
 ### Abilities
 
-![Diabolism: Surpassing Power, Last Resort; Berserker: Bloody-Minded, Free-for-All; Bravery: Sub-Job Speciality 2](PassiveAbilities.png)
+![Diabolism: Surpassing Power, Last Resort; Berserker: Bloody-Minded, Free-for-All; Bravery: Sub-Job Speciality 2](/PersonalWebsiteV3/assets/images/pages/projects/guides/first_turn_kill_bosses_in_bravely_default2/PassiveAbilities.png)
 
 ### Equipment (Not optimised. Change it up however you want)
 
-![Eurytos' Bow, Headband, Brave Suit, Sensei's Belt, Life Ring](Equipment.png)
+![Eurytos' Bow, Headband, Brave Suit, Sensei's Belt, Life Ring](/PersonalWebsiteV3/assets/images/pages/projects/guides/first_turn_kill_bosses_in_bravely_default2/Equipment.png)
 
 ### Stats
 
-![Big Physical Attack(385), Speed(208), and Crit Chance(65)](Stats.png)
+![Big Physical Attack(385), Speed(208), and Crit Chance(65)](/PersonalWebsiteV3/assets/images/pages/projects/guides/first_turn_kill_bosses_in_bravely_default2/Stats.png)
 
 ### How to Win
 
