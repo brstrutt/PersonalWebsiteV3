@@ -90,31 +90,31 @@ Occasionally a horde of scientists will appear and sprint for the metal detector
 
 A small selection of items (mostly weapons) that are good on this one map specifically.
 
-### PNV - BriteNite {{< image_inline "BriteNite.jpg" "BriteNite" >}}/Batshit Crazy {{< image_inline "batshit-crazy.jpg" "Batshit Crazy" >}}/Cloaker-san {{< image_inline "cloaker-san.jpg" "cloaker-san" >}}
+### PNV - BriteNite/Batshit Crazy/Cloaker-san
 
 These masks (found in mask category Normal/DLC/Normal) have inbuilt night vision, turned on/off by holding V for a few seconds. Solves the "it's very dark down here" problem this heist has.
 
-### Ammo Bags {{< image_inline "Ammobag-icon.png" "Ammo Bag" >}}
+### Ammo Bags
 
 This heist WILL drain your ammo. I don't care what gun you bring, you will not have enough ammo to take out 6 minutes of dozers and cloakers. An ammo bag is required.
 
-### Akimbo Parabellum Pistols {{< image_inline "Akimbo_Parabellum_FBI_Files.png" "Akimbo Parabellum" >}}
+### Akimbo Parabellum Pistols
 
 These pistols are very good at taking down Dozers. Hight concealment lets you go for crits. Comboed with Pistol skills makes them pretty damn effective.
 
-### 5/7 AP Pistol {{< image_inline "57AP_FBI_Files.png" "5/7 AP Pistol" >}}
+### 5/7 AP Pistol
 
 Like the parabellums, this has high concealment for crits and benefits from pistol skills. Whilst it is MUCH slower at killing dozers than the parabellums, THIS PISTOL CAN SHOOT THROUGH THE WALLS. Taking out anything from the other side of a wall will be slower but safer than facing them down head on.
 
-### HRL-7 Rocket Launcher {{< image_inline "HRL-7_FBI_Files.png" "HRL-7 Rocket Launcher" >}}
+### HRL-7 Rocket Launcher
 
 This will one shot the dozers with a direct hit, and will two shot them with indirect hits (catching them in the explosion).
 
-### Commando 101 Rocket Launcher {{< image_inline "Commando_101_FBI_Files.png" "Commando 101" >}}
+### Commando 101 Rocket Launcher
 
 This will two shot dozers on direct and indirect hits.
 
-### Trip Mines {{< image_inline "Tripmine-icon.png" "Trip Mines" >}}
+### Trip Mines
 
 These will ALSO one shot dozers when buffed with Technician skill Combat Engineering Aced. Also useful in sensor mode for letting you know where all the enemies are, making it easier to take them out through walls.
 

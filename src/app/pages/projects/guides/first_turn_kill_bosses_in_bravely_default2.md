@@ -70,12 +70,12 @@ So this section exists just to cover EXACTLY how this build works in detail. You
 
 The following abilities Combine to form approximately 8x damage at 1HP
 
-- {{< image_inline "LastResort.png" "Last Resort" >}} increases physical and magical attack when at low health, DOUBLING them when at 1HP
+- "Last Resort" increases physical and magical attack when at low health, DOUBLING them when at 1HP
 - Berserker's Death's Door attack is Incredibly Powerful AND deals more damage at low health. My testing seems to suggest at 1HP it deals FOUR TIMES more damage.
 
 Then the following abilities make it pretty easy to get to 1HP
 
-- {{< image_inline "BloodyMinded.png" "Bloody-Minded" >}} reduces health every time Adelle attacks but won't reduce it below 1. The reduction seems to be approx 20% of damage dealt.
+- "Bloody-Minded" reduces health every time Adelle attacks but won't reduce it below 1. The reduction seems to be approx 20% of damage dealt.
 - Phantom's Become the Lightning costs HP to use so it can bring you closer to that 1HP goal
 
 The following abilities are pretty useful for pushing your damage up even more
@@ -84,15 +84,15 @@ The following abilities are pretty useful for pushing your damage up even more
 - Phantom's Ethereal Edge makes attacks ignore enemy defences. Nice
 - Phantom's Become the Lightning buffs attack by 25%
 
-And of course you need {{< image_inline "SurpassingPower.png" "Surpassing Power" >}} else your damage will never be more than 9,999 per hit
+And of course you need "Surpassing Power" else your damage will never be more than 9,999 per hit
 
 ### Make All abilities FREEEEEEEEE(ish)
 
 The following abilities combine to make all your attacking abilities almost free (the setup requires 18MP to start and then 40MP per turn)
 
-- {{< image_inline "FreeForAll.png" "Free-for-All" >}} makes all abilities free whilst you are Berserk
+- "Free-for-All" makes all abilities free whilst you are Berserk
 - Berserker's Vent Fury gets you into Berserk nice and easy for 18MP
-- {{< image_inline "SubJobSpecialtyTwo.png" "Sub-Job Specialty 2" >}} with Berserker as sub job gives you Rage and Reason, which lets you CHOOSE what to do while berserk 50% of the time. This means half your turns will let you just spam your strongest attack if you want.
+- "Sub-Job Specialty 2" with Berserker as sub job gives you Rage and Reason, which lets you CHOOSE what to do while berserk 50% of the time. This means half your turns will let you just spam your strongest attack if you want.
 - Phantom's Specialty 2: Result's Guaranteed will guarantee that Abilities with a CHANCE of occurring will ALWAYS occur at the cost of 40MP. So now you can ALWAYS choose your actions when berserk as long as you have at least 40MP at the start of your turn
 
 ### Extra Good Things
