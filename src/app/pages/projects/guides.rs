@@ -7,6 +7,8 @@ use leptos_router::{
 
 pub mod control_dark_souls_with_a_piano;
 pub mod embed_presentation_in_hugo;
+pub mod first_turn_kill_bosses_in_bravely_default2;
+pub mod payday2_safehouse_nightmare;
 pub mod ridge_racer_ds_unlock_burning_nightmare;
 
 pub const URL_FRAGMENT: (StaticSegment<&str>,) = path!("/guides");
@@ -18,6 +20,8 @@ pub fn Routes() -> impl MatchNestedRoutes + Clone {
         <ParentRoute path=URL_FRAGMENT view=Outlet>
             <control_dark_souls_with_a_piano::Routes />
             <embed_presentation_in_hugo::Routes />
+            <first_turn_kill_bosses_in_bravely_default2::Routes />
+            <payday2_safehouse_nightmare::Routes />
             <ridge_racer_ds_unlock_burning_nightmare::Routes />
         </ParentRoute>
     }
