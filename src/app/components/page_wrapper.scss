@@ -7,10 +7,10 @@ main {
     .page_wrapper {
         margin: 20px auto;
         padding: 20px;
-        background-color: hsla(200, 50%, 70%, 50%);
-        text-align: center;
+        background-color: hsla(200, 15%, 30%, 0.95);
+        color: white;
         width: fit-content;
-        max-width: 75dvw;
+        max-width: 50dvw;
         border-radius: 2rem;
 
         pointer-events: auto;

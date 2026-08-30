@@ -8,5 +8,5 @@ pub fn MarkdownContent(markdown_text: &'static str) -> impl IntoView {
     let html = markdown::to_html_with_options(markdown_text, &temp)
         .unwrap_or("Failed to parse markdown document.".to_owned());
 
-    view! { <div inner_html=html /> }
+    view! { <div class="markdown_content" inner_html=html /> }
 }
