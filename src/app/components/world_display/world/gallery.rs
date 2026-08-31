@@ -24,6 +24,12 @@ pub fn get_walls(palette: &mut RgbPalette) -> Vec<Wall> {
     let righteous_stand = textures::paintings::maps::righteous_stand::load_texture(palette);
     let taals_horn_keep = textures::paintings::maps::taals_horn_keep::load_texture(palette);
 
+    let ubersreik_five = textures::paintings::pixel_art::ubersreik_five::load_texture(palette);
+    let postman = textures::paintings::pixel_art::postman::load_texture(palette);
+    let zant = textures::paintings::pixel_art::zant::load_texture(palette);
+    let pokemon = textures::paintings::pixel_art::pokemon::load_texture(palette);
+    let bradley = textures::paintings::pixel_art::bradley::load_texture(palette);
+
     let daily_fall = textures::paintings::pixel_art::daily_fall::load_texture(palette);
 
     let mut result = Vec::<Wall>::new();
@@ -99,9 +105,23 @@ pub fn get_walls(palette: &mut RgbPalette) -> Vec<Wall> {
         ],
     ));
 
+    result.push(Wall::new(
+        Line2D {
+            start: Point2D::new(19.0, 4.0),
+            end: Point2D::new(9.0, 14.0),
+        },
+        &wood_wall_texture,
+        vec![
+            Painting::new_to_scale(DUMMY_ID, zant, Point2D::new(0.1, 0.1)),
+            Painting::new_to_scale(DUMMY_ID, bradley, Point2D::new(3.1, 0.1)),
+            Painting::new_to_scale(DUMMY_ID, postman, Point2D::new(5.1, 0.1)),
+            Painting::new_to_scale(DUMMY_ID, pokemon, Point2D::new(9.1, 0.8)),
+            Painting::new_to_scale(DUMMY_ID, ubersreik_five, Point2D::new(11.1, 0.1)),
+        ],
+    ));
+
     result.append(&mut walls_from_point_path(
         &vec![
-            Point2D::new(9.0, 14.0),
             Point2D::new(19.0, 4.0),
             Point2D::new(16.0, 1.0),
             Point2D::new(9.0, 8.0),
