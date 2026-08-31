@@ -1,5 +1,17 @@
+pub mod bradley;
+pub mod daily_fall;
+pub mod daily_magician;
+pub mod daily_metal;
+pub mod daily_mystical;
+pub mod daily_researchl;
+pub mod daily_skill;
+pub mod daily_slime;
+pub mod dark_doorway;
 pub mod nokia_art_jam_3_house;
 pub mod nokia_art_jam_3_keyboard_cat;
 pub mod nokia_art_jam_3_worms;
+pub mod pokemon;
+pub mod postman;
 pub mod ubersreik_five;
 pub mod vermintide_tapestry;
+pub mod zant;
