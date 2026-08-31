@@ -24,6 +24,8 @@ pub fn get_walls(palette: &mut RgbPalette) -> Vec<Wall> {
     let righteous_stand = textures::paintings::maps::righteous_stand::load_texture(palette);
     let taals_horn_keep = textures::paintings::maps::taals_horn_keep::load_texture(palette);
 
+    let daily_fall = textures::paintings::pixel_art::daily_fall::load_texture(palette);
+
     let mut result = Vec::<Wall>::new();
     result.append(&mut walls_from_point_path(
         &vec![
@@ -129,9 +131,25 @@ pub fn get_walls(palette: &mut RgbPalette) -> Vec<Wall> {
         &wood_wall_texture,
     ));
     result.append(&mut walls_from_point_path(
+        &vec![Point2D::new(10.5, 8.5), Point2D::new(10.25, 8.25)],
+        &wood_wall_texture,
+    ));
+
+    result.push(Wall::new(
+        Line2D {
+            start: Point2D::new(10.25, 8.25),
+            end: Point2D::new(8.25, 10.25),
+        },
+        &wood_wall_texture,
+        vec![Painting::new_to_scale(
+            DUMMY_ID,
+            daily_fall,
+            Point2D::new(0.1, 0.1),
+        )],
+    ));
+
+    result.append(&mut walls_from_point_path(
         &vec![
-            Point2D::new(10.5, 8.5),
-            Point2D::new(10.25, 8.25),
             Point2D::new(8.25, 10.25),
             Point2D::new(8.5, 10.5),
             Point2D::new(10.5, 8.5),
