@@ -3,7 +3,7 @@ use std::{cell::RefCell, rc::Rc};
 use leptos::{html::Canvas, prelude::*};
 use leptos_router::hooks::use_navigate;
 use wasmfenbein3d::{
-    render::screen_buffer_row_first::ScreenBufferRowFirst,
+    render::screen_buffer_column_first::ScreenBufferColumnFirst,
     state::{textures::TextureLibrary, world, State},
 };
 
@@ -24,9 +24,9 @@ pub fn world_display() -> impl IntoView {
             element.set_height(height / 2);
 
             // Setup the screen buffer we render to
-            let screen_width = element.width() as usize;
-            let screen_height = element.height() as usize;
-            let screen_buffer = ScreenBufferRowFirst::setup(screen_width, screen_height);
+            let screen_width = element.height() as usize;
+            let screen_height = element.width() as usize;
+            let screen_buffer = ScreenBufferColumnFirst::setup(screen_width, screen_height);
 
             // Setup the wasmfenbein3d state object
             let state = Rc::new(RefCell::new(State::setup(

@@ -1,10 +1,13 @@
 .world_display {
     position: fixed;
-    width: 100dvw;
-    height: 100dvh;
+    width: 100dvh;
+    height: 100dvw;
     top: 0;
     left: 0;
     z-index: 1;
+
+    transform-origin: top left;
+    transform: rotate(90deg) scaleY(-1);
 
     view-transition-name: world_display;
 }
