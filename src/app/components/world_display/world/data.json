@@ -4,151 +4,397 @@
     "walls": [
         {
             "start": {
-                "x": -1.0,
-                "y": 5.0
+                "x": 5.0,
+                "y": 6.0
             },
             "end": {
-                "x": -5.0,
-                "y": 5.0
+                "x": 1.0,
+                "y": 2.0
             },
             "texture_id": "wall_wood"
         },
         {
             "start": {
-                "x": -5.0,
-                "y": 5.0
+                "x": 1.0,
+                "y": 2.0
             },
             "end": {
-                "x": -5.0,
-                "y": -3.0
+                "x": -1.0,
+                "y": 2.0
             },
             "texture_id": "wall_wood"
         },
         {
             "start": {
-                "x": 8.0,
-                "y": 20.0
+                "x": -1.0,
+                "y": 2.0
             },
             "end": {
-                "x": -1.0,
-                "y": 20.0
-            },
-            "texture_id": "wall_stone"
-        },
-        {
-            "start": {
-                "x": -1.0,
-                "y": 20.0
-            },
-            "end": {
-                "x": -1.0,
-                "y": 5.0
-            },
-            "texture_id": "wall_stone"
-        },
-        {
-            "start": {
-                "x": 8.0,
-                "y": 18.0
-            },
-            "end": {
-                "x": 8.0,
-                "y": 15.0
+                "x": -3.0,
+                "y": 4.0
             },
             "texture_id": "wall_wood"
         },
         {
             "start": {
-                "x": 8.0,
-                "y": 15.0
+                "x": -4.0,
+                "y": 3.0
             },
             "end": {
-                "x": 15.0,
-                "y": 15.0
+                "x": -2.0,
+                "y": 1.0
             },
             "texture_id": "wall_wood"
         },
         {
             "start": {
-                "x": 15.0,
-                "y": 15.0
+                "x": -2.0,
+                "y": 1.0
             },
             "end": {
-                "x": 15.0,
-                "y": 23.0
+                "x": -2.0,
+                "y": 0.0
+            },
+            "texture_id": "wall_wood"
+        },
+        {
+            "start": {
+                "x": -2.0,
+                "y": 0.0
+            },
+            "end": {
+                "x": -1.0,
+                "y": -1.0
+            },
+            "texture_id": "wall_wood"
+        },
+        {
+            "start": {
+                "x": -1.0,
+                "y": -1.0
+            },
+            "end": {
+                "x": 1.0,
+                "y": -1.0
+            },
+            "texture_id": "wall_wood"
+        },
+        {
+            "start": {
+                "x": 1.0,
+                "y": -1.0
+            },
+            "end": {
+                "x": 2.0,
+                "y": 0.0
+            },
+            "texture_id": "wall_wood"
+        },
+        {
+            "start": {
+                "x": 2.0,
+                "y": 0.0
+            },
+            "end": {
+                "x": 2.0,
+                "y": 1.0
+            },
+            "texture_id": "wall_wood"
+        },
+        {
+            "start": {
+                "x": 2.0,
+                "y": 1.0
+            },
+            "end": {
+                "x": 6.25,
+                "y": 5.25
+            },
+            "texture_id": "wall_wood"
+        },
+        {
+            "start": {
+                "x": -3.0,
+                "y": 4.0
+            },
+            "end": {
+                "x": -3.0,
+                "y": 6.0
+            },
+            "texture_id": "wall_wood"
+        },
+        {
+            "start": {
+                "x": -3.0,
+                "y": 6.0
+            },
+            "end": {
+                "x": 0.25,
+                "y": 9.25
+            },
+            "texture_id": "wall_wood"
+        },
+        {
+            "start": {
+                "x": 0.25,
+                "y": 9.75
+            },
+            "end": {
+                "x": -3.5,
+                "y": 12.5
+            },
+            "texture_id": "wall_wood",
+            "paintings": [
+                {
+                    "id": "control_dark_souls_with_a_piano",
+                    "top_left": {
+                        "x": 0.1,
+                        "y": 0.2
+                    },
+                    "bottom_right": {
+                        "x": 1.9,
+                        "y": 1.8
+                    }
+                },
+                {
+                    "id": "embed_presentation_in_hugo",
+                    "top_left": {
+                        "x": 2.1,
+                        "y": 0.2
+                    },
+                    "bottom_right": {
+                        "x": 3.9,
+                        "y": 1.8
+                    }
+                }
+            ]
+        },
+        {
+            "start": {
+                "x": -3.5,
+                "y": 12.5
+            },
+            "end": {
+                "x": -9.0,
+                "y": 8.0
+            },
+            "texture_id": "wall_wood",
+            "paintings": [
+                {
+                    "id": "ridge_racer_ds_unlock_burning_nightmare",
+                    "top_left": {
+                        "x": 0.1,
+                        "y": 0.2
+                    },
+                    "bottom_right": {
+                        "x": 1.9,
+                        "y": 1.8
+                    }
+                },
+                {
+                    "id": "first_turn_kill_bosses_in_bravely_default2",
+                    "top_left": {
+                        "x": 2.1,
+                        "y": 0.2
+                    },
+                    "bottom_right": {
+                        "x": 3.9,
+                        "y": 1.8
+                    }
+                },
+                {
+                    "id": "payday2_safehouse_nightmare",
+                    "top_left": {
+                        "x": 4.1,
+                        "y": 0.2
+                    },
+                    "bottom_right": {
+                        "x": 5.9,
+                        "y": 1.8
+                    }
+                }
+            ]
+        },
+        {
+            "start": {
+                "x": -9.0,
+                "y": 8.0
+            },
+            "end": {
+                "x": -4.0,
+                "y": 3.0
+            },
+            "texture_id": "wall_wood"
+        },
+        {
+            "start": {
+                "x": 5.0,
+                "y": 6.0
+            },
+            "end": {
+                "x": 4.0,
+                "y": 7.0
+            },
+            "texture_id": "wall_wood"
+        },
+        {
+            "start": {
+                "x": 4.0,
+                "y": 7.0
+            },
+            "end": {
+                "x": 3.0,
+                "y": 7.0
+            },
+            "texture_id": "wall_wood"
+        },
+        {
+            "start": {
+                "x": 3.0,
+                "y": 7.0
+            },
+            "end": {
+                "x": 1.0,
+                "y": 9.0
+            },
+            "texture_id": "wall_wood"
+        },
+        {
+            "start": {
+                "x": 1.0,
+                "y": 9.0
+            },
+            "end": {
+                "x": 1.0,
+                "y": 9.25
+            },
+            "texture_id": "wall_wood"
+        },
+        {
+            "start": {
+                "x": 1.0,
+                "y": 9.25
+            },
+            "end": {
+                "x": 0.25,
+                "y": 9.25
+            },
+            "texture_id": "wall_wood"
+        },
+        {
+            "start": {
+                "x": 0.25,
+                "y": 9.75
+            },
+            "end": {
+                "x": 1.0,
+                "y": 9.75
+            },
+            "texture_id": "wall_wood"
+        },
+        {
+            "start": {
+                "x": 1.0,
+                "y": 9.75
+            },
+            "end": {
+                "x": 1.0,
+                "y": 10.0
+            },
+            "texture_id": "wall_wood"
+        },
+        {
+            "start": {
+                "x": 1.0,
+                "y": 10.0
+            },
+            "end": {
+                "x": 5.0,
+                "y": 14.0
+            },
+            "texture_id": "wall_wood"
+        },
+        {
+            "start": {
+                "x": 9.0,
+                "y": 14.0
+            },
+            "end": {
+                "x": 5.0,
+                "y": 14.0
             },
             "texture_id": "wall_wood",
             "paintings": [
                 {
                     "id": "vermintide_tapestry",
                     "top_left": {
-                        "x": 2.85,
+                        "x": 0.85,
                         "y": 0.1
                     }
                 },
                 {
                     "id": "blood_in_the_darkness",
                     "top_left": {
-                        "x": 2.5,
+                        "x": 0.5,
                         "y": 0.5
                     },
                     "bottom_right": {
-                        "x": 2.8,
+                        "x": 0.8,
                         "y": 0.8
                     }
                 },
                 {
                     "id": "burplespue_halescourge",
                     "top_left": {
-                        "x": 2.5,
+                        "x": 0.5,
                         "y": 1.3
                     },
                     "bottom_right": {
-                        "x": 2.8,
+                        "x": 0.8,
                         "y": 1.6
                     }
                 },
                 {
                     "id": "castle_drachenfels",
                     "top_left": {
-                        "x": 2.5,
+                        "x": 0.5,
                         "y": 0.9
                     },
                     "bottom_right": {
-                        "x": 2.8,
+                        "x": 0.8,
                         "y": 1.2
                     }
                 },
                 {
                     "id": "into_the_nest",
                     "top_left": {
-                        "x": 5.4,
+                        "x": 3.4,
                         "y": 0.5
                     },
                     "bottom_right": {
-                        "x": 5.7,
+                        "x": 3.7,
                         "y": 0.8
                     }
                 },
                 {
                     "id": "righteous_stand",
                     "top_left": {
-                        "x": 5.4,
+                        "x": 3.4,
                         "y": 1.3
                     },
                     "bottom_right": {
-                        "x": 5.7,
+                        "x": 3.7,
                         "y": 1.6
                     }
                 },
                 {
                     "id": "taals_horn_keep",
                     "top_left": {
-                        "x": 5.4,
+                        "x": 3.4,
                         "y": 0.9
                     },
                     "bottom_right": {
-                        "x": 5.7,
+                        "x": 3.7,
                         "y": 1.2
                     }
                 }
@@ -156,189 +402,137 @@
         },
         {
             "start": {
-                "x": 15.0,
-                "y": 23.0
+                "x": 19.0,
+                "y": 4.0
             },
             "end": {
-                "x": 8.0,
-                "y": 23.0
-            },
-            "texture_id": "wall_wood"
-        },
-        {
-            "start": {
-                "x": 8.0,
-                "y": 23.0
-            },
-            "end": {
-                "x": 8.0,
-                "y": 20.0
-            },
-            "texture_id": "wall_wood"
-        },
-        {
-            "start": {
-                "x": 1.0,
-                "y": 5.0
-            },
-            "end": {
-                "x": 1.0,
-                "y": 18.0
-            },
-            "texture_id": "wall_stone"
-        },
-        {
-            "start": {
-                "x": 1.0,
-                "y": 18.0
-            },
-            "end": {
-                "x": 8.0,
-                "y": 18.0
-            },
-            "texture_id": "wall_stone"
-        },
-        {
-            "start": {
-                "x": -5.0,
-                "y": -5.0
-            },
-            "end": {
-                "x": 5.0,
-                "y": -5.0
-            },
-            "texture_id": "wall_wood"
-        },
-        {
-            "start": {
-                "x": 5.0,
-                "y": -5.0
-            },
-            "end": {
-                "x": 5.0,
-                "y": 5.0
-            },
-            "texture_id": "wall_wood"
-        },
-        {
-            "start": {
-                "x": 5.0,
-                "y": 5.0
-            },
-            "end": {
-                "x": 1.0,
-                "y": 5.0
-            },
-            "texture_id": "wall_wood"
-        },
-        {
-            "start": {
-                "x": -10.0,
-                "y": -5.0
-            },
-            "end": {
-                "x": -5.0,
-                "y": -5.0
+                "x": 9.0,
+                "y": 14.0
             },
             "texture_id": "wall_wood",
             "paintings": [
                 {
-                    "id": "nokia_art_jam_3_house",
+                    "id": "zant",
                     "top_left": {
-                        "x": 0.4,
-                        "y": 0.6
+                        "x": 0.1,
+                        "y": 0.1
                     }
                 },
                 {
-                    "id": "nokia_art_jam_3_keyboard_cat",
+                    "id": "bradley",
                     "top_left": {
-                        "x": 2.0,
-                        "y": 0.6
+                        "x": 3.1,
+                        "y": 0.1
                     }
                 },
                 {
-                    "id": "nokia_art_jam_3_worms",
+                    "id": "postman",
                     "top_left": {
-                        "x": 3.5,
-                        "y": 0.6
+                        "x": 5.1,
+                        "y": 0.1
                     }
-                }
-            ]
-        },
-        {
-            "start": {
-                "x": -10.0,
-                "y": -3.0
-            },
-            "end": {
-                "x": -10.0,
-                "y": -1.0
-            },
-            "texture_id": "wall_wood"
-        },
-        {
-            "start": {
-                "x": -10.0,
-                "y": -1.0
-            },
-            "end": {
-                "x": -13.0,
-                "y": -1.0
-            },
-            "texture_id": "wall_wood"
-        },
-        {
-            "start": {
-                "x": -13.0,
-                "y": -1.0
-            },
-            "end": {
-                "x": -13.0,
-                "y": -7.0
-            },
-            "texture_id": "wall_wood"
-        },
-        {
-            "start": {
-                "x": -13.0,
-                "y": -7.0
-            },
-            "end": {
-                "x": -10.0,
-                "y": -7.0
-            },
-            "texture_id": "wall_wood"
-        },
-        {
-            "start": {
-                "x": -10.0,
-                "y": -7.0
-            },
-            "end": {
-                "x": -10.0,
-                "y": -5.0
-            },
-            "texture_id": "wall_wood"
-        },
-        {
-            "start": {
-                "x": -5.0,
-                "y": -3.0
-            },
-            "end": {
-                "x": -10.0,
-                "y": -3.0
-            },
-            "texture_id": "wall_stone",
-            "paintings": [
+                },
+                {
+                    "id": "pokemon",
+                    "top_left": {
+                        "x": 9.1,
+                        "y": 0.8
+                    }
+                },
                 {
                     "id": "ubersreik_five",
                     "top_left": {
-                        "x": 3.0,
-                        "y": 0.2
+                        "x": 11.1,
+                        "y": 0.1
                     }
                 }
             ]
+        },
+        {
+            "start": {
+                "x": 19.0,
+                "y": 4.0
+            },
+            "end": {
+                "x": 16.0,
+                "y": 1.0
+            },
+            "texture_id": "wall_wood"
+        },
+        {
+            "start": {
+                "x": 16.0,
+                "y": 1.0
+            },
+            "end": {
+                "x": 9.0,
+                "y": 8.0
+            },
+            "texture_id": "wall_wood"
+        },
+        {
+            "start": {
+                "x": 9.0,
+                "y": 8.0
+            },
+            "end": {
+                "x": 6.25,
+                "y": 5.25
+            },
+            "texture_id": "wall_wood"
+        },
+        {
+            "start": {
+                "x": 10.5,
+                "y": 8.5
+            },
+            "end": {
+                "x": 10.25,
+                "y": 8.25
+            },
+            "texture_id": "wall_wood"
+        },
+        {
+            "start": {
+                "x": 10.25,
+                "y": 8.25
+            },
+            "end": {
+                "x": 8.25,
+                "y": 10.25
+            },
+            "texture_id": "wall_wood",
+            "paintings": [
+                {
+                    "id": "daily_fall",
+                    "top_left": {
+                        "x": 0.1,
+                        "y": 0.1
+                    }
+                }
+            ]
+        },
+        {
+            "start": {
+                "x": 8.25,
+                "y": 10.25
+            },
+            "end": {
+                "x": 8.5,
+                "y": 10.5
+            },
+            "texture_id": "wall_wood"
+        },
+        {
+            "start": {
+                "x": 8.5,
+                "y": 10.5
+            },
+            "end": {
+                "x": 10.5,
+                "y": 8.5
+            },
+            "texture_id": "wall_wood"
         }
     ]
 }
