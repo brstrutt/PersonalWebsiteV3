@@ -1,8 +1,9 @@
 use const_format::concatcp;
 use leptos::prelude::*;
 use leptos_router::{components::Route, path, MatchNestedRoutes, StaticSegment};
+use wasmfenbein3d::wasmcontrols::data_action;
 
-use crate::app::components::{world_display::controls::input_action_keys::*, TouchscreenButton};
+use crate::app::components::TouchscreenButton;
 
 pub const URL_FRAGMENT: (StaticSegment<&str>,) = path!("/explore");
 pub const PAGE_PATH: &str = concatcp!(super::PAGE_PATH, "/", URL_FRAGMENT.0 .0);
@@ -17,16 +18,14 @@ fn Page() -> impl IntoView {
     view! {
         <main>
             <div class="screen_controls">
-                <TouchscreenButton data_action=DATA_ACTION_MOVE_LEFT>"◄"</TouchscreenButton>
+                <TouchscreenButton data_action=data_action::MOVE_LEFT>"◄"</TouchscreenButton>
                 <div class="vertical_movement_buttons">
-                    <TouchscreenButton data_action=DATA_ACTION_MOVE_FORWARD>
+                    <TouchscreenButton data_action=data_action::MOVE_FORWARD>
                         "▲"
                     </TouchscreenButton>
-                    <TouchscreenButton data_action=DATA_ACTION_MOVE_BACKWARD>
-                        "▼"
-                    </TouchscreenButton>
+                    <TouchscreenButton data_action=data_action::MOVE_BACK>"▼"</TouchscreenButton>
                 </div>
-                <TouchscreenButton data_action=DATA_ACTION_MOVE_RIGHT>"►"</TouchscreenButton>
+                <TouchscreenButton data_action=data_action::MOVE_RIGHT>"►"</TouchscreenButton>
             </div>
         </main>
     }

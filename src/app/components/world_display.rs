@@ -2,20 +2,13 @@ use std::{cell::RefCell, rc::Rc};
 
 use leptos::{html::Canvas, prelude::*};
 use leptos_router::hooks::use_navigate;
-use wasmfenbein3d::core::{
-    render::{rgb_palette::RgbPalette, screen_buffer_row_first::ScreenBufferRowFirst},
-    state::GameState,
+use wasmfenbein3d::{
+    render::screen_buffer_row_first::ScreenBufferRowFirst,
+    state::{textures::TextureLibrary, world, State},
 };
 
-use controls::setup_controls;
-use physics::character_motion_loop;
-use render::render_loop;
-
 pub mod controls;
-mod physics;
-mod render;
 mod textures;
-mod world;
 
 #[component]
 pub fn world_display() -> impl IntoView {
@@ -33,33 +26,31 @@ pub fn world_display() -> impl IntoView {
             // Setup the screen buffer we render to
             let screen_width = element.width() as usize;
             let screen_height = element.height() as usize;
-            let screen_buffer = Rc::new(RefCell::new(ScreenBufferRowFirst::setup(
-                screen_width,
-                screen_height,
+            let screen_buffer = ScreenBufferRowFirst::setup(screen_width, screen_height);
+
+            // Setup the wasmfenbein3d state object
+            let state = Rc::new(RefCell::new(State::setup(
+                screen_buffer,
+                world::World::load(
+                    &TextureLibrary::load(&textures::TILING_TEXTURES, &textures::TEXTURES),
+                    include_str!("world_display/world/data.json"),
+                ),
             )));
-
-            // Load the textures world
-            let mut palette = RgbPalette::new();
-            let walls = world::load_walls(&mut palette);
-            let floor_texture = textures::environment::big_floor::load_texture(&mut palette);
-            let ceiling_texture = textures::environment::floor::load_texture(&mut palette);
-
-            // Setup the initial game state
-            let state = Rc::new(RefCell::new(GameState::setup(
-                screen_width,
-                screen_height,
-                walls,
-                &mut palette,
-                floor_texture.clone(),
-                ceiling_texture,
-            )));
-
-            // Allow controlling the player character
-            setup_controls(element.clone(), state.clone(), navigate.clone());
-            character_motion_loop(state.clone());
 
             // Setup the render loop
-            render_loop(screen_buffer, state, element);
+            wasmfenbein3d::wasmrender::setup(state.clone(), element.clone());
+
+            // Setup controls
+            wasmfenbein3d::wasmcontrols::setup(
+                state.clone(),
+                element.clone(),
+                |id: &str| {
+                    controls::on_click(id, navigate.clone());
+                },
+                || {
+                    controls::on_mouse_capture(navigate.clone());
+                },
+            );
         }
     });
 
