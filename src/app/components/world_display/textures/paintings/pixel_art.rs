@@ -23,6 +23,7 @@ pub const PAINTINGS_PIXEL_ART_NOKIA_ART_JAM_3_KEYBOARD_CAT: RawTexture =
 pub const PAINTINGS_PIXEL_ART_NOKIA_ART_JAM_3_WORMS: RawTexture =
     include_texture!("pixel_art/", "nokia_art_jam_3_worms");
 pub const PAINTINGS_PIXEL_ART_POKEMON: RawTexture = include_texture!("pixel_art/", "pokemon");
+pub const PAINTINGS_PIXEL_ART_POSTMAN: RawTexture = include_texture!("pixel_art/", "postman");
 pub const PAINTINGS_PIXEL_ART_UBERSREIK_FIVE: RawTexture =
     include_texture!("pixel_art/", "ubersreik_five");
 pub const PAINTINGS_PIXEL_ART_VERMINTIDE_TAPESTRY: RawTexture =
