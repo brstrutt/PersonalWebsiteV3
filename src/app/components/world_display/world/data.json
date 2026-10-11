@@ -1,6 +1,6 @@
 {
-    "floor_texture_id": "big_floor",
-    "ceiling_texture_id": "floor",
+    "floor_texture_id": "floor_wood",
+    "ceiling_texture_id": "ceiling_white",
     "walls": [
         {
             "start": {
@@ -11,7 +11,7 @@
                 "x": 1.0,
                 "y": 2.0
             },
-            "texture_id": "wall_wood"
+            "texture_id": "wall_default"
         },
         {
             "start": {
@@ -22,7 +22,7 @@
                 "x": -1.0,
                 "y": 2.0
             },
-            "texture_id": "wall_wood"
+            "texture_id": "wall_default"
         },
         {
             "start": {
@@ -33,7 +33,7 @@
                 "x": -3.0,
                 "y": 4.0
             },
-            "texture_id": "wall_wood"
+            "texture_id": "wall_default"
         },
         {
             "start": {
@@ -44,7 +44,7 @@
                 "x": -2.0,
                 "y": 1.0
             },
-            "texture_id": "wall_wood"
+            "texture_id": "wall_default"
         },
         {
             "start": {
@@ -55,7 +55,7 @@
                 "x": -2.0,
                 "y": 0.0
             },
-            "texture_id": "wall_wood"
+            "texture_id": "wall_default"
         },
         {
             "start": {
@@ -66,7 +66,7 @@
                 "x": -1.0,
                 "y": -1.0
             },
-            "texture_id": "wall_wood"
+            "texture_id": "wall_default"
         },
         {
             "start": {
@@ -77,7 +77,7 @@
                 "x": 1.0,
                 "y": -1.0
             },
-            "texture_id": "wall_wood"
+            "texture_id": "wall_default"
         },
         {
             "start": {
@@ -88,7 +88,7 @@
                 "x": 2.0,
                 "y": 0.0
             },
-            "texture_id": "wall_wood"
+            "texture_id": "wall_default"
         },
         {
             "start": {
@@ -99,7 +99,7 @@
                 "x": 2.0,
                 "y": 1.0
             },
-            "texture_id": "wall_wood"
+            "texture_id": "wall_default"
         },
         {
             "start": {
@@ -110,7 +110,7 @@
                 "x": 6.25,
                 "y": 5.25
             },
-            "texture_id": "wall_wood"
+            "texture_id": "wall_default"
         },
         {
             "start": {
@@ -121,7 +121,7 @@
                 "x": -3.0,
                 "y": 6.0
             },
-            "texture_id": "wall_wood"
+            "texture_id": "wall_default"
         },
         {
             "start": {
@@ -132,7 +132,7 @@
                 "x": 0.25,
                 "y": 9.25
             },
-            "texture_id": "wall_wood"
+            "texture_id": "wall_default"
         },
         {
             "start": {
@@ -143,7 +143,7 @@
                 "x": -3.5,
                 "y": 12.5
             },
-            "texture_id": "wall_wood",
+            "texture_id": "wall_default",
             "paintings": [
                 {
                     "id": "control_dark_souls_with_a_piano",
@@ -178,7 +178,7 @@
                 "x": -9.0,
                 "y": 8.0
             },
-            "texture_id": "wall_wood",
+            "texture_id": "wall_default",
             "paintings": [
                 {
                     "id": "ridge_racer_ds_unlock_burning_nightmare",
@@ -224,7 +224,7 @@
                 "x": -4.0,
                 "y": 3.0
             },
-            "texture_id": "wall_wood"
+            "texture_id": "wall_default"
         },
         {
             "start": {
@@ -235,7 +235,7 @@
                 "x": 4.0,
                 "y": 7.0
             },
-            "texture_id": "wall_wood"
+            "texture_id": "wall_default"
         },
         {
             "start": {
@@ -246,7 +246,7 @@
                 "x": 3.0,
                 "y": 7.0
             },
-            "texture_id": "wall_wood"
+            "texture_id": "wall_default"
         },
         {
             "start": {
@@ -257,7 +257,7 @@
                 "x": 1.0,
                 "y": 9.0
             },
-            "texture_id": "wall_wood"
+            "texture_id": "wall_default"
         },
         {
             "start": {
@@ -268,7 +268,7 @@
                 "x": 1.0,
                 "y": 9.25
             },
-            "texture_id": "wall_wood"
+            "texture_id": "wall_default"
         },
         {
             "start": {
@@ -279,7 +279,7 @@
                 "x": 0.25,
                 "y": 9.25
             },
-            "texture_id": "wall_wood"
+            "texture_id": "wall_default"
         },
         {
             "start": {
@@ -290,7 +290,7 @@
                 "x": 1.0,
                 "y": 9.75
             },
-            "texture_id": "wall_wood"
+            "texture_id": "wall_default"
         },
         {
             "start": {
@@ -301,7 +301,7 @@
                 "x": 1.0,
                 "y": 10.0
             },
-            "texture_id": "wall_wood"
+            "texture_id": "wall_default"
         },
         {
             "start": {
@@ -312,7 +312,7 @@
                 "x": 5.0,
                 "y": 14.0
             },
-            "texture_id": "wall_wood"
+            "texture_id": "wall_default"
         },
         {
             "start": {
@@ -323,7 +323,7 @@
                 "x": 5.0,
                 "y": 14.0
             },
-            "texture_id": "wall_wood",
+            "texture_id": "wall_default",
             "paintings": [
                 {
                     "id": "vermintide_tapestry",
@@ -409,7 +409,7 @@
                 "x": 9.0,
                 "y": 14.0
             },
-            "texture_id": "wall_wood",
+            "texture_id": "wall_default",
             "paintings": [
                 {
                     "id": "zant",
@@ -457,7 +457,7 @@
                 "x": 16.0,
                 "y": 1.0
             },
-            "texture_id": "wall_wood"
+            "texture_id": "wall_default"
         },
         {
             "start": {
@@ -468,7 +468,7 @@
                 "x": 9.0,
                 "y": 8.0
             },
-            "texture_id": "wall_wood"
+            "texture_id": "wall_default"
         },
         {
             "start": {
@@ -479,7 +479,7 @@
                 "x": 6.25,
                 "y": 5.25
             },
-            "texture_id": "wall_wood"
+            "texture_id": "wall_default"
         },
         {
             "start": {
@@ -490,7 +490,7 @@
                 "x": 10.25,
                 "y": 8.25
             },
-            "texture_id": "wall_wood"
+            "texture_id": "wall_default"
         },
         {
             "start": {
@@ -501,7 +501,7 @@
                 "x": 8.25,
                 "y": 10.25
             },
-            "texture_id": "wall_wood",
+            "texture_id": "wall_default",
             "paintings": [
                 {
                     "id": "daily_fall",
@@ -521,7 +521,7 @@
                 "x": 8.5,
                 "y": 10.5
             },
-            "texture_id": "wall_wood"
+            "texture_id": "wall_default"
         },
         {
             "start": {
@@ -532,7 +532,7 @@
                 "x": 10.5,
                 "y": 8.5
             },
-            "texture_id": "wall_wood"
+            "texture_id": "wall_default"
         }
     ]
 }
