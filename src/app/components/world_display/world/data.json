@@ -121,7 +121,7 @@
                 "x": -3.0,
                 "y": 6.0
             },
-            "texture_id": "wall_default"
+            "texture_id": "wall_bookshelves"
         },
         {
             "start": {
@@ -132,7 +132,7 @@
                 "x": 0.25,
                 "y": 9.25
             },
-            "texture_id": "wall_default"
+            "texture_id": "wall_bookshelves"
         },
         {
             "start": {
@@ -143,7 +143,7 @@
                 "x": -3.5,
                 "y": 12.5
             },
-            "texture_id": "wall_default",
+            "texture_id": "wall_bookshelves",
             "paintings": [
                 {
                     "id": "control_dark_souls_with_a_piano",
@@ -178,7 +178,7 @@
                 "x": -9.0,
                 "y": 8.0
             },
-            "texture_id": "wall_default",
+            "texture_id": "wall_bookshelves",
             "paintings": [
                 {
                     "id": "ridge_racer_ds_unlock_burning_nightmare",
@@ -224,7 +224,7 @@
                 "x": -4.0,
                 "y": 3.0
             },
-            "texture_id": "wall_default"
+            "texture_id": "wall_bookshelves"
         },
         {
             "start": {
