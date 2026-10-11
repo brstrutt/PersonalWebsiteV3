@@ -5,7 +5,7 @@ pub use environment::*;
 pub mod paintings;
 pub use paintings::*;
 
-pub const TILING_TEXTURES: [&RawTexture; 8] = [
+pub const TILING_TEXTURES: [&RawTexture; 10] = [
     &ENVIRONMENT_BIG_FLOOR,
     &ENVIRONMENT_FLOOR,
     &ENVIRONMENT_WALL_STONE,
@@ -14,6 +14,8 @@ pub const TILING_TEXTURES: [&RawTexture; 8] = [
     &ENVIRONMENT_CEILING_WHITE,
     &ENVIRONMENT_WALL_DEFAULT,
     &ENVIRONMENT_WALL_BOOKSHELVES,
+    &ENVIRONMENT_WALL_BIG_DOORS,
+    &ENVIRONMENT_WALL_COAT_HOOKS,
 ];
 
 pub const TEXTURES: [&RawTexture; 28] = [

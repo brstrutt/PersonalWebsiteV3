@@ -10,3 +10,7 @@ pub const ENVIRONMENT_CEILING_WHITE: RawTexture = include_texture!("environment/
 pub const ENVIRONMENT_WALL_DEFAULT: RawTexture = include_texture!("environment/", "wall_default");
 pub const ENVIRONMENT_WALL_BOOKSHELVES: RawTexture =
     include_texture!("environment/", "wall_bookshelves");
+pub const ENVIRONMENT_WALL_BIG_DOORS: RawTexture =
+    include_texture!("environment/", "wall_big_doors");
+pub const ENVIRONMENT_WALL_COAT_HOOKS: RawTexture =
+    include_texture!("environment/", "wall_coat_hooks");
