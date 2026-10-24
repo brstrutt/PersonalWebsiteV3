@@ -29,3 +29,23 @@ pub const PAINTINGS_PIXEL_ART_UBERSREIK_FIVE: RawTexture =
 pub const PAINTINGS_PIXEL_ART_VERMINTIDE_TAPESTRY: RawTexture =
     include_texture!("pixel_art/", "vermintide_tapestry");
 pub const PAINTINGS_PIXEL_ART_ZANT: RawTexture = include_texture!("pixel_art/", "zant");
+pub const PAINTINGS_PIXEL_ART_ALPHA_SHOULDER: RawTexture =
+    include_texture!("pixel_art/", "alpha_shoulder");
+pub const PAINTINGS_PIXEL_ART_ULTRA_SHOULDER: RawTexture =
+    include_texture!("pixel_art/", "ultra_shoulder");
+pub const PAINTINGS_PIXEL_ART_ELDEN_LANDSCAPE: RawTexture =
+    include_texture!("pixel_art/", "elden-landscape");
+pub const PAINTINGS_PIXEL_ART_FURNITURE: RawTexture = include_texture!("pixel_art/", "furniture");
+pub const PAINTINGS_PIXEL_ART_GALAXY_J6_SCREENSAVER_NO_THINKING: RawTexture =
+    include_texture!("pixel_art/", "Galaxy_J6_Screensaver_no_thinking");
+pub const PAINTINGS_PIXEL_ART_MINI_MON: RawTexture = include_texture!("pixel_art/", "mini_mon");
+pub const PAINTINGS_PIXEL_ART_NIGHTSCAPE: RawTexture = include_texture!("pixel_art/", "nightscape");
+pub const PAINTINGS_PIXEL_ART_SMALL_CITY_BUILDING_5: RawTexture =
+    include_texture!("pixel_art/", "small_city_building_5");
+pub const PAINTINGS_PIXEL_ART_SMALL_CITY_BUILDING: RawTexture =
+    include_texture!("pixel_art/", "small_city_building");
+pub const PAINTINGS_PIXEL_ART_TECHNO_BACKGROUND_FOREGROUND: RawTexture =
+    include_texture!("pixel_art/", "techno_background_foreground");
+pub const PAINTINGS_PIXEL_ART_VIEW: RawTexture = include_texture!("pixel_art/", "view");
+pub const PAINTINGS_PIXEL_ART_SMALL_CITY_BUILDING_2: RawTexture =
+    include_texture!("pixel_art/", "small_city_building_2");

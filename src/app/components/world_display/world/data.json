@@ -1,415 +1,455 @@
 {
-    "floor_texture_id": "floor_wood",
     "ceiling_texture_id": "ceiling_white",
+    "floor_texture_id": "floor_wood",
+    "painting_texture_dimensions": {
+        "Galaxy_J6_Screensaver_no_thinking": {
+            "height": 370.0,
+            "width": 180.0
+        },
+        "alpha_shoulder": {
+            "height": 1.0,
+            "width": 1.0
+        },
+        "blood_in_the_darkness": {
+            "height": 1.0,
+            "width": 1.0
+        },
+        "bradley": {
+            "height": 1.0,
+            "width": 1.0
+        },
+        "burplespue_halescourge": {
+            "height": 1.0,
+            "width": 1.0
+        },
+        "castle_drachenfels": {
+            "height": 1.0,
+            "width": 1.0
+        },
+        "control_dark_souls_with_a_piano": {
+            "height": 1.0,
+            "width": 1.0
+        },
+        "daily_fall": {
+            "height": 1.0,
+            "width": 1.0
+        },
+        "daily_mystical": {
+            "height": 44.0,
+            "width": 75.0
+        },
+        "dark_doorway": {
+            "height": 33.0,
+            "width": 55.0
+        },
+        "elden-landscape": {
+            "height": 72.0,
+            "width": 172.0
+        },
+        "embed_presentation_in_hugo": {
+            "height": 1.0,
+            "width": 1.0
+        },
+        "first_turn_kill_bosses_in_bravely_default2": {
+            "height": 1.0,
+            "width": 1.0
+        },
+        "furniture": {
+            "height": 135.0,
+            "width": 82.0
+        },
+        "into_the_nest": {
+            "height": 1.0,
+            "width": 1.0
+        },
+        "mini_mon": {
+            "height": 32.0,
+            "width": 320.0
+        },
+        "nightscape": {
+            "height": 1.0,
+            "width": 1.0
+        },
+        "nokia_art_jam_3_house": {
+            "height": 65.0,
+            "width": 96.0
+        },
+        "nokia_art_jam_3_keyboard_cat": {
+            "height": 65.0,
+            "width": 96.0
+        },
+        "nokia_art_jam_3_worms": {
+            "height": 65.0,
+            "width": 96.0
+        },
+        "payday2_safehouse_nightmare": {
+            "height": 1.0,
+            "width": 1.0
+        },
+        "pokemon": {
+            "height": 22.0,
+            "width": 72.0
+        },
+        "postman": {
+            "height": 1.0,
+            "width": 1.0
+        },
+        "ridge_racer_ds_unlock_burning_nightmare": {
+            "height": 1.0,
+            "width": 1.0
+        },
+        "righteous_stand": {
+            "height": 1.0,
+            "width": 1.0
+        },
+        "small_city_building": {
+            "height": 1.0,
+            "width": 1.0
+        },
+        "small_city_building_2": {
+            "height": 1.0,
+            "width": 1.0
+        },
+        "small_city_building_5": {
+            "height": 1.0,
+            "width": 1.0
+        },
+        "taals_horn_keep": {
+            "height": 1.0,
+            "width": 1.0
+        },
+        "techno_background_foreground": {
+            "height": 183.0,
+            "width": 125.0
+        },
+        "ubersreik_five": {
+            "height": 1.0,
+            "width": 1.0
+        },
+        "ultra_shoulder": {
+            "height": 1.0,
+            "width": 1.0
+        },
+        "vermintide_tapestry": {
+            "height": 320.0,
+            "width": 420.0
+        },
+        "view": {
+            "height": 1.0,
+            "width": 1.0
+        },
+        "zant": {
+            "height": 1.0,
+            "width": 1.0
+        }
+    },
     "walls": [
         {
-            "start": {
-                "x": 5.0,
-                "y": 6.0
-            },
             "end": {
-                "x": 1.0,
-                "y": 2.0
+                "x": -2.0,
+                "y": 0.0
             },
-            "texture_id": "wall_default"
-        },
-        {
             "start": {
-                "x": 1.0,
-                "y": 2.0
-            },
-            "end": {
-                "x": -1.0,
-                "y": 2.0
-            },
-            "texture_id": "wall_coat_hooks"
-        },
-        {
-            "start": {
-                "x": -1.0,
-                "y": 2.0
-            },
-            "end": {
-                "x": -3.0,
-                "y": 4.0
-            },
-            "texture_id": "wall_default"
-        },
-        {
-            "start": {
-                "x": -4.0,
-                "y": 3.0
-            },
-            "end": {
                 "x": -2.0,
                 "y": 1.0
             },
             "texture_id": "wall_default"
         },
         {
-            "start": {
-                "x": -2.0,
-                "y": 1.0
-            },
-            "end": {
-                "x": -2.0,
-                "y": 0.0
-            },
-            "texture_id": "wall_default"
-        },
-        {
-            "start": {
-                "x": -2.0,
-                "y": 0.0
-            },
             "end": {
                 "x": -1.0,
                 "y": -1.0
+            },
+            "start": {
+                "x": -2.0,
+                "y": 0.0
             },
             "texture_id": "wall_coat_hooks"
         },
         {
-            "start": {
-                "x": -1.0,
-                "y": -1.0
-            },
             "end": {
                 "x": 1.0,
+                "y": -1.0
+            },
+            "start": {
+                "x": -1.0,
                 "y": -1.0
             },
             "texture_id": "wall_big_doors"
         },
         {
+            "end": {
+                "x": 2.0,
+                "y": 0.0
+            },
             "start": {
                 "x": 1.0,
                 "y": -1.0
             },
-            "end": {
-                "x": 2.0,
-                "y": 0.0
-            },
             "texture_id": "wall_coat_hooks"
         },
         {
+            "end": {
+                "x": 2.0,
+                "y": 1.0
+            },
             "start": {
                 "x": 2.0,
                 "y": 0.0
             },
+            "texture_id": "wall_default"
+        },
+        {
             "end": {
+                "x": 6.0,
+                "y": 5.0
+            },
+            "start": {
                 "x": 2.0,
                 "y": 1.0
             },
             "texture_id": "wall_default"
         },
         {
-            "start": {
-                "x": 2.0,
-                "y": 1.0
-            },
             "end": {
-                "x": 6.25,
-                "y": 5.25
+                "x": -3.0140000000000002,
+                "y": 13.0
             },
-            "texture_id": "wall_default"
-        },
-        {
-            "start": {
-                "x": -3.0,
-                "y": 4.0
-            },
-            "end": {
-                "x": -3.0,
-                "y": 6.0
-            },
-            "texture_id": "wall_bookshelves"
-        },
-        {
-            "start": {
-                "x": -3.0,
-                "y": 6.0
-            },
-            "end": {
-                "x": 0.25,
-                "y": 9.25
-            },
-            "texture_id": "wall_bookshelves"
-        },
-        {
-            "start": {
-                "x": 0.25,
-                "y": 9.75
-            },
-            "end": {
-                "x": -3.5,
-                "y": 12.5
-            },
-            "texture_id": "wall_bookshelves",
             "paintings": [
                 {
+                    "bottom_right": {
+                        "x": 1.9,
+                        "y": 1.8
+                    },
                     "id": "control_dark_souls_with_a_piano",
                     "top_left": {
                         "x": 0.1,
                         "y": 0.2
-                    },
-                    "bottom_right": {
-                        "x": 1.9,
-                        "y": 1.8
                     }
                 },
                 {
+                    "bottom_right": {
+                        "x": 3.9,
+                        "y": 1.8
+                    },
                     "id": "embed_presentation_in_hugo",
                     "top_left": {
                         "x": 2.1,
                         "y": 0.2
-                    },
-                    "bottom_right": {
-                        "x": 3.9,
-                        "y": 1.8
                     }
                 }
-            ]
-        },
-        {
+            ],
             "start": {
-                "x": -3.5,
-                "y": 12.5
-            },
-            "end": {
-                "x": -9.0,
-                "y": 8.0
-            },
-            "texture_id": "wall_bookshelves",
-            "paintings": [
-                {
-                    "id": "ridge_racer_ds_unlock_burning_nightmare",
-                    "top_left": {
-                        "x": 0.1,
-                        "y": 0.2
-                    },
-                    "bottom_right": {
-                        "x": 1.9,
-                        "y": 1.8
-                    }
-                },
-                {
-                    "id": "first_turn_kill_bosses_in_bravely_default2",
-                    "top_left": {
-                        "x": 2.1,
-                        "y": 0.2
-                    },
-                    "bottom_right": {
-                        "x": 3.9,
-                        "y": 1.8
-                    }
-                },
-                {
-                    "id": "payday2_safehouse_nightmare",
-                    "top_left": {
-                        "x": 4.1,
-                        "y": 0.2
-                    },
-                    "bottom_right": {
-                        "x": 5.9,
-                        "y": 1.8
-                    }
-                }
-            ]
-        },
-        {
-            "start": {
-                "x": -9.0,
-                "y": 8.0
-            },
-            "end": {
-                "x": -4.0,
-                "y": 3.0
+                "x": 0.5,
+                "y": 9.5
             },
             "texture_id": "wall_bookshelves"
         },
         {
-            "start": {
-                "x": 5.0,
-                "y": 6.0
-            },
             "end": {
-                "x": 4.0,
-                "y": 7.0
+                "x": -9.0,
+                "y": 8.0
             },
-            "texture_id": "wall_default"
+            "paintings": [
+                {
+                    "bottom_right": {
+                        "x": 1.9,
+                        "y": 1.8
+                    },
+                    "id": "ridge_racer_ds_unlock_burning_nightmare",
+                    "top_left": {
+                        "x": 0.1,
+                        "y": 0.2
+                    }
+                },
+                {
+                    "bottom_right": {
+                        "x": 3.9,
+                        "y": 1.8
+                    },
+                    "id": "first_turn_kill_bosses_in_bravely_default2",
+                    "top_left": {
+                        "x": 2.1,
+                        "y": 0.2
+                    }
+                },
+                {
+                    "bottom_right": {
+                        "x": 5.9,
+                        "y": 1.8
+                    },
+                    "id": "payday2_safehouse_nightmare",
+                    "top_left": {
+                        "x": 4.1,
+                        "y": 0.2
+                    }
+                }
+            ],
+            "start": {
+                "x": -3.0140000000000002,
+                "y": 13.0
+            },
+            "texture_id": "wall_bookshelves"
         },
         {
-            "start": {
-                "x": 4.0,
-                "y": 7.0
-            },
             "end": {
-                "x": 3.0,
-                "y": 7.0
+                "x": -2.0,
+                "y": 1.0
             },
-            "texture_id": "wall_default"
+            "start": {
+                "x": -9.0,
+                "y": 8.0
+            },
+            "texture_id": "wall_bookshelves"
         },
         {
-            "start": {
-                "x": 3.0,
-                "y": 7.0
-            },
             "end": {
-                "x": 1.0,
-                "y": 9.0
+                "x": 0.5,
+                "y": 9.5
             },
-            "texture_id": "wall_default"
-        },
-        {
+            "paintings": [
+                {
+                    "bottom_right": {
+                        "x": 5.83,
+                        "y": 0.74
+                    },
+                    "id": "pokemon",
+                    "top_left": {
+                        "x": 4.91,
+                        "y": 0.46
+                    }
+                },
+                {
+                    "bottom_right": {
+                        "x": 4.48,
+                        "y": 0.75
+                    },
+                    "id": "mini_mon",
+                    "top_left": {
+                        "x": 0.68,
+                        "y": 0.37
+                    }
+                },
+                {
+                    "bottom_right": {
+                        "x": 1.7,
+                        "y": 1.72
+                    },
+                    "id": "alpha_shoulder",
+                    "top_left": {
+                        "x": 0.98,
+                        "y": 1.0
+                    }
+                },
+                {
+                    "bottom_right": {
+                        "x": 2.68,
+                        "y": 1.72
+                    },
+                    "id": "ultra_shoulder",
+                    "top_left": {
+                        "x": 1.96,
+                        "y": 1.0
+                    }
+                }
+            ],
             "start": {
-                "x": 1.0,
-                "y": 9.0
-            },
-            "end": {
-                "x": 1.0,
-                "y": 9.25
-            },
-            "texture_id": "wall_default"
-        },
-        {
-            "start": {
-                "x": 1.0,
-                "y": 9.25
-            },
-            "end": {
-                "x": 0.25,
-                "y": 9.25
-            },
-            "texture_id": "wall_default"
-        },
-        {
-            "start": {
-                "x": 0.25,
-                "y": 9.75
-            },
-            "end": {
-                "x": 1.0,
-                "y": 9.75
-            },
-            "texture_id": "wall_default"
-        },
-        {
-            "start": {
-                "x": 1.0,
-                "y": 9.75
-            },
-            "end": {
-                "x": 1.0,
-                "y": 10.0
-            },
-            "texture_id": "wall_default"
-        },
-        {
-            "start": {
-                "x": 1.0,
-                "y": 10.0
-            },
-            "end": {
                 "x": 5.0,
                 "y": 14.0
             },
             "texture_id": "wall_default"
         },
         {
-            "start": {
-                "x": 9.0,
-                "y": 14.0
-            },
             "end": {
-                "x": 5.0,
-                "y": 14.0
+                "x": 15.836703999999996,
+                "y": 0.1368640000000002
             },
-            "texture_id": "wall_default",
             "paintings": [
                 {
                     "id": "vermintide_tapestry",
                     "top_left": {
-                        "x": 0.85,
+                        "x": 0.92,
                         "y": 0.1
                     }
                 },
                 {
+                    "bottom_right": {
+                        "x": 0.8,
+                        "y": 0.8
+                    },
                     "id": "blood_in_the_darkness",
                     "top_left": {
                         "x": 0.5,
                         "y": 0.5
-                    },
-                    "bottom_right": {
-                        "x": 0.8,
-                        "y": 0.8
                     }
                 },
                 {
+                    "bottom_right": {
+                        "x": 0.8,
+                        "y": 1.6
+                    },
                     "id": "burplespue_halescourge",
                     "top_left": {
                         "x": 0.5,
                         "y": 1.3
-                    },
-                    "bottom_right": {
-                        "x": 0.8,
-                        "y": 1.6
                     }
                 },
                 {
+                    "bottom_right": {
+                        "x": 0.8,
+                        "y": 1.2
+                    },
                     "id": "castle_drachenfels",
                     "top_left": {
                         "x": 0.5,
                         "y": 0.9
-                    },
-                    "bottom_right": {
-                        "x": 0.8,
-                        "y": 1.2
                     }
                 },
                 {
+                    "bottom_right": {
+                        "x": 3.7,
+                        "y": 0.8
+                    },
                     "id": "into_the_nest",
                     "top_left": {
                         "x": 3.4,
                         "y": 0.5
-                    },
-                    "bottom_right": {
-                        "x": 3.7,
-                        "y": 0.8
                     }
                 },
                 {
+                    "bottom_right": {
+                        "x": 3.7,
+                        "y": 1.6
+                    },
                     "id": "righteous_stand",
                     "top_left": {
                         "x": 3.4,
                         "y": 1.3
-                    },
-                    "bottom_right": {
-                        "x": 3.7,
-                        "y": 1.6
                     }
                 },
                 {
+                    "bottom_right": {
+                        "x": 3.7,
+                        "y": 1.2
+                    },
                     "id": "taals_horn_keep",
                     "top_left": {
                         "x": 3.4,
                         "y": 0.9
-                    },
-                    "bottom_right": {
-                        "x": 3.7,
-                        "y": 1.2
                     }
                 }
-            ]
+            ],
+            "start": {
+                "x": 18.836704,
+                "y": 3.136864
+            },
+            "texture_id": "wall_default"
         },
         {
-            "start": {
-                "x": 19.0,
-                "y": 4.0
-            },
             "end": {
                 "x": 9.0,
                 "y": 14.0
             },
-            "texture_id": "wall_default",
             "paintings": [
                 {
                     "id": "zant",
@@ -433,75 +473,148 @@
                     }
                 },
                 {
-                    "id": "pokemon",
-                    "top_left": {
-                        "x": 9.1,
-                        "y": 0.8
-                    }
-                },
-                {
                     "id": "ubersreik_five",
                     "top_left": {
                         "x": 11.1,
                         "y": 0.1
                     }
+                },
+                {
+                    "id": "Galaxy_J6_Screensaver_no_thinking",
+                    "top_left": {
+                        "x": 9.51,
+                        "y": 0.1
+                    }
                 }
-            ]
-        },
-        {
+            ],
             "start": {
-                "x": 19.0,
-                "y": 4.0
-            },
-            "end": {
-                "x": 16.0,
-                "y": 1.0
+                "x": 18.0,
+                "y": 5.0
             },
             "texture_id": "wall_default"
         },
         {
-            "start": {
-                "x": 16.0,
-                "y": 1.0
-            },
             "end": {
+                "x": 5.0,
+                "y": 14.0
+            },
+            "paintings": [
+                {
+                    "id": "furniture",
+                    "top_left": {
+                        "x": 0.36,
+                        "y": 0.34
+                    }
+                },
+                {
+                    "id": "techno_background_foreground",
+                    "top_left": {
+                        "x": 2.72,
+                        "y": 0.34
+                    }
+                },
+                {
+                    "bottom_right": {
+                        "x": 2.43,
+                        "y": 0.98
+                    },
+                    "id": "daily_mystical",
+                    "top_left": {
+                        "x": 1.51,
+                        "y": 0.44
+                    }
+                },
+                {
+                    "bottom_right": {
+                        "x": 2.33,
+                        "y": 1.61
+                    },
+                    "id": "dark_doorway",
+                    "top_left": {
+                        "x": 1.63,
+                        "y": 1.19
+                    }
+                }
+            ],
+            "start": {
                 "x": 9.0,
-                "y": 8.0
+                "y": 14.0
             },
             "texture_id": "wall_default"
         },
         {
-            "start": {
-                "x": 9.0,
-                "y": 8.0
-            },
             "end": {
-                "x": 6.25,
-                "y": 5.25
+                "x": 10.0,
+                "y": 5.0
+            },
+            "paintings": [
+                {
+                    "id": "nightscape",
+                    "top_left": {
+                        "x": 3.77,
+                        "y": 0.31
+                    }
+                },
+                {
+                    "id": "view",
+                    "top_left": {
+                        "x": 2.53,
+                        "y": 0.57
+                    }
+                },
+                {
+                    "id": "small_city_building",
+                    "top_left": {
+                        "x": 0.15,
+                        "y": 0.69
+                    }
+                },
+                {
+                    "id": "small_city_building_5",
+                    "top_left": {
+                        "x": 0.86,
+                        "y": 0.69
+                    }
+                },
+                {
+                    "id": "small_city_building_2",
+                    "top_left": {
+                        "x": 1.55,
+                        "y": 0.69
+                    }
+                }
+            ],
+            "start": {
+                "x": 13.5,
+                "y": 1.5
             },
             "texture_id": "wall_default"
         },
         {
-            "start": {
-                "x": 10.5,
-                "y": 8.5
-            },
             "end": {
-                "x": 10.25,
-                "y": 8.25
+                "x": 6.0,
+                "y": 5.0
+            },
+            "paintings": [
+                {
+                    "id": "elden-landscape",
+                    "top_left": {
+                        "x": 0.16,
+                        "y": 0.23
+                    }
+                }
+            ],
+            "start": {
+                "x": 10.0,
+                "y": 5.0
             },
             "texture_id": "wall_default"
         },
         {
-            "start": {
-                "x": 10.25,
-                "y": 8.25
-            },
             "end": {
-                "x": 8.25,
-                "y": 10.25
+                "x": 2.256000000000002,
+                "y": 8.0306
             },
-            "texture_id": "wall_default",
             "paintings": [
                 {
                     "id": "daily_fall",
@@ -510,27 +623,175 @@
                         "y": 0.1
                     }
                 }
-            ]
-        },
-        {
+            ],
             "start": {
-                "x": 8.25,
-                "y": 10.25
-            },
-            "end": {
-                "x": 8.5,
-                "y": 10.5
+                "x": 4.256000000000002,
+                "y": 6.030600000000001
             },
             "texture_id": "wall_default"
         },
         {
-            "start": {
-                "x": 8.5,
-                "y": 10.5
-            },
             "end": {
-                "x": 10.5,
-                "y": 8.5
+                "x": 13.5,
+                "y": 1.5
+            },
+            "start": {
+                "x": 12.0,
+                "y": 0.0
+            },
+            "texture_id": "wall_default"
+        },
+        {
+            "end": {
+                "x": 20.5,
+                "y": 7.5
+            },
+            "start": {
+                "x": 18.0,
+                "y": 5.0
+            },
+            "texture_id": "wall_default"
+        },
+        {
+            "end": {
+                "x": 27.0,
+                "y": 1.0
+            },
+            "start": {
+                "x": 20.5,
+                "y": 7.5
+            },
+            "texture_id": "wall_default"
+        },
+        {
+            "end": {
+                "x": 19.0,
+                "y": -7.0
+            },
+            "start": {
+                "x": 12.0,
+                "y": 0.0
+            },
+            "texture_id": "wall_default"
+        },
+        {
+            "end": {
+                "x": 27.0,
+                "y": 1.0
+            },
+            "start": {
+                "x": 19.0,
+                "y": -7.0
+            },
+            "texture_id": "wall_default"
+        },
+        {
+            "end": {
+                "x": 4.349750000000002,
+                "y": 6.108725000000001
+            },
+            "paintings": [
+                {
+                    "bottom_right": {
+                        "x": 1.21,
+                        "y": 1.67
+                    },
+                    "id": "nokia_art_jam_3_house",
+                    "top_left": {
+                        "x": 0.35,
+                        "y": 1.09
+                    }
+                },
+                {
+                    "bottom_right": {
+                        "x": 2.54,
+                        "y": 1.66
+                    },
+                    "id": "nokia_art_jam_3_keyboard_cat",
+                    "top_left": {
+                        "x": 1.69,
+                        "y": 1.08
+                    }
+                },
+                {
+                    "bottom_right": {
+                        "x": 1.86,
+                        "y": 0.84
+                    },
+                    "id": "nokia_art_jam_3_worms",
+                    "top_left": {
+                        "x": 1.0,
+                        "y": 0.26
+                    }
+                }
+            ],
+            "start": {
+                "x": 2.349750000000002,
+                "y": 8.108725
+            },
+            "texture_id": "wall_default"
+        },
+        {
+            "end": {
+                "x": 4.349750000000002,
+                "y": 6.108725000000001
+            },
+            "start": {
+                "x": 4.256000000000002,
+                "y": 6.030600000000001
+            },
+            "texture_id": "wall_default"
+        },
+        {
+            "end": {
+                "x": 2.349750000000002,
+                "y": 8.108725
+            },
+            "start": {
+                "x": 2.256000000000002,
+                "y": 8.0306
+            },
+            "texture_id": "wall_default"
+        },
+        {
+            "end": {
+                "x": 18.7507665,
+                "y": 3.2071765
+            },
+            "paintings": [
+                {
+                    "id": "vermintide_tapestry",
+                    "top_left": {
+                        "x": 1.24,
+                        "y": 0.31
+                    }
+                }
+            ],
+            "start": {
+                "x": 15.750766499999996,
+                "y": 0.2071765000000002
+            },
+            "texture_id": "wall_default"
+        },
+        {
+            "end": {
+                "x": 15.750766499999996,
+                "y": 0.2071765000000002
+            },
+            "start": {
+                "x": 15.836703999999996,
+                "y": 0.1368640000000002
+            },
+            "texture_id": "wall_default"
+        },
+        {
+            "end": {
+                "x": 18.7507665,
+                "y": 3.2071765
+            },
+            "start": {
+                "x": 18.836704,
+                "y": 3.136864
             },
             "texture_id": "wall_default"
         }
