@@ -2,9 +2,197 @@
     "ceiling_texture_id": "ceiling_white",
     "floor_texture_id": "floor_wood",
     "painting_texture_dimensions": {
+        "Arbiters_Grounds": {
+            "height": 826.0,
+            "width": 619.0
+        },
+        "Athel_Yenlui": {
+            "height": 304.0,
+            "width": 801.0
+        },
+        "Bank_Heist_1": {
+            "height": 619.0,
+            "width": 826.0
+        },
+        "Car_Shop_1": {
+            "height": 619.0,
+            "width": 826.0
+        },
+        "Cathedral_Ward1": {
+            "height": 619.0,
+            "width": 826.0
+        },
+        "Chalice_Dungeon1": {
+            "height": 619.0,
+            "width": 826.0
+        },
+        "Chalice_Dungeon2": {
+            "height": 619.0,
+            "width": 826.0
+        },
+        "Dalhgren": {
+            "height": 619.0,
+            "width": 826.0
+        },
+        "Death_Mountain": {
+            "height": 619.0,
+            "width": 826.0
+        },
+        "Faron_Woods": {
+            "height": 619.0,
+            "width": 826.0
+        },
+        "Festering_Ground_1": {
+            "height": 619.0,
+            "width": 826.0
+        },
+        "Festering_Ground_2": {
+            "height": 619.0,
+            "width": 826.0
+        },
+        "Fishing_Hamlet1": {
+            "height": 619.0,
+            "width": 826.0
+        },
         "Galaxy_J6_Screensaver_no_thinking": {
             "height": 370.0,
             "width": 180.0
+        },
+        "Gerudo_Desert": {
+            "height": 826.0,
+            "width": 619.0
+        },
+        "Goron_Mines": {
+            "height": 619.0,
+            "width": 826.0
+        },
+        "Heat_Signature_Map1": {
+            "height": 619.0,
+            "width": 826.0
+        },
+        "Horn_Of_Magnus_2": {
+            "height": 619.0,
+            "width": 826.0
+        },
+        "Hyrule_Field": {
+            "height": 826.0,
+            "width": 619.0
+        },
+        "Iosefkas_Clinic1": {
+            "height": 619.0,
+            "width": 826.0
+        },
+        "Jewellery_Store_1": {
+            "height": 619.0,
+            "width": 826.0
+        },
+        "Kakariko_Village": {
+            "height": 619.0,
+            "width": 826.0
+        },
+        "Left4Dead2_Map1": {
+            "height": 619.0,
+            "width": 826.0
+        },
+        "Minimalistic_Stylised_Map": {
+            "height": 619.0,
+            "width": 826.0
+        },
+        "Monaco_Map1": {
+            "height": 619.0,
+            "width": 826.0
+        },
+        "New_Londo1": {
+            "height": 618.0,
+            "width": 826.0
+        },
+        "Nurgles_Buboes_1": {
+            "height": 619.0,
+            "width": 826.0
+        },
+        "Old_Yharnam1": {
+            "height": 619.0,
+            "width": 826.0
+        },
+        "Ordon_Village": {
+            "height": 619.0,
+            "width": 826.0
+        },
+        "Pokemon_Emerald_Map1": {
+            "height": 619.0,
+            "width": 826.0
+        },
+        "Random_Map_1": {
+            "height": 619.0,
+            "width": 826.0
+        },
+        "Random_Map_11": {
+            "height": 619.0,
+            "width": 826.0
+        },
+        "Random_Map_3": {
+            "height": 619.0,
+            "width": 826.0
+        },
+        "Random_Map_4": {
+            "height": 619.0,
+            "width": 826.0
+        },
+        "Random_Map_6": {
+            "height": 619.0,
+            "width": 826.0
+        },
+        "Random_Map_7": {
+            "height": 619.0,
+            "width": 826.0
+        },
+        "Real_Place_1": {
+            "height": 619.0,
+            "width": 826.0
+        },
+        "Real_Place_3": {
+            "height": 619.0,
+            "width": 826.0
+        },
+        "Real_Place_4": {
+            "height": 619.0,
+            "width": 826.0
+        },
+        "Sekiro_Map1": {
+            "height": 619.0,
+            "width": 826.0
+        },
+        "Skyward_Sword_Map2": {
+            "height": 619.0,
+            "width": 826.0
+        },
+        "Snowpeak": {
+            "height": 826.0,
+            "width": 619.0
+        },
+        "The_Depths1": {
+            "height": 619.0,
+            "width": 826.0
+        },
+        "Undead_Asylum1": {
+            "height": 619.0,
+            "width": 826.0
+        },
+        "Undead_Church2": {
+            "height": 618.0,
+            "width": 826.0
+        },
+        "Undead_Church3": {
+            "height": 619.0,
+            "width": 826.0
+        },
+        "Yharnam1": {
+            "height": 619.0,
+            "width": 826.0
+        },
+        "Zoras_Domain": {
+            "height": 826.0,
+            "width": 619.0
         },
         "alpha_shoulder": {
             "height": 1.0,
@@ -212,7 +400,7 @@
         },
         {
             "end": {
-                "x": -3.0140000000000002,
+                "x": -3.0,
                 "y": 13.0
             },
             "paintings": [
@@ -247,8 +435,8 @@
         },
         {
             "end": {
-                "x": -9.0,
-                "y": 8.0
+                "x": -8.5,
+                "y": 7.5
             },
             "paintings": [
                 {
@@ -286,7 +474,7 @@
                 }
             ],
             "start": {
-                "x": -3.0140000000000002,
+                "x": -3.0,
                 "y": 13.0
             },
             "texture_id": "wall_bookshelves"
@@ -297,8 +485,8 @@
                 "y": 1.0
             },
             "start": {
-                "x": -9.0,
-                "y": 8.0
+                "x": -8.5,
+                "y": 7.5
             },
             "texture_id": "wall_bookshelves"
         },
@@ -436,6 +624,61 @@
                     "top_left": {
                         "x": 3.4,
                         "y": 0.9
+                    }
+                },
+                {
+                    "bottom_right": {
+                        "x": 4.08,
+                        "y": 0.38
+                    },
+                    "id": "Athel_Yenlui",
+                    "top_left": {
+                        "x": 3.39,
+                        "y": 0.12
+                    }
+                },
+                {
+                    "bottom_right": {
+                        "x": 4.16,
+                        "y": 0.97
+                    },
+                    "id": "Festering_Ground_1",
+                    "top_left": {
+                        "x": 3.78,
+                        "y": 0.69
+                    }
+                },
+                {
+                    "bottom_right": {
+                        "x": 4.16,
+                        "y": 1.4
+                    },
+                    "id": "Festering_Ground_2",
+                    "top_left": {
+                        "x": 3.78,
+                        "y": 1.12
+                    }
+                },
+                {
+                    "bottom_right": {
+                        "x": 0.41,
+                        "y": 1.35
+                    },
+                    "id": "Horn_Of_Magnus_2",
+                    "top_left": {
+                        "x": 0.09,
+                        "y": 1.11
+                    }
+                },
+                {
+                    "bottom_right": {
+                        "x": 0.42,
+                        "y": 1.75
+                    },
+                    "id": "Nurgles_Buboes_1",
+                    "top_left": {
+                        "x": 0.1,
+                        "y": 1.51
                     }
                 }
             ],
@@ -632,56 +875,464 @@
         },
         {
             "end": {
+                "x": 10.5,
+                "y": -1.5
+            },
+            "paintings": [
+                {
+                    "id": "Minimalistic_Stylised_Map",
+                    "top_left": {
+                        "x": 0.33,
+                        "y": 0.53
+                    }
+                },
+                {
+                    "id": "Random_Map_3",
+                    "top_left": {
+                        "x": 2.97,
+                        "y": 0.66
+                    }
+                },
+                {
+                    "id": "Random_Map_4",
+                    "top_left": {
+                        "x": 1.9,
+                        "y": 0.71
+                    }
+                }
+            ],
+            "start": {
                 "x": 13.5,
                 "y": 1.5
             },
-            "start": {
-                "x": 12.0,
-                "y": 0.0
-            },
             "texture_id": "wall_default"
         },
         {
             "end": {
-                "x": 20.5,
-                "y": 7.5
-            },
-            "start": {
                 "x": 18.0,
                 "y": 5.0
             },
+            "paintings": [
+                {
+                    "id": "Random_Map_7",
+                    "top_left": {
+                        "x": 0.37,
+                        "y": 0.55
+                    }
+                },
+                {
+                    "id": "Random_Map_1",
+                    "top_left": {
+                        "x": 2.71,
+                        "y": 0.54
+                    }
+                },
+                {
+                    "bottom_right": {
+                        "x": 2.49,
+                        "y": 0.97
+                    },
+                    "id": "Random_Map_6",
+                    "top_left": {
+                        "x": 1.77,
+                        "y": 0.43
+                    }
+                },
+                {
+                    "bottom_right": {
+                        "x": 2.5,
+                        "y": 1.65
+                    },
+                    "id": "Random_Map_11",
+                    "top_left": {
+                        "x": 1.78,
+                        "y": 1.11
+                    }
+                }
+            ],
+            "start": {
+                "x": 21.0,
+                "y": 8.0
+            },
             "texture_id": "wall_default"
         },
         {
             "end": {
-                "x": 27.0,
-                "y": 1.0
+                "x": 21.0,
+                "y": 8.0
             },
+            "paintings": [
+                {
+                    "bottom_right": {
+                        "x": 9.96,
+                        "y": 0.91
+                    },
+                    "id": "Arbiters_Grounds",
+                    "top_left": {
+                        "x": 9.47,
+                        "y": 0.25
+                    }
+                },
+                {
+                    "id": "Hyrule_Field",
+                    "top_left": {
+                        "x": 5.94,
+                        "y": 0.08
+                    }
+                },
+                {
+                    "bottom_right": {
+                        "x": 9.68,
+                        "y": 1.81
+                    },
+                    "id": "Gerudo_Desert",
+                    "top_left": {
+                        "x": 9.11,
+                        "y": 1.05
+                    }
+                },
+                {
+                    "bottom_right": {
+                        "x": 5.32,
+                        "y": 1.2
+                    },
+                    "id": "Faron_Woods",
+                    "top_left": {
+                        "x": 4.41,
+                        "y": 0.52
+                    }
+                },
+                {
+                    "bottom_right": {
+                        "x": 3.07,
+                        "y": 1.03
+                    },
+                    "id": "Death_Mountain",
+                    "top_left": {
+                        "x": 2.16,
+                        "y": 0.35
+                    }
+                },
+                {
+                    "bottom_right": {
+                        "x": 1.99,
+                        "y": 0.83
+                    },
+                    "id": "Goron_Mines",
+                    "top_left": {
+                        "x": 1.19,
+                        "y": 0.23
+                    }
+                },
+                {
+                    "bottom_right": {
+                        "x": 5.5,
+                        "y": 1.87
+                    },
+                    "id": "Ordon_Village",
+                    "top_left": {
+                        "x": 4.78,
+                        "y": 1.33
+                    }
+                },
+                {
+                    "id": "Kakariko_Village",
+                    "top_left": {
+                        "x": 3.22,
+                        "y": 0.63
+                    }
+                },
+                {
+                    "bottom_right": {
+                        "x": 8.78,
+                        "y": 1.25
+                    },
+                    "id": "Snowpeak",
+                    "top_left": {
+                        "x": 8.33,
+                        "y": 0.65
+                    }
+                },
+                {
+                    "bottom_right": {
+                        "x": 8.14,
+                        "y": 0.78
+                    },
+                    "id": "Zoras_Domain",
+                    "top_left": {
+                        "x": 7.64,
+                        "y": 0.12
+                    }
+                }
+            ],
             "start": {
-                "x": 20.5,
-                "y": 7.5
+                "x": 29.5,
+                "y": -0.5000000000000029
             },
             "texture_id": "wall_default"
         },
         {
             "end": {
-                "x": 19.0,
-                "y": -7.0
+                "x": 19.5,
+                "y": -10.5
             },
+            "paintings": [
+                {
+                    "id": "Yharnam1",
+                    "top_left": {
+                        "x": 2.44,
+                        "y": 0.46
+                    }
+                },
+                {
+                    "bottom_right": {
+                        "x": 1.2,
+                        "y": 0.94
+                    },
+                    "id": "Cathedral_Ward1",
+                    "top_left": {
+                        "x": 0.34,
+                        "y": 0.3
+                    }
+                },
+                {
+                    "bottom_right": {
+                        "x": 1.19,
+                        "y": 1.76
+                    },
+                    "id": "Fishing_Hamlet1",
+                    "top_left": {
+                        "x": 0.34,
+                        "y": 1.12
+                    }
+                },
+                {
+                    "id": "Old_Yharnam1",
+                    "top_left": {
+                        "x": 4.05,
+                        "y": 0.69
+                    }
+                },
+                {
+                    "id": "Iosefkas_Clinic1",
+                    "top_left": {
+                        "x": 1.43,
+                        "y": 0.69
+                    }
+                },
+                {
+                    "bottom_right": {
+                        "x": 6.04,
+                        "y": 0.69
+                    },
+                    "id": "Chalice_Dungeon1",
+                    "top_left": {
+                        "x": 5.34,
+                        "y": 0.17
+                    }
+                },
+                {
+                    "bottom_right": {
+                        "x": 6.33,
+                        "y": 1.81
+                    },
+                    "id": "Chalice_Dungeon2",
+                    "top_left": {
+                        "x": 5.1,
+                        "y": 0.89
+                    }
+                },
+                {
+                    "id": "Undead_Church2",
+                    "top_left": {
+                        "x": 9.46,
+                        "y": 0.5
+                    }
+                },
+                {
+                    "bottom_right": {
+                        "x": 11.95,
+                        "y": 0.89
+                    },
+                    "id": "Undead_Asylum1",
+                    "top_left": {
+                        "x": 11.2,
+                        "y": 0.33
+                    }
+                },
+                {
+                    "bottom_right": {
+                        "x": 11.96,
+                        "y": 1.75
+                    },
+                    "id": "Undead_Church3",
+                    "top_left": {
+                        "x": 11.21,
+                        "y": 1.19
+                    }
+                },
+                {
+                    "bottom_right": {
+                        "x": 9.17,
+                        "y": 1.01
+                    },
+                    "id": "The_Depths1",
+                    "top_left": {
+                        "x": 8.16,
+                        "y": 0.25
+                    }
+                },
+                {
+                    "bottom_right": {
+                        "x": 8.66,
+                        "y": 1.71
+                    },
+                    "id": "New_Londo1",
+                    "top_left": {
+                        "x": 7.99,
+                        "y": 1.21
+                    }
+                }
+            ],
             "start": {
-                "x": 12.0,
-                "y": 0.0
+                "x": 10.5,
+                "y": -1.5
             },
             "texture_id": "wall_default"
         },
         {
             "end": {
-                "x": 27.0,
-                "y": 1.0
+                "x": 29.5,
+                "y": -0.5000000000000029
             },
+            "paintings": [
+                {
+                    "id": "Dalhgren",
+                    "top_left": {
+                        "x": 8.0,
+                        "y": 0.39
+                    }
+                },
+                {
+                    "id": "Left4Dead2_Map1",
+                    "top_left": {
+                        "x": 0.77,
+                        "y": 0.44
+                    }
+                },
+                {
+                    "bottom_right": {
+                        "x": 11.5,
+                        "y": 1.66
+                    },
+                    "id": "Heat_Signature_Map1",
+                    "top_left": {
+                        "x": 11.15,
+                        "y": 1.4
+                    }
+                },
+                {
+                    "bottom_right": {
+                        "x": 11.07,
+                        "y": 1.76
+                    },
+                    "id": "Monaco_Map1",
+                    "top_left": {
+                        "x": 10.41,
+                        "y": 1.26
+                    }
+                },
+                {
+                    "id": "Sekiro_Map1",
+                    "top_left": {
+                        "x": 11.16,
+                        "y": 0.7
+                    }
+                },
+                {
+                    "id": "Skyward_Sword_Map2",
+                    "top_left": {
+                        "x": 12.3,
+                        "y": 0.6
+                    }
+                },
+                {
+                    "id": "Pokemon_Emerald_Map1",
+                    "top_left": {
+                        "x": 10.65,
+                        "y": 0.84
+                    }
+                },
+                {
+                    "bottom_right": {
+                        "x": 4.06,
+                        "y": 0.92
+                    },
+                    "id": "Bank_Heist_1",
+                    "top_left": {
+                        "x": 3.07,
+                        "y": 0.18
+                    }
+                },
+                {
+                    "bottom_right": {
+                        "x": 5.52,
+                        "y": 0.91
+                    },
+                    "id": "Car_Shop_1",
+                    "top_left": {
+                        "x": 4.53,
+                        "y": 0.17
+                    }
+                },
+                {
+                    "bottom_right": {
+                        "x": 4.78,
+                        "y": 1.77
+                    },
+                    "id": "Jewellery_Store_1",
+                    "top_left": {
+                        "x": 3.79,
+                        "y": 1.03
+                    }
+                },
+                {
+                    "bottom_right": {
+                        "x": 7.11,
+                        "y": 0.98
+                    },
+                    "id": "Real_Place_1",
+                    "top_left": {
+                        "x": 6.52,
+                        "y": 0.54
+                    }
+                },
+                {
+                    "bottom_right": {
+                        "x": 6.8,
+                        "y": 1.5
+                    },
+                    "id": "Real_Place_3",
+                    "top_left": {
+                        "x": 6.21,
+                        "y": 1.06
+                    }
+                },
+                {
+                    "bottom_right": {
+                        "x": 7.44,
+                        "y": 1.5
+                    },
+                    "id": "Real_Place_4",
+                    "top_left": {
+                        "x": 6.86,
+                        "y": 1.06
+                    }
+                }
+            ],
             "start": {
-                "x": 19.0,
-                "y": -7.0
+                "x": 19.5,
+                "y": -10.5
             },
             "texture_id": "wall_default"
         },
