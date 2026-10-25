@@ -1517,6 +1517,7 @@ dependencies = [
  "markdown",
  "wasm-logger",
  "wasmfenbein3d",
+ "web-sys",
 ]
 
 [[package]]

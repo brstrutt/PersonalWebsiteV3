@@ -12,3 +12,4 @@ markdown = "1.0.0"
 wasmfenbein3d = { git = "https://github.com/brstrutt/wasmfenbein3d.git" }
 log = "0.4"
 wasm-logger = "0.2"
+web-sys = "0.3.99"
