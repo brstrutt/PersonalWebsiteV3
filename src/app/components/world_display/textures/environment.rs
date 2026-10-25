@@ -15,3 +15,4 @@ pub const ENVIRONMENT_WALL_BIG_DOORS: RawTexture =
 pub const ENVIRONMENT_WALL_COAT_HOOKS: RawTexture =
     include_texture!("environment/", "wall_coat_hooks");
 pub const ENVIRONMENT_SPLASH_SCREEN: RawTexture = include_texture!("environment/", "splashscreen");
+pub const ENVIRONMENT_LOADING_SCREEN: RawTexture = include_texture!("environment/", "loading");

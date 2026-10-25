@@ -10,7 +10,7 @@ use wasmfenbein3d::{
 use web_sys::wasm_bindgen::{Clamped, JsCast};
 
 use crate::app::{
-    components::world_display::textures::ENVIRONMENT_SPLASH_SCREEN,
+    components::world_display::textures::{ENVIRONMENT_LOADING_SCREEN, ENVIRONMENT_SPLASH_SCREEN},
     utils::{yield_to_browser, LoggerWithDuration},
 };
 
@@ -23,7 +23,7 @@ pub fn world_display() -> impl IntoView {
 
     Effect::new(move |_| {
         if let Some(element) = node_ref.get() {
-            render_splash_screen(element);
+            render_loading_screen(element);
         }
     });
 
@@ -100,8 +100,16 @@ pub fn world_display() -> impl IntoView {
     view! { <canvas node_ref=node_ref class="world_display" /> }
 }
 
+fn render_loading_screen(canvas: web_sys::HtmlCanvasElement) {
+    render_texture_on_canvas(canvas, ENVIRONMENT_LOADING_SCREEN.bytes);
+}
+
 fn render_splash_screen(canvas: web_sys::HtmlCanvasElement) {
-    let splash_screen_texture = ImageReader::new(Cursor::new(ENVIRONMENT_SPLASH_SCREEN.bytes))
+    render_texture_on_canvas(canvas, ENVIRONMENT_SPLASH_SCREEN.bytes);
+}
+
+fn render_texture_on_canvas(canvas: web_sys::HtmlCanvasElement, texture_bytes: &[u8]) {
+    let splash_screen_texture = ImageReader::new(Cursor::new(texture_bytes))
         .with_guessed_format()
         .expect("Failed to guess image format of splash screen raw data.")
         .decode()
