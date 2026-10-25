@@ -3,6 +3,7 @@ pub mod explore;
 pub mod home;
 pub mod notes;
 pub mod projects;
+pub mod shopping_list;
 
 use leptos::prelude::*;
 use leptos_router::MatchNestedRoutes;
@@ -16,7 +17,7 @@ pub fn Routes() -> impl MatchNestedRoutes + Clone {
         <home::Routes />
         <art::Routes />
         <projects::Routes />
-        <notes::Routes />
+        <shopping_list::Routes />
     }
     .into_inner()
 }
