@@ -10,7 +10,8 @@ use wasmfenbein3d::{
 use web_sys::wasm_bindgen::{Clamped, JsCast};
 
 use crate::app::{
-    components::world_display::textures::ENVIRONMENT_SPLASH_SCREEN, utils::LoggerWithDuration,
+    components::world_display::textures::ENVIRONMENT_SPLASH_SCREEN,
+    utils::{yield_to_browser, LoggerWithDuration},
 };
 
 pub mod controls;
@@ -29,7 +30,17 @@ pub fn world_display() -> impl IntoView {
     let textures = LocalResource::<TextureLibrary>::new(|| async {
         let mut logger = LoggerWithDuration::new();
         logger.log_time("Start loading textures");
-        let textures = TextureLibrary::load(&textures::TILING_TEXTURES, &textures::TEXTURES);
+
+        let mut textures = TextureLibrary::new();
+        for raw_texture in &textures::TILING_TEXTURES {
+            textures.insert_tiling_texture(&raw_texture);
+            yield_to_browser().await;
+        }
+        for raw_texture in &textures::TEXTURES {
+            textures.insert_texture(&raw_texture);
+            yield_to_browser().await;
+        }
+
         logger.log_time("Textures finished loading!");
         textures
     });
