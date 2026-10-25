@@ -17,13 +17,25 @@ use crate::app::{
 pub mod controls;
 mod textures;
 
+#[derive(Copy, Clone, PartialEq)]
+enum CanvasState {
+    SplashScreen,
+    Loading,
+    Wasmfenbein3dLoaded,
+}
+
 #[component]
 pub fn world_display() -> impl IntoView {
     let node_ref = NodeRef::<Canvas>::new();
+    let (canvas_state, set_canvas_state) = signal(CanvasState::SplashScreen);
 
     Effect::new(move |_| {
         if let Some(element) = node_ref.get() {
-            render_loading_screen(element);
+            match canvas_state.get() {
+                CanvasState::SplashScreen => render_splash_screen(element),
+                CanvasState::Loading => render_loading_screen(element),
+                _ => {}
+            }
         }
     });
 
@@ -92,12 +104,24 @@ pub fn world_display() -> impl IntoView {
                     );
                     logger.log_time("Wasm controls setup...");
                     logger.log_time("Wasmfenbein3d initialised!");
+
+                    set_canvas_state.set(CanvasState::Wasmfenbein3dLoaded);
                 }
             });
         }
     });
 
-    view! { <canvas node_ref=node_ref class="world_display" /> }
+    view! {
+        <canvas
+            node_ref=node_ref
+            class="world_display"
+            on:click=move |_| {
+                if canvas_state.get() == CanvasState::SplashScreen {
+                    set_canvas_state.set(CanvasState::Loading)
+                }
+            }
+        />
+    }
 }
 
 fn render_loading_screen(canvas: web_sys::HtmlCanvasElement) {
