@@ -5,6 +5,8 @@ use crate::app::{
         PAINTING_GUIDE_FIRST_TURN_KILL_BOSSES_IN_BRAVELY_DEFAULT2,
         PAINTING_GUIDE_PAYDAY2_SAFEHOUSE_NIGHTMARE,
         PAINTING_GUIDE_RIDGE_RACER_DS_UNLOCK_BURNING_NIGHTMARE,
+        PAINTING_SITE_IS_WORCESTER_UNDERWATER, PAINTING_SITE_MOON,
+        PAINTING_SITE_PIXEL_PERFECT_WEBSITE, PAINTING_SITE_ROLL_OF_THE_DIE,
     },
     pages,
 };
@@ -41,6 +43,16 @@ fn navigate_to(item_id: &str) -> Option<&'static str> {
         }
         val if val == PAINTING_GUIDE_EMBED_PRESENTATION_IN_HUGO.id => {
             Some(pages::projects::guides::embed_presentation_in_hugo::PAGE_PATH)
+        }
+        val if val == PAINTING_SITE_IS_WORCESTER_UNDERWATER.id => {
+            Some(pages::projects::sites::is_worcester_underwater::PAGE_PATH)
+        }
+        val if val == PAINTING_SITE_MOON.id => Some(pages::projects::sites::moon::PAGE_PATH),
+        val if val == PAINTING_SITE_PIXEL_PERFECT_WEBSITE.id => {
+            Some(pages::projects::sites::pixel_perfect_website::PAGE_PATH)
+        }
+        val if val == PAINTING_SITE_ROLL_OF_THE_DIE.id => {
+            Some(pages::projects::sites::roll_of_the_die::PAGE_PATH)
         }
         &_ => None,
     }
