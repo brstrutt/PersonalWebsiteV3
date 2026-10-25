@@ -9,6 +9,8 @@
     transform-origin: top left;
     transform: rotate(90deg) scaleY(-1);
 
+    image-rendering: pixelated;
+
     view-transition-name: world_display;
 }
 
