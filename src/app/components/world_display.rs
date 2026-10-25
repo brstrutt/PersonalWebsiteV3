@@ -61,7 +61,7 @@ pub fn world_display() -> impl IntoView {
     Effect::new(move |_| {
         if let Some(element) = node_ref.get() {
             textures.with(|loaded_textures| {
-                if let Some(textures) = loaded_textures {
+                if let Some(textures) = loaded_textures && canvas_state.get() == CanvasState::Loading{
                     let mut logger = LoggerWithDuration::new();
                     logger.log_time("Initialising wasmfenbein3d!");
                     // Setup the canvas image size to be half resolution when compared to canvas element size
