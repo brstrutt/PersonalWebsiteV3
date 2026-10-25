@@ -1,4 +1,4 @@
-use crate::app::components::PageWrapper;
+use crate::app::components::page_wrapper::LeptosRoutingPageWrapper;
 use const_format::concatcp;
 use leptos::prelude::*;
 use leptos_router::{components::ParentRoute, path, MatchNestedRoutes, StaticSegment};
@@ -11,7 +11,7 @@ pub const PAGE_PATH: &str = concatcp!(super::PAGE_PATH, "/", URL_FRAGMENT.0 .0);
 #[component(transparent)]
 pub fn Routes() -> impl MatchNestedRoutes + Clone {
     view! {
-        <ParentRoute path=URL_FRAGMENT view=PageWrapper>
+        <ParentRoute path=URL_FRAGMENT view=LeptosRoutingPageWrapper>
             <pixel_art::Routes />
         </ParentRoute>
     }
