@@ -14,9 +14,21 @@
             "height": 619.0,
             "width": 826.0
         },
+        "Blood_In_The_Darkness_1": {
+            "height": 1.0,
+            "width": 1.0
+        },
+        "Burplespue_Halescourge_1": {
+            "height": 1.0,
+            "width": 1.0
+        },
         "Car_Shop_1": {
             "height": 619.0,
             "width": 826.0
+        },
+        "Castle_Drachenfels_1": {
+            "height": 1.0,
+            "width": 1.0
         },
         "Cathedral_Ward1": {
             "height": 619.0,
@@ -77,6 +89,10 @@
         "Hyrule_Field": {
             "height": 826.0,
             "width": 619.0
+        },
+        "Into_The_Nest_1": {
+            "height": 1.0,
+            "width": 1.0
         },
         "Iosefkas_Clinic1": {
             "height": 619.0,
@@ -158,6 +174,10 @@
             "height": 619.0,
             "width": 826.0
         },
+        "Righteous_Stand_1": {
+            "height": 1.0,
+            "width": 1.0
+        },
         "Sekiro_Map1": {
             "height": 619.0,
             "width": 826.0
@@ -169,6 +189,10 @@
         "Snowpeak": {
             "height": 826.0,
             "width": 619.0
+        },
+        "Taals_Horn_Keep_1": {
+            "height": 1.0,
+            "width": 1.0
         },
         "The_Depths1": {
             "height": 619.0,
@@ -198,19 +222,7 @@
             "height": 1.0,
             "width": 1.0
         },
-        "Blood_In_The_Darkness_1": {
-            "height": 1.0,
-            "width": 1.0
-        },
         "bradley": {
-            "height": 1.0,
-            "width": 1.0
-        },
-        "Burplespue_Halescourge_1": {
-            "height": 1.0,
-            "width": 1.0
-        },
-        "Castle_Drachenfels_1": {
             "height": 1.0,
             "width": 1.0
         },
@@ -245,10 +257,6 @@
         "furniture": {
             "height": 135.0,
             "width": 82.0
-        },
-        "Into_The_Nest_1": {
-            "height": 1.0,
-            "width": 1.0
         },
         "is_worcester_underwater": {
             "height": 181.0,
@@ -298,10 +306,6 @@
             "height": 149.0,
             "width": 273.0
         },
-        "Righteous_Stand_1": {
-            "height": 1.0,
-            "width": 1.0
-        },
         "roll_of_the_die": {
             "height": 139.0,
             "width": 257.0
@@ -315,10 +319,6 @@
             "width": 1.0
         },
         "small_city_building_5": {
-            "height": 1.0,
-            "width": 1.0
-        },
-        "Taals_Horn_Keep_1": {
             "height": 1.0,
             "width": 1.0
         },
@@ -1037,6 +1037,10 @@
             },
             "paintings": [
                 {
+                    "bottom_right": {
+                        "x": 3.881163166397415,
+                        "y": 1.54
+                    },
                     "id": "Yharnam1",
                     "top_left": {
                         "x": 2.44,
@@ -1066,6 +1070,10 @@
                     }
                 },
                 {
+                    "bottom_right": {
+                        "x": 4.877334410339257,
+                        "y": 1.31
+                    },
                     "id": "Old_Yharnam1",
                     "top_left": {
                         "x": 4.05,
@@ -1073,6 +1081,10 @@
                     }
                 },
                 {
+                    "bottom_right": {
+                        "x": 2.257334410339257,
+                        "y": 1.31
+                    },
                     "id": "Iosefkas_Clinic1",
                     "top_left": {
                         "x": 1.43,
