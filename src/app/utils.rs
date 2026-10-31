@@ -6,3 +6,5 @@ pub mod logger_with_duration;
 pub use logger_with_duration::LoggerWithDuration;
 pub mod yield_to_browser;
 pub use yield_to_browser::yield_to_browser;
+pub mod request_pointer_lock;
+pub use request_pointer_lock::request_pointer_lock;

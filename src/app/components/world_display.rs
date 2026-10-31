@@ -7,11 +7,10 @@ use wasmfenbein3d::{
     render::screen_buffer_column_first::ScreenBufferColumnFirst,
     state::{textures::TextureLibrary, world, State},
 };
-use web_sys::{HtmlCanvasElement, MouseEvent, wasm_bindgen::{Clamped, JsCast}};
+use web_sys::{MouseEvent, wasm_bindgen::{Clamped, JsCast}};
 
 use crate::app::{
-    components::world_display::textures::{ENVIRONMENT_LOADING_SCREEN, ENVIRONMENT_SPLASH_SCREEN},
-    utils::{LoggerWithDuration},
+    components::world_display::textures::{ENVIRONMENT_LOADING_SCREEN, ENVIRONMENT_SPLASH_SCREEN}, utils::{LoggerWithDuration, request_pointer_lock},
 };
 
 pub mod controls;
@@ -108,12 +107,7 @@ pub fn world_display() -> impl IntoView {
             class="world_display"
             on:click=move |click_event: MouseEvent| {
                 if canvas_state.get() == CanvasState::SplashScreen {
-                    click_event
-                        .target()
-                        .unwrap()
-                        .dyn_ref::<HtmlCanvasElement>()
-                        .unwrap()
-                        .request_pointer_lock();
+                    request_pointer_lock(click_event.into());
                     set_canvas_state.set(CanvasState::Loading)
                 }
             }
