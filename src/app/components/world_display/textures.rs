@@ -1,9 +1,12 @@
-use wasmfenbein3d::state::textures::RawTexture;
+use leptos::prelude::*;
+use wasmfenbein3d::state::textures::{RawTexture, TextureLibrary};
 
 pub mod environment;
 pub use environment::*;
 pub mod paintings;
 pub use paintings::*;
+
+use crate::app::utils::{yield_to_browser, LoggerWithDuration};
 
 pub const TILING_TEXTURES: [&RawTexture; 10] = [
     &ENVIRONMENT_BIG_FLOOR,
@@ -111,3 +114,23 @@ pub const TEXTURES: [&RawTexture; 91] = [
     &PAINTINGS_MAP_SNOWPEAK,
     &PAINTINGS_MAP_ZORAS_DOMAIN,
 ];
+
+pub async fn load_async_tracking_progress(set_progress: WriteSignal<i32>) -> TextureLibrary {
+    let mut logger = LoggerWithDuration::new();
+    logger.log_time("Start loading textures");
+
+    let mut textures = TextureLibrary::new();
+    for raw_texture in &TILING_TEXTURES {
+        textures.insert_tiling_texture(&raw_texture);
+        *set_progress.write() += 1;
+        yield_to_browser().await;
+    }
+    for raw_texture in &TEXTURES {
+        textures.insert_texture(&raw_texture);
+        *set_progress.write() += 1;
+        yield_to_browser().await;
+    }
+
+    logger.log_time("Textures finished loading!");
+    textures
+}
