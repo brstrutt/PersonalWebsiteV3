@@ -7,7 +7,7 @@ use wasmfenbein3d::{
     render::screen_buffer_column_first::ScreenBufferColumnFirst,
     state::{textures::TextureLibrary, world, State},
 };
-use web_sys::wasm_bindgen::{Clamped, JsCast};
+use web_sys::{HtmlCanvasElement, MouseEvent, wasm_bindgen::{Clamped, JsCast}};
 
 use crate::app::{
     components::world_display::textures::{ENVIRONMENT_LOADING_SCREEN, ENVIRONMENT_SPLASH_SCREEN},
@@ -71,6 +71,11 @@ pub fn world_display() -> impl IntoView {
                             include_str!("world_display/world/data.json"),
                         ),
                     )));
+                    state.borrow_mut().input.pointer_locked = window()
+                        .document()
+                        .expect("no global `document` exists")
+                        .pointer_lock_element()
+                        .is_some();
                     logger.log_time("Game state initialised...");
 
                     // Setup the render loop
@@ -101,8 +106,14 @@ pub fn world_display() -> impl IntoView {
         <canvas
             node_ref=node_ref
             class="world_display"
-            on:click=move |_| {
+            on:click=move |click_event: MouseEvent| {
                 if canvas_state.get() == CanvasState::SplashScreen {
+                    click_event
+                        .target()
+                        .unwrap()
+                        .dyn_ref::<HtmlCanvasElement>()
+                        .unwrap()
+                        .request_pointer_lock();
                     set_canvas_state.set(CanvasState::Loading)
                 }
             }
