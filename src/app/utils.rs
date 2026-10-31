@@ -8,3 +8,5 @@ pub mod yield_to_browser;
 pub use yield_to_browser::yield_to_browser;
 pub mod request_pointer_lock;
 pub use request_pointer_lock::request_pointer_lock;
+pub mod render_texture_on_canvas;
+pub use render_texture_on_canvas::render_texture_on_canvas;

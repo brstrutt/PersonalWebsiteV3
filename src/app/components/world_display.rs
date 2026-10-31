@@ -1,16 +1,15 @@
-use std::{cell::RefCell, io::Cursor, rc::Rc};
+use std::{cell::RefCell, rc::Rc};
 
-use image::{imageops::FilterType, ImageReader};
 use leptos::{html::Canvas, prelude::*};
 use leptos_router::hooks::use_navigate;
 use wasmfenbein3d::{
     render::screen_buffer_column_first::ScreenBufferColumnFirst,
     state::{textures::TextureLibrary, world, State},
 };
-use web_sys::{MouseEvent, wasm_bindgen::{Clamped, JsCast}};
+use web_sys::MouseEvent;
 
 use crate::app::{
-    components::world_display::textures::{ENVIRONMENT_LOADING_SCREEN, ENVIRONMENT_SPLASH_SCREEN}, utils::{LoggerWithDuration, request_pointer_lock},
+    components::world_display::textures::{ENVIRONMENT_LOADING_SCREEN, ENVIRONMENT_SPLASH_SCREEN}, utils::{LoggerWithDuration, render_texture_on_canvas, request_pointer_lock},
 };
 
 pub mod controls;
@@ -31,8 +30,8 @@ pub fn world_display() -> impl IntoView {
     Effect::new(move |_| {
         if let Some(element) = node_ref.get() {
             match canvas_state.get() {
-                CanvasState::SplashScreen => render_splash_screen(element),
-                CanvasState::Loading => render_loading_screen(element),
+                CanvasState::SplashScreen => render_texture_on_canvas(element, ENVIRONMENT_SPLASH_SCREEN.bytes),
+                CanvasState::Loading => render_texture_on_canvas(element, ENVIRONMENT_LOADING_SCREEN.bytes),
                 _ => {}
             }
         }
@@ -120,46 +119,4 @@ pub fn world_display() -> impl IntoView {
             }
         }}
     }
-}
-
-fn render_loading_screen(canvas: web_sys::HtmlCanvasElement) {
-    render_texture_on_canvas(canvas, ENVIRONMENT_LOADING_SCREEN.bytes);
-}
-
-fn render_splash_screen(canvas: web_sys::HtmlCanvasElement) {
-    render_texture_on_canvas(canvas, ENVIRONMENT_SPLASH_SCREEN.bytes);
-}
-
-fn render_texture_on_canvas(canvas: web_sys::HtmlCanvasElement, texture_bytes: &[u8]) {
-    let splash_screen_texture = ImageReader::new(Cursor::new(texture_bytes))
-        .with_guessed_format()
-        .expect("Failed to guess image format of splash screen raw data.")
-        .decode()
-        .expect("Failed to decode splash screen.")
-        // Resize the image to fill the canvas. The image will be rendered at it's native size, so we adjust the size here.
-        .resize_exact(canvas.height(), canvas.width(), FilterType::Nearest)
-        // Rotate and flip the image to account for the canvas being rotated due to the use of the column first screen buffer
-        .rotate90()
-        .fliph()
-        .to_rgba8();
-
-    let splash_screen_image_data = web_sys::ImageData::new_with_u8_clamped_array_and_sh(
-        Clamped(splash_screen_texture.as_raw()),
-        splash_screen_texture.width() as u32,
-        splash_screen_texture.height() as u32,
-    )
-    .expect("couldnt convert splash_screen_texture to ImageData");
-
-    let canvas_2d_context = canvas
-        .get_context("2d")
-        .expect("Rendering splash screen: failed to get canvas 2d context")
-        .unwrap()
-        .dyn_into::<web_sys::CanvasRenderingContext2d>()
-        .expect("Rendering splash screen: failed to convert 2d context to correct type");
-
-    // Turn off image smoothing to try and keep the pixels looking crisp
-    canvas_2d_context.set_image_smoothing_enabled(false);
-    canvas_2d_context
-        .put_image_data(&splash_screen_image_data, 0.0, 0.0)
-        .expect("Rendering splash screen: failed to render splash screen");
 }
