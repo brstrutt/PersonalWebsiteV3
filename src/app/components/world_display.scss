@@ -70,3 +70,8 @@
         visibility: hidden;
     }
 }
+
+progress.overlay {
+    height: calc((100dvh/80) * 9); // screen height divided by pixel count on loading page, multiplied by character height on loading page
+    top: calc((100dvh/80) * 14 * 2); // same as above except multiplied by line height not character height, and multiplied by 3
+}
