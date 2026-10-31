@@ -1,5 +1,5 @@
-@import './footer.scss';
-@import './overlay.scss';
-@import './world_display.scss';
-@import './page_wrapper.scss';
-@import './markdown_content.scss';
+@forward './footer.scss';
+@forward './overlay.scss';
+@forward './world_display.scss';
+@forward './page_wrapper.scss';
+@forward './markdown_content.scss';
