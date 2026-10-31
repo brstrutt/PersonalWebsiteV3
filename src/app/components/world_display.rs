@@ -11,7 +11,7 @@ use web_sys::{HtmlCanvasElement, MouseEvent, wasm_bindgen::{Clamped, JsCast}};
 
 use crate::app::{
     components::world_display::textures::{ENVIRONMENT_LOADING_SCREEN, ENVIRONMENT_SPLASH_SCREEN},
-    utils::{yield_to_browser, LoggerWithDuration},
+    utils::{LoggerWithDuration},
 };
 
 pub mod controls;
@@ -41,7 +41,7 @@ pub fn world_display() -> impl IntoView {
 
     let texture_count = textures::TILING_TEXTURES.len() + textures::TEXTURES.len();
     let (loaded_textures, set_loaded_textures) = signal(0);
-    let textures = LocalResource::<TextureLibrary>::new(move || load_textures(set_loaded_textures));
+    let textures = LocalResource::<TextureLibrary>::new(move || textures::load_async_tracking_progress(set_loaded_textures));
 
     let navigate = use_navigate();
     Effect::new(move |_| {
@@ -168,24 +168,4 @@ fn render_texture_on_canvas(canvas: web_sys::HtmlCanvasElement, texture_bytes: &
     canvas_2d_context
         .put_image_data(&splash_screen_image_data, 0.0, 0.0)
         .expect("Rendering splash screen: failed to render splash screen");
-}
-
-async fn load_textures(set_progress: WriteSignal<i32>) -> TextureLibrary {
-        let mut logger = LoggerWithDuration::new();
-        logger.log_time("Start loading textures");
-
-        let mut textures = TextureLibrary::new();
-        for raw_texture in &textures::TILING_TEXTURES {
-            textures.insert_tiling_texture(&raw_texture);
-            *set_progress.write() += 1;
-            yield_to_browser().await;
-        }
-        for raw_texture in &textures::TEXTURES {
-            textures.insert_texture(&raw_texture);
-            *set_progress.write() += 1;
-            yield_to_browser().await;
-        }
-
-        logger.log_time("Textures finished loading!");
-        textures
 }
