@@ -74,4 +74,22 @@
 progress.overlay {
     height: calc((100dvh/80) * 9); // screen height divided by pixel count on loading page, multiplied by character height on loading page
     top: calc((100dvh/80) * 14 * 2); // same as above except multiplied by line height not character height, and multiplied by 3
+
+    border: calc((100dvh/80) * 2) solid #1b1f21; // Two pixel wide border
+
+    // Chrome customise the bar colour
+    &::-webkit-progress-bar {
+        background-color: #63ab3f;
+    }
+
+    &::-webkit-progress-value {
+        background-color: #c8d45d;
+    }
+
+    // Firefox customise the bar colour
+    background: #63ab3f;
+
+    &::-moz-progress-bar {
+        background-color: #c8d45d;
+    }
 }
