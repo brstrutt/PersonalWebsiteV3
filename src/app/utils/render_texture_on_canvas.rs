@@ -9,10 +9,7 @@ pub fn render_texture_on_canvas(canvas: web_sys::HtmlCanvasElement, texture_byte
         .decode()
         .expect("Failed to decode splash screen.")
         // Resize the image to fill the canvas. The image will be rendered at it's native size, so we adjust the size here.
-        .resize_exact(canvas.height(), canvas.width(), FilterType::Nearest)
-        // Rotate and flip the image to account for the canvas being rotated due to the use of the column first screen buffer
-        .rotate90()
-        .fliph()
+        .resize_exact(canvas.width(), canvas.height(), FilterType::Nearest)
         .to_rgba8();
 
     let splash_screen_image_data = web_sys::ImageData::new_with_u8_clamped_array_and_sh(
