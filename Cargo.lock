@@ -592,7 +592,7 @@ dependencies = [
 [[package]]
 name = "fenbein3d"
 version = "0.0.0"
-source = "git+https://github.com/brstrutt/wasmfenbein3d.git#6a664dec4d1817a20497538366b8e809871e8224"
+source = "git+https://github.com/brstrutt/wasmfenbein3d.git#cd7f41e0b9bc49313f97402917856dce0c797a09"
 dependencies = [
  "image",
  "serde",
@@ -2575,7 +2575,7 @@ dependencies = [
 [[package]]
 name = "wasmfenbein3d"
 version = "0.2.0"
-source = "git+https://github.com/brstrutt/wasmfenbein3d.git#6a664dec4d1817a20497538366b8e809871e8224"
+source = "git+https://github.com/brstrutt/wasmfenbein3d.git#cd7f41e0b9bc49313f97402917856dce0c797a09"
 dependencies = [
  "fenbein3d",
  "web-sys",
