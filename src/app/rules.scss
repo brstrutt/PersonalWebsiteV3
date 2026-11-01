@@ -1,6 +1,16 @@
 @forward './styles/rules.scss';
 @forward './components/rules.scss';
 
+.game_ui {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100dvw;
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+}
+
 .fullsize_pixel_art {
     position: fixed;
     width: 100dvw;

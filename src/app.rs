@@ -13,7 +13,9 @@ const URL_SUFFIX: &str = "/PersonalWebsiteV3";
 pub fn App() -> impl IntoView {
     view! {
         <Router base=URL_SUFFIX>
-            <WorldDisplay />
+            <div class="game_ui">
+                <WorldDisplay />
+            </div>
             <Overlay>
                 <Routes fallback=|| "404 Not found!" transition=true>
                     <pages::Routes />
