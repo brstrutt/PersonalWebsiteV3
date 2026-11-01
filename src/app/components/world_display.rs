@@ -112,7 +112,11 @@ pub fn world_display() -> impl IntoView {
         />
         {move || {
             if canvas_state.get() == CanvasState::Loading {
-                Some(view! { <progress class="overlay" max=texture_count value=loaded_textures /> })
+                Some(
+                    view! {
+                        <progress class="loading_world" max=texture_count value=loaded_textures />
+                    },
+                )
             } else {
                 None
             }
