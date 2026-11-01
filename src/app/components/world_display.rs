@@ -29,6 +29,12 @@ pub fn world_display() -> impl IntoView {
 
     Effect::new(move |_| {
         if let Some(element) = node_ref.get() {
+            // Setup the canvas image size to be half resolution when compared to canvas element size
+            let width: u32 = element.offset_width() as u32;
+            let height: u32 = element.offset_height() as u32;
+            element.set_width(width / 2);
+            element.set_height(height / 2);
+
             match canvas_state.get() {
                 CanvasState::SplashScreen => render_texture_on_canvas(element, ENVIRONMENT_SPLASH_SCREEN.bytes),
                 CanvasState::Loading => render_texture_on_canvas(element, ENVIRONMENT_LOADING_SCREEN.bytes),
@@ -48,12 +54,6 @@ pub fn world_display() -> impl IntoView {
                 if let Some(textures) = loaded_textures && canvas_state.get() == CanvasState::Loading{
                     let mut logger = LoggerWithDuration::new();
                     logger.log_time("Initialising wasmfenbein3d!");
-                    // Setup the canvas image size to be half resolution when compared to canvas element size
-                    let width: u32 = element.offset_width() as u32;
-                    let height: u32 = element.offset_height() as u32;
-                    element.set_width(width / 2);
-                    element.set_height(height / 2);
-                    logger.log_time("Canvas element resized...");
 
                     // Setup the screen buffer we render to
                     let screen_width = element.height() as usize;
