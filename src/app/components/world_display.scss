@@ -1,15 +1,13 @@
 .world_display {
-    position: fixed;
-    width: 100dvw;
-    height: 100dvh;
-    top: 0;
-    left: 0;
+    width: min(100dvw, calc(100dvh * 120 / 80));
+    height: min(100dvh, calc(100dvw * 80 / 120));
     z-index: 1;
 
     image-rendering: pixelated;
 
     view-transition-name: world_display;
 }
+
 
 ::view-transition-group(world_display),
 ::view-transition-old(world_display),
