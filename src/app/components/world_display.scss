@@ -4,15 +4,6 @@
     z-index: 1;
 
     image-rendering: pixelated;
-
-    view-transition-name: world_display;
-}
-
-
-::view-transition-group(world_display),
-::view-transition-old(world_display),
-::view-transition-new(world_display) {
-    animation: none;
 }
 
 .screen_controls {
