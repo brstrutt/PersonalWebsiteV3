@@ -1,6 +1,10 @@
 @forward './styles/rules.scss';
 @forward './components/rules.scss';
 
+body {
+    background-color: black;
+}
+
 .game_ui {
     position: fixed;
     top: 0;
