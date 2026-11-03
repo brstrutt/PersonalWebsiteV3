@@ -1,0 +1,44 @@
+.d-pad {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 300px;
+    height: 300px;
+
+    $button_thickness: 80px;
+    $button_length: 100px;
+    $button-colour: #808080;
+
+    .up,
+    .down {
+        width: $button_thickness;
+        height: $button_length;
+        background-color: $button-colour;
+    }
+
+    .left,
+    .right {
+        height: $button_thickness;
+        width: $button_length;
+        background-color: $button-colour;
+    }
+
+    .active {
+        background-color: #606060;
+    }
+
+    .center {
+        height: $button_thickness;
+        width: $button_thickness;
+        background-color: $button-colour;
+    }
+
+
+    .row {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+    }
+}

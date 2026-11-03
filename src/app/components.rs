@@ -10,3 +10,5 @@ pub mod touchscreen_button;
 pub use touchscreen_button::TouchscreenButton;
 pub mod page_wrapper;
 pub use page_wrapper::PageWrapper;
+pub mod d_pad;
+pub use d_pad::DPad;
