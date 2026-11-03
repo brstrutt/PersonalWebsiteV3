@@ -3,42 +3,42 @@
     flex-direction: column;
     justify-content: center;
 
-    width: 300px;
-    height: 300px;
+    width: 50%;
+    aspect-ratio: 1/1;
+    min-height: 0;
 
-    $button_thickness: 80px;
-    $button_length: 100px;
     $button-colour: #808080;
-
-    .up,
-    .down {
-        width: $button_thickness;
-        height: $button_length;
-        background-color: $button-colour;
-    }
-
-    .left,
-    .right {
-        height: $button_thickness;
-        width: $button_length;
-        background-color: $button-colour;
-    }
-
-    .active {
-        background-color: #606060;
-    }
-
-    .center {
-        height: $button_thickness;
-        width: $button_thickness;
-        background-color: $button-colour;
-    }
-
 
     .row {
         display: flex;
         flex-direction: row;
         width: 100%;
+        height: calc(100% / 3);
         justify-content: center;
+
+
+        .up,
+        .down {
+            width: calc(100% / 3);
+            height: 100%;
+            background-color: $button-colour;
+        }
+
+        .left,
+        .right {
+            height: 100%;
+            width: calc(100% / 3);
+            background-color: $button-colour;
+        }
+
+        .active {
+            background-color: #606060;
+        }
+
+        .center {
+            height: 100%;
+            width: calc(100% / 3);
+            background-color: $button-colour;
+        }
     }
 }
