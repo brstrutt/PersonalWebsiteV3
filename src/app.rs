@@ -14,8 +14,12 @@ pub fn App() -> impl IntoView {
     view! {
         <Router base=URL_SUFFIX>
             <div class="game_ui">
-                <WorldDisplay />
-                <LeftJoycon />
+                <div class="game_screen">
+                    <WorldDisplay />
+                </div>
+                <div class="joycons">
+                    <LeftJoycon />
+                </div>
             </div>
             <Overlay>
                 <Routes fallback=|| "404 Not found!" transition=true>
