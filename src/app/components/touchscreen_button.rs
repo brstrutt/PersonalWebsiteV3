@@ -32,31 +32,35 @@ pub fn touchscreen_button(
 fn setup_touchscreen_button_behaviour(button: HtmlButtonElement) {
     let cloned_button = button.clone();
     let target = EventTarget::from(button.clone());
+    let original_class_name = button.class_name();
     add_event_listener_with_callback(target.clone(), "mousedown", move |e: Event| {
         e.prevent_default();
-        set_active(true, cloned_button.clone());
+        set_active(true, cloned_button.clone(), original_class_name.as_str());
     });
     let cloned_button = button.clone();
+    let original_class_name = button.class_name();
     add_event_listener_with_callback(target.clone(), "touchstart", move |e: Event| {
         e.prevent_default();
-        set_active(true, cloned_button.clone());
+        set_active(true, cloned_button.clone(), original_class_name.as_str());
     });
 
     let cloned_button = button.clone();
+    let original_class_name = button.class_name();
     add_event_listener_with_callback(target.clone(), "mouseup", move |e: Event| {
         e.prevent_default();
-        set_active(false, cloned_button.clone());
+        set_active(false, cloned_button.clone(), original_class_name.as_str());
     });
+    let original_class_name = button.class_name();
     add_event_listener_with_callback(target.clone(), "touchend", move |e: Event| {
         e.prevent_default();
-        set_active(false, button.clone());
+        set_active(false, button.clone(), original_class_name.as_str());
     });
 }
 
-fn set_active(active: bool, button: HtmlButtonElement) {
+fn set_active(active: bool, button: HtmlButtonElement, original_class_name: &str) {
     if active {
-        button.set_class_name("active")
+        button.set_class_name(format!("{} active", original_class_name).as_str())
     } else {
-        button.set_class_name("")
+        button.set_class_name(original_class_name)
     }
 }
