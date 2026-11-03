@@ -12,3 +12,5 @@ pub mod page_wrapper;
 pub use page_wrapper::PageWrapper;
 pub mod d_pad;
 pub use d_pad::DPad;
+pub mod left_joycon;
+pub use left_joycon::LeftJoycon;

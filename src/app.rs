@@ -1,4 +1,4 @@
-use crate::app::components::{Footer, Overlay, WorldDisplay};
+use crate::app::components::{Footer, LeftJoycon, Overlay, WorldDisplay};
 use core::str;
 use leptos::prelude::*;
 use leptos_router::components::{Router, Routes};
@@ -15,6 +15,7 @@ pub fn App() -> impl IntoView {
         <Router base=URL_SUFFIX>
             <div class="game_ui">
                 <WorldDisplay />
+                <LeftJoycon />
             </div>
             <Overlay>
                 <Routes fallback=|| "404 Not found!" transition=true>
