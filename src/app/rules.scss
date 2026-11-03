@@ -13,6 +13,15 @@ body {
     height: 100dvh;
     display: flex;
     flex-direction: column;
+
+    .game_screen {
+        display: flex;
+        justify-content: center;
+    }
+
+    .joycons {
+        flex: auto;
+    }
 }
 
 .fullsize_pixel_art {
