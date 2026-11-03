@@ -19,6 +19,8 @@ pub fn App() -> impl IntoView {
                 </div>
                 <div class="joycons">
                     <LeftJoycon />
+                    <div class="spacer" />
+                    <div class="right-joycon" />
                 </div>
             </div>
             <Overlay>
