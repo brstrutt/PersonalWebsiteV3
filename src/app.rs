@@ -1,4 +1,4 @@
-use crate::app::components::{Footer, LeftJoycon, Overlay, RightJoycon, WorldDisplay};
+use crate::app::components::{Footer, GameUi, Overlay};
 use core::str;
 use leptos::prelude::*;
 use leptos_router::components::{Router, Routes};
@@ -13,16 +13,7 @@ const URL_SUFFIX: &str = "/PersonalWebsiteV3";
 pub fn App() -> impl IntoView {
     view! {
         <Router base=URL_SUFFIX>
-            <div class="game_ui">
-                <div class="game_screen">
-                    <WorldDisplay />
-                </div>
-                <div class="joycons">
-                    <LeftJoycon />
-                    <div class="spacer" />
-                    <RightJoycon />
-                </div>
-            </div>
+            <GameUi />
             <Overlay>
                 <Routes fallback=|| "404 Not found!" transition=true>
                     <pages::Routes />
