@@ -1,4 +1,4 @@
-use crate::app::components::{Footer, LeftJoycon, Overlay, WorldDisplay};
+use crate::app::components::{Footer, LeftJoycon, Overlay, RightJoycon, WorldDisplay};
 use core::str;
 use leptos::prelude::*;
 use leptos_router::components::{Router, Routes};
@@ -20,7 +20,7 @@ pub fn App() -> impl IntoView {
                 <div class="joycons">
                     <LeftJoycon />
                     <div class="spacer" />
-                    <div class="right-joycon" />
+                    <RightJoycon />
                 </div>
             </div>
             <Overlay>
