@@ -14,3 +14,5 @@ pub mod d_pad;
 pub use d_pad::DPad;
 pub mod left_joycon;
 pub use left_joycon::LeftJoycon;
+pub mod right_joycon;
+pub use right_joycon::RightJoycon;
