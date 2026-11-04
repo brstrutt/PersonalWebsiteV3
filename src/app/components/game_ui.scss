@@ -1,0 +1,50 @@
+.game_ui {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100dvw;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+
+    .game_screen {
+        display: flex;
+        justify-content: center;
+    }
+
+    .joycons {
+        position: fixed;
+        display: flex;
+        flex-direction: row;
+        flex: auto 1 auto;
+        width: 100%;
+
+        @media (max-aspect-ratio: 120/80) {
+            top: calc(100dvw * 80 / 120);
+            height: calc(100dvh - (100dvw * 80 / 120));
+        }
+
+        @media (min-aspect-ratio: 120/80) {
+            top: 0px;
+            height: 100dvh;
+        }
+
+
+        .spacer {
+            flex-basis: auto;
+
+            @media (max-aspect-ratio: 120/80) {
+                width: 0px;
+            }
+
+            @media (min-aspect-ratio: 120/80) {
+                width: min(100dvw, calc(100dvh * 120 / 80));
+            }
+        }
+
+        .left-joycon,
+        .right-joycon {
+            flex-grow: 1
+        }
+    }
+}

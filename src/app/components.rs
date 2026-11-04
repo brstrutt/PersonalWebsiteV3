@@ -16,3 +16,5 @@ pub mod left_joycon;
 pub use left_joycon::LeftJoycon;
 pub mod right_joycon;
 pub use right_joycon::RightJoycon;
+pub mod game_ui;
+pub use game_ui::GameUi;
