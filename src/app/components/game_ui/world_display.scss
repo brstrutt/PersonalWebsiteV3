@@ -11,10 +11,10 @@ progress.loading_world {
     z-index: 3;
     pointer-events: none;
     width: min(100dvw, calc(100dvh * 120 / 80));
-    height: calc((100dvh/80) * 9); // screen height divided by pixel count on loading page, multiplied by character height on loading page
-    top: calc((100dvh/80) * 14 * 2); // same as above except multiplied by line height not character height, and multiplied by 3
+    height: calc((min(100dvh, calc(100dvw * 80 / 120))/80) * 9); // screen height divided by pixel count on loading page, multiplied by character height on loading page
+    top: calc((min(100dvh, calc(100dvw * 80 / 120))/80) * 14 * 2); // same as above except multiplied by line height not character height, and multiplied by 3
 
-    border: calc((100dvh/80) * 2) solid #1b1f21; // Two pixel wide border
+    border: calc((min(100dvh, calc(100dvw * 80 / 120))/80) * 2) solid #1b1f21; // Two pixel wide border
 
     // Chrome customise the bar colour
     &::-webkit-progress-bar {
