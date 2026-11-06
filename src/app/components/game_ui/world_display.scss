@@ -1,10 +1,8 @@
-$game_screen_width: min(100dvw, calc(100dvh * 120 / 80));
-$game_screen_height: min(100dvh, calc(100dvw * 80 / 120));
-$game_screen_pixel_size: calc($game_screen_height/80);
+@use './world_display_variables.scss' as vars;
 
 .world_display {
-    width: $game_screen_width;
-    height: $game_screen_height;
+    width: vars.$game_screen_width;
+    height: vars.$game_screen_height;
     z-index: 1;
 
     image-rendering: pixelated;
@@ -14,11 +12,11 @@ progress.loading_world {
     position: absolute;
     z-index: 3;
     pointer-events: none;
-    width: $game_screen_width;
-    height: calc($game_screen_pixel_size * 9); // Loading page text is 9 pixels high. Match this size
-    top: calc($game_screen_pixel_size * 14 * 2); // Loading page line height is 14 pixels high. Plce this on the third line by setting it's top to the bottom of the second line
+    width: vars.$game_screen_width;
+    height: calc(vars.$game_screen_pixel_size * 9); // Loading page text is 9 pixels high. Match this size
+    top: calc(vars.$game_screen_pixel_size * 14 * 2); // Loading page line height is 14 pixels high. Plce this on the third line by setting it's top to the bottom of the second line
 
-    border: calc($game_screen_pixel_size * 2) solid #1b1f21;
+    border: calc(vars.$game_screen_pixel_size * 2) solid #1b1f21;
 
     // Chrome customise the bar colour
     &::-webkit-progress-bar {

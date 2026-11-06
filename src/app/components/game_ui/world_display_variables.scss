@@ -1,0 +1,3 @@
+$game_screen_width: min(100dvw, calc(100dvh * 120 / 80));
+$game_screen_height: min(100dvh, calc(100dvw * 80 / 120));
+$game_screen_pixel_size: calc($game_screen_height/80);
