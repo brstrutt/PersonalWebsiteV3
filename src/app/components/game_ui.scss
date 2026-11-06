@@ -1,4 +1,5 @@
 @forward './game_ui/rules.scss';
+@use './game_ui/world_display_variables.scss' as vars;
 
 .game_ui {
     position: fixed;
@@ -22,8 +23,8 @@
         width: 100%;
 
         @media (max-aspect-ratio: 120/80) {
-            top: calc(100dvw * 80 / 120);
-            height: calc(100dvh - (100dvw * 80 / 120));
+            top: vars.$game_screen_height;
+            height: calc(100dvh - vars.$game_screen_height);
         }
 
         @media (min-aspect-ratio: 120/80) {
@@ -40,7 +41,7 @@
             }
 
             @media (min-aspect-ratio: 120/80) {
-                width: min(100dvw, calc(100dvh * 120 / 80));
+                width: vars.$game_screen_width;
             }
         }
 
