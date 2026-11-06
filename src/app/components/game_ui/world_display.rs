@@ -7,12 +7,11 @@ use wasmfenbein3d::{
 };
 use web_sys::MouseEvent;
 
-use crate::app::{
-    components::world_display::textures::{ENVIRONMENT_LOADING_SCREEN, ENVIRONMENT_SPLASH_SCREEN}, utils::{LoggerWithDuration, render_texture_on_canvas, request_pointer_lock},
-};
+use crate::app::utils::{LoggerWithDuration, render_texture_on_canvas, request_pointer_lock};
 
 pub mod controls;
 mod textures;
+use textures::{ENVIRONMENT_LOADING_SCREEN, ENVIRONMENT_SPLASH_SCREEN};
 
 #[derive(Copy, Clone, PartialEq)]
 enum CanvasState {

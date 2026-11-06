@@ -1,4 +1,4 @@
-use crate::app::components::TouchscreenButton;
+use super::TouchscreenButton;
 use leptos::prelude::*;
 use wasmfenbein3d::wasmcontrols::data_action;
 

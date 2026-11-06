@@ -1,5 +1,15 @@
-use crate::app::components::{LeftJoycon, RightJoycon, WorldDisplay};
 use leptos::prelude::*;
+
+pub mod world_display;
+pub use world_display::WorldDisplay;
+pub mod touchscreen_button;
+use touchscreen_button::TouchscreenButton;
+pub mod d_pad;
+use d_pad::DPad;
+pub mod left_joycon;
+pub use left_joycon::LeftJoycon;
+pub mod right_joycon;
+pub use right_joycon::RightJoycon;
 
 #[component]
 pub fn game_ui() -> impl IntoView {

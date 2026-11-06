@@ -1,4 +1,4 @@
-use crate::app::components::DPad;
+use super::DPad;
 use leptos::prelude::*;
 
 #[component]
