@@ -115,7 +115,7 @@ pub const TEXTURES: [&RawTexture; 91] = [
     &PAINTINGS_MAP_ZORAS_DOMAIN,
 ];
 
-pub async fn load_async_tracking_progress(set_progress: WriteSignal<i32>) -> TextureLibrary {
+pub async fn load_async_tracking_progress(set_progress: WriteSignal<usize>) -> TextureLibrary {
     let mut logger = LoggerWithDuration::new();
     logger.log_time("Start loading textures");
 
