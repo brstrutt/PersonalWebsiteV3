@@ -10,6 +10,8 @@ pub mod left_joycon;
 pub use left_joycon::LeftJoycon;
 pub mod right_joycon;
 pub use right_joycon::RightJoycon;
+pub mod a_button;
+use a_button::AButton;
 
 #[component]
 pub fn game_ui() -> impl IntoView {

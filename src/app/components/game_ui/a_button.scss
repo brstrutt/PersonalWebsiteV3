@@ -1,0 +1,18 @@
+.a-button {
+    width: 20%;
+    aspect-ratio: 1/1;
+    min-height: 0;
+    background-color: #808080;
+    color: #202020;
+
+    border-radius: 50%;
+
+    font-size: 400%;
+    font-weight: bold;
+    font-family: monospace;
+
+    &:active {
+        background-color: #606060;
+        color: #000000;
+    }
+}
