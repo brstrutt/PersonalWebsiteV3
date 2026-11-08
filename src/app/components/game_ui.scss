@@ -1,5 +1,5 @@
 @forward './game_ui/rules.scss';
-@use './game_ui/world_display_variables.scss' as vars;
+@use './game_ui/variables.scss' as vars;
 
 .game_ui {
     position: fixed;
