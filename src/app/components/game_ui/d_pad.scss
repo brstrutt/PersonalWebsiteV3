@@ -1,3 +1,5 @@
+@use './variables.scss' as vars;
+
 .d-pad {
     display: flex;
     flex-direction: column;
@@ -6,8 +8,6 @@
     width: 50%;
     aspect-ratio: 1/1;
     min-height: 0;
-
-    $button-colour: #808080;
 
     .row {
         display: flex;
@@ -21,24 +21,24 @@
         .down {
             width: calc(100% / 3);
             height: 100%;
-            background-color: $button-colour;
+            background-color: vars.$button-colour;
         }
 
         .left,
         .right {
             height: 100%;
             width: calc(100% / 3);
-            background-color: $button-colour;
+            background-color: vars.$button-colour;
         }
 
         .active {
-            background-color: #606060;
+            background-color: vars.$button-active-colour;
         }
 
         .center {
             height: 100%;
             width: calc(100% / 3);
-            background-color: $button-colour;
+            background-color: vars.$button-colour;
         }
     }
 }

@@ -1,9 +1,11 @@
+@use './variables.scss' as vars;
+
 .a-button {
     width: 20%;
     aspect-ratio: 1/1;
     min-height: 0;
-    background-color: #808080;
-    color: #202020;
+    background-color: vars.$button-colour;
+    color: vars.$button-text-colour;
 
     border-radius: 50%;
 
@@ -12,7 +14,7 @@
     font-family: monospace;
 
     &:active {
-        background-color: #606060;
-        color: #000000;
+        background-color: vars.$button-active-colour;
+        color: vars.$button-active-text-colour;
     }
 }
