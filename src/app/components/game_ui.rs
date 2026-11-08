@@ -39,6 +39,7 @@ pub fn game_ui() -> impl IntoView {
     });
 
     let navigate = use_navigate();
+    let (game_state, set_game_state) = signal_local::<Option<Rc<RefCell<State>>>>(None);
     Effect::new(move |_| {
         if let Some(element) = world_display_ref.get() {
             textures.with(|loaded_textures| {
@@ -86,6 +87,7 @@ pub fn game_ui() -> impl IntoView {
                     logger.log_time("Wasmfenbein3d initialised!");
 
                     set_world_display_state.set(WorldDisplayState::Wasmfenbein3dLoaded);
+                    set_game_state.set(Some(state));
                 }
             });
         }
@@ -105,7 +107,7 @@ pub fn game_ui() -> impl IntoView {
             <div class="joycons">
                 <LeftJoycon />
                 <div class="spacer" />
-                <RightJoycon />
+                <RightJoycon game_state=game_state />
             </div>
         </div>
     }
