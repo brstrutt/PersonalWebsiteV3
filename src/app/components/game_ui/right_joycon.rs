@@ -1,6 +1,6 @@
 use std::{cell::RefCell, rc::Rc};
 
-use super::AButton;
+use super::{AButton, CameraSlider};
 use leptos::prelude::*;
 use wasmfenbein3d::state::State;
 
@@ -10,6 +10,7 @@ pub fn right_joycon(
 ) -> impl IntoView {
     view! {
         <div class="right-joycon">
+            <CameraSlider game_state=game_state />
             <AButton game_state=game_state />
         </div>
     }

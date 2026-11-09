@@ -17,6 +17,8 @@ mod right_joycon;
 use right_joycon::RightJoycon;
 mod a_button;
 use a_button::AButton;
+mod camera_slider;
+use camera_slider::CameraSlider;
 
 use crate::app::{components::game_ui::world_display::controls, utils::LoggerWithDuration};
 
