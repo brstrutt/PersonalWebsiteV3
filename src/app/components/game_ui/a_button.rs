@@ -24,7 +24,7 @@ pub fn a_button(game_state: ReadSignal<Option<Rc<RefCell<State>>>, LocalStorage>
                 }
             }
         >
-            A
+            <div class="label">A</div>
         </button>
     }
 }

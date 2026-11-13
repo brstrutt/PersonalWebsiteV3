@@ -9,12 +9,16 @@
 
     border-radius: 50%;
 
-    font-size: 400%;
-    font-weight: bold;
-    font-family: monospace;
-
     &:active {
         background-color: vars.$button-active-colour;
         color: vars.$button-active-text-colour;
+    }
+
+    container-type: size;
+
+    .label {
+        font-size: 50cqh;
+        font-weight: bold;
+        font-family: monospace;
     }
 }
