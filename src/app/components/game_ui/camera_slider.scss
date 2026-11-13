@@ -7,4 +7,9 @@
 
     border: solid 12px vars.$button-colour;
     background-color: vars.$button-active-colour;
+
+    &.active {
+        border-color: vars.$button-active-colour;
+        background-color: vars.$button-active-text-colour;
+    }
 }

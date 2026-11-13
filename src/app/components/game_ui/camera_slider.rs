@@ -11,6 +11,7 @@ pub fn camera_slider(
     game_state: ReadSignal<Option<Rc<RefCell<State>>>, LocalStorage>,
 ) -> impl IntoView {
     let node_ref = NodeRef::<Div>::new();
+    let (active, set_active) = signal(false);
 
     Effect::new(move |_| {
         if let Some(element) = node_ref.get() && let Some(game_state) = game_state.get() {
@@ -28,6 +29,7 @@ pub fn camera_slider(
                             .expect("Failed to get first touch point on the camera_slider")
                             .screen_x();
                         state.input.last_canvas_touch_point_x = Some(touch_x_position);
+                        set_active.set(true);
                     }
                 }
             );
@@ -68,10 +70,11 @@ pub fn camera_slider(
                     e.prevent_default();
                     let mut state = cloned_state.borrow_mut();
                     state.input.last_canvas_touch_point_x = None;
+                    set_active.set(false);
                 },
             );
         }
     });
 
-    view! { <div node_ref=node_ref class="camera_slider" /> }
+    view! { <div node_ref=node_ref class="camera_slider" class:active=move || active.get() /> }
 }
